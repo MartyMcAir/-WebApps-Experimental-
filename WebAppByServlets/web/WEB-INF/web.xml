@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!--    указываем главную страницу -->
+    <welcome-file-list>
+        <!--        <welcome-file>myPage.jsp</welcome-file>-->
+        <welcome-file>bootstrap.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--    для Мэппинга Сервлетов-->
+    <!--    Описываем сервлет: -->
+    <servlet>
+        <servlet-name>FirstServlet</servlet-name>
+        <servlet-class>servlets.FirstServlet</servlet-class>
+    </servlet>
+    <!--     привязываем его к адресу -->
+    <servlet-mapping>
+        <!-- при переходя по адресу /hello-FirstServlet TomCat - перенаправит запрос на сервлет FirstServlet -->
+        <!-- в метод doGet(..) -->
+        <servlet-name>FirstServlet</servlet-name>
+        <url-pattern>/hello-FirstServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--SecondServletParameter-->
+    <servlet>
+        <servlet-name>SecondServletParameter</servlet-name>
+        <servlet-class>servlets.SecondServletParameter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecondServletParameter</servlet-name>
+        <url-pattern>/hello-SecondServletParameter</url-pattern>
+    </servlet-mapping>
+
+    <!--ForwardServlet-->
+    <servlet>
+        <servlet-name>ForwardServlet</servlet-name>
+        <servlet-class>servlets.ForwardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForwardServlet</servlet-name>
+        <url-pattern>/hello-ForwardServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--ForwardServlet-->
+    <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>servlets.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/hello-SessionServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--SessionCartServlet-->
+    <servlet>
+        <servlet-name>SessionCartServlet</servlet-name>
+        <servlet-class>servlets.SessionCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionCartServlet</servlet-name>
+        <url-pattern>/hello-SessionCartServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- PostGreSQL -->
+    <servlet>
+        <servlet-name>LibraryServletSQL</servlet-name>
+        <servlet-class>servlets.LibraryServletSQL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LibraryServletSQL</servlet-name>
+        <url-pattern>/hello-LibraryServletSQL</url-pattern>
+    </servlet-mapping>
+
+    <!-- Cookies Servlets and Pages -->
+    <servlet>
+        <servlet-name>SetCookiesServlet</servlet-name>
+        <servlet-class>servlets.cookies.SetCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetCookiesServlet</servlet-name>
+        <url-pattern>/cookies-SetCookiesServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetCookiesServlet</servlet-name>
+        <servlet-class>servlets.cookies.GetCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCookiesServlet</servlet-name>
+        <url-pattern>/cookies-GetCookiesServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCookiesServlet</servlet-name>
+        <servlet-class>servlets.cookies.DeleteCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCookiesServlet</servlet-name>
+        <url-pattern>/cookies-DeleteCookiesServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--    для Мэппинга JSP Страниц _ любые JSP компилируются в сервлеты поэтому маппинг похожий -->
+    <servlet>
+        <servlet-name>secondJsp</servlet-name>
+        <jsp-file>/simpleJSP/secondJsp.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>secondJsp</servlet-name>
+        <!-- при открытии пути в браузере /hello-secondJsp будет открыта JSP страница seconJsp.jsp -->
+        <url-pattern>/hello-secondJsp</url-pattern>
+    </servlet-mapping>
+
+    <!--   Мэпинг для app сервлетов и для appIndex Java Rush    -->
+    <!-- from https://javarush.ru/groups/posts/328-sozdanie-prostogo-veb-prilozhenija-na-servletakh-i-jsp-chastjh-1 -->
+    <!-- add servlet -->
+    <servlet>
+        <servlet-name>add</servlet-name>
+        <servlet-class>app.servlets.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <!-- list servlet -->
+    <servlet>
+        <servlet-name>list</servlet-name>
+        <servlet-class>app.servlets.ListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>list</servlet-name>
+        <url-pattern>/list</url-pattern>
+    </servlet-mapping>
+
+    <!--  Мэппинг c JavaRush app CRUD _ для тестов -->
+    <!--  В мэпинге не поддерживаютсяадреса начинавшиеся на точку т.е. для ./appIndex/JRush-AddServlet  -->
+    <!--  Будет ошибка и приложение не задеплоится  -->
+    <servlet>
+        <servlet-name>AddServlet</servlet-name>
+        <servlet-class>app.servlets.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddServlet</servlet-name>
+        <url-pattern>/appIndex.jsp/JRush-AddServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListServlet</servlet-name>
+        <servlet-class>app.servlets.ListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListServlet</servlet-name>
+        <url-pattern>/appIndex.jsp/JRush-ListServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--  Мой тестовый Сервлет доступ к папке app/servlets  -->
+    <servlet>
+        <servlet-name>MyTestExpServlet</servlet-name>
+        <servlet-class>app.servlets.MyTestExpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyTestExpServlet</servlet-name>
+        <url-pattern>/appIndex.jsp/JRush-MyTestExpServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- My examples Page for Redirect & Forward..  -->
+    <servlet>
+        <servlet-name>RedirectForward</servlet-name>
+        <servlet-class>servlets.RedirectForward</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RedirectForward</servlet-name>
+        <url-pattern>/RedirectForward</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestServletForForward</servlet-name>
+        <servlet-class>servlets.TestServletForForward</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServletForForward</servlet-name>
+        <url-pattern>/TestServletForForward</url-pattern>
+    </servlet-mapping>
+
+    <!-- My examples Page for SQL CRUD..  -->
+    <servlet>
+        <servlet-name>AddColumnsServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AddColumnsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddColumnsServlet</servlet-name>
+        <url-pattern>/AddColumns</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteColumnsServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.DeleteColumnsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteColumnsServlet</servlet-name>
+        <url-pattern>/DeleteColumns</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddDataServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AddDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddDataServlet</servlet-name>
+        <url-pattern>/AddData</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteOneRowServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.DeleteOneRowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteOneRowServlet</servlet-name>
+        <url-pattern>/DeleteOneRow</url-pattern>
+    </servlet-mapping>
+
+    <!--  AJAX SERVLETS  -->
+    <servlet>
+        <servlet-name>ExpAjaxServletGetTableHead</servlet-name>
+        <servlet-class>ajaxServlets.ExpAjaxServletGetTableHead</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpAjaxServletGetTableHead</servlet-name>
+        <url-pattern>/ExpAjaxServletGetTableHead</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExpAjaxServletGetFromForm</servlet-name>
+        <servlet-class>ajaxServlets.ExpAjaxServletGetFromForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpAjaxServletGetFromForm</servlet-name>
+        <url-pattern>/ExpAjaxServletGetFromForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExpAjaxServletGetJson</servlet-name>
+        <servlet-class>ajaxServlets.ExpAjaxServletGetJson</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpAjaxServletGetJson</servlet-name>
+        <url-pattern>/ExpAjaxServletGetJson</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjaxAddDataServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AjaxAddDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjaxAddDataServlet</servlet-name>
+        <url-pattern>/AjaxAddDataServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AjaxDeleteOneRowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>
+        <url-pattern>/AjaxDeleteOneRowServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

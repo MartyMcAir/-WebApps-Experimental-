@@ -1,0 +1,49 @@
+/*.tableIs {*/
+/*    border-collapse: collapse;*/
+/*    width: 100%;*/
+/*    box-sizing: border-box;*/
+/*    line-height: 1.5;*/
+/*    padding: .75rem;*/
+/*    vertical-align: top;*/
+/*    border-top: 1px solid #dee2e6;*/
+/*    text-align: inherit;*/
+/*    display: inline-block;*/
+/*}*/
+
+.tableFormIs input {
+    width: auto;
+    display: inline-block;
+    font-size: small;
+    margin-right: 35px;
+    /*padding: revert;*/
+    /*padding-right: 30px;*/
+
+    /*/ / / / / / / / / / / / / / / / / / tttttttttttttttttt*/
+    /*margin-right: -3px;*/
+    /*padding: unset;*/
+
+    /*/ / / / / / / / / / tttttttttttttt*/
+    border-top: 1px solid #dee2e6;
+    vertical-align: top;
+    box-sizing: border-box;
+    border-collapse: collapse;
+
+    /*line-height: 1.5;*/
+    /*display: block;*/
+    /*padding: .375rem .75rem;*/
+    padding: .375rem 0.9rem;
+    /*font-size: 1rem;*/
+}
+
+.tableFormIs strong {
+    /*margin-right: 20px;*/
+    margin-right: 1rem;
+}
+
+#resultId {
+    color: red;
+}
+
+#resultId2 {
+    color: red;
+}

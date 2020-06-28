@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>groupId</groupId>
+    <artifactId>FirstWebApp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compile.source>1.8</maven.compile.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <!-- https://mkyong.com/maven/maven-source-value-1-5-is-obsolete-and-will-be-removed-in-a-future-release/ -->
+    <!-- https://blog.softhints.com/java-8-warning-java-target-source-value-1-5-is-obsolete/ -->
+    <!-- https://www.thetopsites.net/article/52114848.shtml -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!--       javax..........................................  -->
+        <!--       Библиотека тегов JSTL. -->
+        <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!--        Servlet.service() for servlet jsp throw this exception -->
+        <!--        https://stackoverflow.com/questions/2322031/why-did-servlet-service-for-servlet-jsp-throw-this-exception -->
+
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <!--        https://streletzcoder.ru/ispolzuem-servletyi-v-eclipse-vmeste-s-maven/ -->
+        <!--       Первая проблема с которой мы сталкиваемся, это то, что Maven по умолчанию не добавляет
+        класс javax.servlet.http.HttpServlet. -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--       ..........................................javax  -->
+
+
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0-M1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.13</version>
+        </dependency>
+
+        <!--        Simple JSON - бысрее Jackson'a и без глюков  .....................................-->
+        <!--        ClassNotFoundException: org.json.simple.JSONValue - лечитсяскачиванием
+        *.jar и подключением его вручную File-> Project Structure ->.. -->
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+    </dependencies>
+</project>
