@@ -1,4 +1,4 @@
-# WebAppByServletsExample
+# WebAppByServletsExample (from a lot oth examles)
 Here My  (experimental) First Web App based on Java
 TomCat 9.0.34 _ 
 JDK 11 & 14 _ 
