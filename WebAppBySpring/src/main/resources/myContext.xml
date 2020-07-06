@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:property="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--   ..................................................................................   -->
+    <!--    сообщаем Spring что бы сканил класы на наличие аннотаций в пакете.. -->
+    <!--    using @Component + in code in applicationContext -->
+    <context:component-scan base-package="pkgAnnotation"/>
+    <!--    using @Component + @Autowired -->
+    <context:component-scan base-package="pkgAnnAuto"/>
+    <!--    using @Component + -->
+    <!--    and @Scope, @Value, @PostConstruct, @PreDestroy -->
+    <context:component-scan base-package="pkgAdditionalAnno"/>
+    <!--   ..................................................................................   -->
+
+    <!--   ..................................................................................   -->
+    <!--    For additional using @Scope, @Value, @PostConstruct, @PreDestroy -->
+    <!--    берем импортим _  key - value из properties файла -->
+    <context:property-placeholder location="classpath:triangle.properties"/>
+
+    <!--    создаем бин что будем внедрять как зависимость -->
+    <bean id="oval" class="pkgAdditionalAnno.Oval">
+    </bean>
+
+    <!--    создаем бин в который внедряются зависимости -->
+    <bean id="triangle" class="pkgAdditionalAnno.Triangle">
+        <!--        сеттим в его конструктор value -->
+        <constructor-arg value="my value from XML in Constructor"/>
+        <!--        сеттим в его поле valueFromXML, value через XML value -->
+        <!--        при это наличие сеттера вида setValueFromXML в класс Triangle обязательное -->
+        <!--        т.е. в поле такое не сеттится _ _ сеттер обязателен -->
+        <property name="valueFromXML" value="my value from XML"/>
+
+        <!--     или сеттим в его поля сылку на бин-объект _ сеттер обязателен -->
+        <property name="oval" ref="oval"/>
+
+        <!--     или сеттим в его поля value из property файла _ сеттер обязателен -->
+        <property name="valueFromProp" value="${triangle.valueFromProp}"/>
+
+        <!--    OR значения из файла сеттим в его поля через аннотацию @Value и.. -->
+
+        <!-- другие способы сеттинга зависимостей через аннотации, при этом сеттер не обязателен -->
+    </bean>
+
+
+</beans>

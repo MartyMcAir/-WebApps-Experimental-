@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- xmlns:th="http://www.w3.org/1999/xhtml"  - импорт th-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>data from model to View</title>
+</head>
+<body>
+<a href="../">Go too Main Page</a>
+
+<form action="../calculator/calculate">
+    <label> Param firstParam: <input name="firstParam"> </label>
+    <label> Param secondParam: <input name="secondParam" type="number"> </label>
+    <label> Param operationName:
+        <p><select name="operationName">
+            <!--        <p><select size="3" name="operationName">-->
+            <!--            <option disabled>Choose your Operation</option>-->
+            <option selected value="multiply">multiply</option>
+            <option value="division">division</option>
+        </select></p>
+    </label>
+    <button>Send Request</button>
+</form>
+
+<!-- ThymeLeaf - шаблонизатор берет из можели ключи и выводит представление -->
+<p>Your result is: </p>
+<p th:text="${result}"/>
+
+</body>
+</html>

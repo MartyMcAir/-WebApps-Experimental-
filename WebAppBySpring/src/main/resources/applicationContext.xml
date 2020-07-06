@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:property="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--   ..................................................................................   -->
+    <!--    сообщаем Spring что бы сканил класы на наличие аннотаций в пакете.. -->
+    <!--    using @Component + in code in applicationContext -->
+    <context:component-scan base-package="pkgAnnotation"/>
+    <!--    using @Component + @Autowired -->
+    <context:component-scan base-package="pkgAnnAuto"/>
+    <!--    using @Component + -->
+    <!--    and @Scope, @Value, @PostConstruct, @PreDestroy -->
+    <context:component-scan base-package="pkgAdditionalAnno"/>
+    <!--   ..................................................................................   -->
+
+    <bean id="testBean" class="pkg1.TestBean">
+        <constructor-arg value="MartyMcAir"/>
+    </bean>
+
+    <!--   ..................................................................................   -->
+    <!--        чтоб каждай раз не лезьть в файл applicationContext.xml-->
+    <!--        внедрение зависимостей из внешнего файла импорт значения из файла-->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <!--   ..................................................................................   -->
+
+
+    <!--    нельзя сделать бин из интерфейса ведь нельзя создать объект -экземпляр интерфейса-->
+    <!--    можно менять ClassicalMusic на RockMusic ил др класс реализуюший интерфейс Music
+            и будет в коде что использует этот бин возвращен уже др объект без перекомпиляции-->
+    <bean id="musicBeanPrototype" class="pkg1.hierarchy.RocMusic" scope="prototype"
+          init-method="doMyInit" destroy-method="doMyDestroy">
+        <!--          scope="singleton" - по умолчанию именно это значение используется Spring'ом -->
+    </bean>
+
+    <!--        doInit doDestroy methods -->
+    <bean id="musicBeanInitDestroy" class="pkg1.hierarchy.SoulMusic"
+          init-method="doMyInit" destroy-method="doMyDestroy">
+    </bean>
+
+    <bean id="musicBean" class="pkg1.hierarchy.RocMusic">
+    </bean>
+
+    <!--    DI Dependency Injection Внедрение Зависимостей -->
+    <bean id="musicPlayer" class="pkg1.hierarchy.MusicPlayer">
+        <!--        при наличии конструктора у класса (не дефолтного) надо добавить.. -->
+        <!--        либо создать дефолтный конструктор в MusicPlayer-->
+        <!--        ссылку на бин который он принимает -->
+        <!--        внедрение ссылки на бин-->
+        <constructor-arg ref="musicBean"/>
+        <!--       DI через сеттер setMusic -->
+        <property name="music" ref="musicBean"/>
+
+        <!--       DI через сеттер setVolume _ внедрение int а не объектов -->
+        <property name="volume" value="66"/>
+        <!--        берем значение для setVolume из внешнего файла -->
+        <property name="songName" value="${musicPlayer.songName}"/>
+
+    </bean>
+
+    <bean id="musicPlayerProtoType" class="pkg1.hierarchy.MusicPlayer" scope="prototype">
+        <constructor-arg ref="musicBean"/>
+        <!--       DI через сеттер setMusic -->
+        <property name="music" ref="musicBean"/>
+        <!--       DI через сеттер setVolume _ внедрение int а не объектов -->
+        <property name="volume" value="66"/>
+        <!--        берем значение для setVolume из внешнего файла -->
+        <property name="songName" value="${musicPlayer.songName}"/>
+    </bean>
+
+    <!--    исопльзуя Фабричный метод  Factory Method   -->
+    <bean id="musicBeanFactory" class="pkg1.hierarchy.PopMusic"
+          factory-method="getPopMusic">
+    </bean>
+</beans>
