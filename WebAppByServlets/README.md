@@ -1,6 +1,40 @@
-# WebAppByServletsExample (from a lot oth examles)
-Here My  (experimental) First Web App based on Java
-TomCat 9.0.34 _ 
-JDK 11 & 14 _ 
-PostGreSQL 4 _ 
-(Win10) _ 
+---
+typora-root-url: web\WEB-INF\img
+---
+
+# Web App By Servlets Example (from a-lot of number of other sources)
+###### Here My  (experimental) First Web App based on Java
+
+## Information about the system and editors used:
+
+- utf 8 encoding
+
+- Windows 10
+
+- IntelliJ IDEA 2020.1
+
+- DataGrip 2020.1.5
+
+
+## Technology highlights:
+
+- Maven 3.6
+- JDK 11 
+- SDK 1.8
+- TomCat 9.0.34
+- JSP 4.0.1
+- json simple 1.1.1
+- PostGreSQL 12
+- Ajax CRUD (pure java script)
+
+### Main Page
+
+![](/MainPage.png)
+
+### JSP CRUD Page
+
+![](/JSP_Page_CRUD.png)
+
+### Ajax CRUD Page (pure java script)
+
+![](/PureJS_CRUD.png)

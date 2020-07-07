@@ -1,3 +1,7 @@
 # Study Spring Angular
-https://javastudy.ru/spring-mvc/review-mvc-angularjs-bootstrap-html5/ - 
-Обзор и описание учебного приложения для изучения фреймворков Spring MVC, AngularJS, Bootstrap и HTML5 в одном приложении.
+
+### From: https://javastudy.ru/spring-mvc/review-mvc-angularjs-bootstrap-html5/ - 
+
+### РћР±Р·РѕСЂ Рё РѕРїРёСЃР°РЅРёРµ СѓС‡РµР±РЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ РґР»СЏ РёР·СѓС‡РµРЅРёСЏ С„СЂРµР№РјРІРѕСЂРєРѕРІ Spring MVC, AngularJS, Bootstrap Рё HTML5 РІ РѕРґРЅРѕРј РїСЂРёР»РѕР¶РµРЅРёРё.
+
+### // СЃРєРѕРЅС„РёРіСѓСЂРёСЂРѕРІР°РЅРЅС‹Р№ Рё РїСЂРѕРІРµСЂРµРЅРЅС‹Р№, Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ СЂР°Р±РѕС‚Р°РµС‚)
