@@ -1,7 +1,3 @@
----
-typora-root-url: web\WEB-INF\img
----
-
 # Web App By Servlets Example (from a-lot of number of other sources)
 ###### Here My  (experimental) First Web App based on Java
 
@@ -29,12 +25,12 @@ typora-root-url: web\WEB-INF\img
 
 ### Main Page
 
-![](/MainPage.png)
+![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/WebAppByServlets/web/WEB-INF/img/MainPage.png)
 
 ### JSP CRUD Page
 
-![](/JSP_Page_CRUD.png)
+![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/WebAppByServlets/web/WEB-INF/img/JSP_Page_CRUD.png)
 
 ### Ajax CRUD Page (pure java script)
 
-![](/PureJS_CRUD.png)
+![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/WebAppByServlets/web/WEB-INF/img/PureJS_CRUD.png)
