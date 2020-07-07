@@ -19,6 +19,7 @@
 - SDK 1.8
 - TomCat 9.0.34
 - JSP 4.0.1
+- JSTL 1.2
 - json simple 1.1.1
 - PostGreSQL 12
 - Ajax CRUD (pure java script)
