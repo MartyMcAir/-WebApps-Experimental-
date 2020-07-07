@@ -39,4 +39,4 @@
 
 ### Main Page
 
-![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/WebAppBySpring/src/main/webapp/WEB-INF/img/MainPage.png)
+![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/StudySpringAngular/src/main/webapp/WEB-INF/img/MainPage.png)
