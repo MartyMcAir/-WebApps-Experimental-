@@ -1,6 +1,11 @@
 # Spring Resume Udemy (as a service linkedin)
 ###### dont Ready!
 ###### origin: https://github.com/devstudy-net/resume
+
+###### http://devstudy.net/course/jee-resume
+
+###### https://hub.docker.com/u/devstudy
+
 ###### https://www.udemy.com/course/jee-my-resume/
 
 
