@@ -1,5 +1,4 @@
 <%--<jsp:useBean id="name" scope="request" type="MyDB_CRUD.SQL_Operations"/>--%>
-<%@ page import="MyDB_CRUD.SQL_Operations, java.util.List, java.sql.ResultSet" %>
 <%--
   Created by IntelliJ IDEA.
   User: marty

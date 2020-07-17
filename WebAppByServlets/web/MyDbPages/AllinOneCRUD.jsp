@@ -1,6 +1,6 @@
 <%@ page import="MyDB_CRUD.SQL_Operations" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.sql.ResultSet" %><%--
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: marty
   Date: 12.06.2020

@@ -1,4 +1,3 @@
-<%@ tag import="java.util.Date" %>
 <%@ tag import="java.util.Calendar" %>
 <%@ tag pageEncoding="utf-8" language="java" %>
 

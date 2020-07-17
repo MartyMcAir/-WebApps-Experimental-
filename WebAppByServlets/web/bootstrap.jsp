@@ -76,7 +76,7 @@
 
         <div class="card mb-4 shadow-sm">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Cookies _ ..</h4>
+                <h4 class="my-0 font-weight-normal">Cookies & Session</h4>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
@@ -86,6 +86,11 @@
                         маппинга</a></li>
                     <li><a class="text-muted" href="${contextPath}/cookies-DeleteCookiesServlet">DeleteCookiesServlet
                         маппинга</a>
+                    </li>
+                    <li><a class="text-muted" href="${contextPath}/hello-SessionServlet">SessionServlet
+                        через маппинг</a></li>
+                    <li><a class="text-muted" href="${contextPath}/hello-SessionCartServlet">SessionCartServlet
+                        через маппинг</a>
                     </li>
                 </ul>
             </div>
@@ -139,23 +144,7 @@
 
         <div class="card mb-4 shadow-sm">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Session _ ..</h4>
-            </div>
-            <div class="card-body">
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li><a class="text-muted" href="${contextPath}/hello-SessionServlet">SessionServlet
-                        через маппинг</a></li>
-                    <li><a class="text-muted" href="${contextPath}/hello-SessionCartServlet">SessionCartServlet
-                        через
-                        маппинг</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">my SQL _ DB CRUD _ ..</h4>
+                <h4 class="my-0 font-weight-normal">SQL _ DB CRUD _ ..</h4>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
@@ -165,6 +154,22 @@
                     </li>
                     <li><a class="text-muted" href="MyDbPages/AddDataToBase.jsp">write data AddDataToBase.jsp</a></li>
                     <li><a class="text-muted" href="MyDbPages/AllinOneCRUD.jsp">All CRUD AllinOneCRUD.jsp</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">SQL using Hibernate</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li><a class="text-muted" href="${contextPath}/hello-SessionServlet">SessionServlet
+                        через маппинг</a></li>
+                    <li><a class="text-muted" href="${contextPath}/hello-SessionCartServlet">SessionCartServlet
+                        через
+                        маппинг</a>
+                    </li>
                 </ul>
             </div>
         </div>

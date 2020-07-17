@@ -23,6 +23,7 @@
           <element id="library" level="project" name="Maven: junit:junit:4.10" />
           <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.1" />
           <element id="library" level="project" name="json-simple-1.1.1" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.4.18.Final" />
         </element>
       </element>
       <element id="dir-copy" path="$PROJECT_DIR$/web/public_resources" />

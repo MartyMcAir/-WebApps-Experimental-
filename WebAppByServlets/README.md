@@ -4,12 +4,10 @@
 ## Information about the system and editors used:
 
 - utf 8 encoding
-
 - Windows 10
-
-- IntelliJ IDEA 2020.1
-
 - DataGrip 2020.1.5
+- IntelliJ IDEA 2020.1
+  - created like Java EE project Web App and added Maven..
 
 
 ## Technology highlights:

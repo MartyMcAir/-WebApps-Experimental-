@@ -268,4 +268,14 @@
         <servlet-name>AjaxDeleteOneRowServlet</servlet-name>
         <url-pattern>/AjaxDeleteOneRowServlet</url-pattern>
     </servlet-mapping>
+
+    <!--    Hibernate Pages -->
+<!--    <servlet>-->
+<!--        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>-->
+<!--        <servlet-class>MyDB_CRUD.AjaxDeleteOneRowServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>-->
+<!--        <url-pattern>/AjaxDeleteOneRowServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>

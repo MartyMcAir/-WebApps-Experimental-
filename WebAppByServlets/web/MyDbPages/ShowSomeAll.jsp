@@ -1,9 +1,7 @@
 <%@ page import="MyDB_CRUD.SQL_Operations" %>
+<%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="MyDB_CRUD.DBConnectionPoolVector" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.ResultSet" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: marty
   Date: 08.06.2020
