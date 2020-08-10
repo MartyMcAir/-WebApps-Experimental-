@@ -11,7 +11,7 @@ const log = document.querySelector('#log')   // получаем obj в кото
 const input1ClassObj = form.querySelector('.input1Class')
 // console.dir(input1ClassObj)   // получение подробной инфы об obj
 
-//     <%--    ошибка сама исчезла непонял как --%>
+//     <%--    ошибка сама исчезла не понял как --%>
 // <%--    <p>Ошибка синтаксического анализа XML: ошибка синтаксиса Адрес:.. </p>--%>
 
 function logSubmit(event) {
@@ -32,7 +32,7 @@ function logSubmit(event) {
 }
 
 
-// добавляем слушатель событий на получнный DOM элемент из объекта form
+// добавляем слушатель событий на полученный DOM элемент из объекта form
 // а слушать будет событие type="submit" - с формы т.е. нажатие кнопки
 // вторым аргументом идёт logSubmit - функция, которая должна сработать при данном событии
 form.addEventListener('submit', logSubmit)

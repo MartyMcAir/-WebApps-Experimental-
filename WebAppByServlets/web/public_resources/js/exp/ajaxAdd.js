@@ -8,6 +8,23 @@ const formPlace = document.querySelector('#formPlace')
 
 formPlace.addEventListener('submit', addInTbl)
 
+function fillArray(elements, i, namesArr, valuesArr, params) {
+    const fieldName = elements[i].getAttribute('name')
+    const fieldValue = elements[i].value // value with out submit
+    // const fieldValue = formPlace.elements[i].textContent
+    // const fieldValue = formPlace.elements[i].content
+
+    // добавляем названия полей и их значения в массив
+    namesArr.push(fieldName)
+    valuesArr.push(fieldValue)
+
+    params += fieldName + '=' + fieldValue + '&'
+
+    // console.log(fieldName + '=' + fieldValue)
+    elements[i].value = ''
+    return params;
+}
+
 function addInTbl(event) {
     // console.log('hello from addInTbl function')
 
@@ -19,20 +36,7 @@ function addInTbl(event) {
     let namesArr = [], valuesArr = []
     for (let i = 0; i < elements.length; i++) {
         // console.dir(elements[i])
-
-        const fieldName = elements[i].getAttribute('name')
-        const fieldValue = elements[i].value // value with out submit
-        // const fieldValue = formPlace.elements[i].textContent
-        // const fieldValue = formPlace.elements[i].content
-
-        // добавляем названия полей и их значения в массив
-        namesArr.push(fieldName)
-        valuesArr.push(fieldValue)
-
-        params += fieldName + '=' + fieldValue + '&'
-
-        // console.log(fieldName + '=' + fieldValue)
-        elements[i].value = ''
+        params = fillArray(elements, i, namesArr, valuesArr, params)
     }
 
     const indexIs = params.lastIndexOf('&')
@@ -76,7 +80,7 @@ function sendContentToServerAndAddRow(responseTypeIs, contentTypeIs, servletName
             const newIDis = request.responseText
             // const tbodyEl = document.querySelector('#tblBodyID')
             const tbodyEl = tbodyObj
-            // при успешном добавлении в БД сервера создаем соответсв поля с нов ID
+            // при успешном добавлении в БД сервера создаем соответствие поля с нов ID
             addTooBodyTbl(valuesArr, tbodyEl, namesArr, newIDis)
 
             // обновляем надпись оповещающую пользователя

@@ -10,7 +10,7 @@ public class DBConnectionPoolVector {   // https://habr.com/ru/post/229199/
     private Vector<Connection> connectionList = new Vector<>();
     private Vector<Connection> usedConnectionList = new Vector<>();
     private final String DB_Driver = "org.postgresql.Driver";
-    private final String DB_Full_Name = "jdbc:postgresql://localhost:5432/mydb";
+    private final String DB_Full_Name = "jdbc:postgresql://localhost:5432/postgres";
 //    private final String DB_Full_Name = "jdbc:postgresql://localhost:5432/postgres";
     private final String userName = "postgres";
     private final String DB_password = "Z33_q77_888";

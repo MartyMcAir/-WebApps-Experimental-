@@ -11,6 +11,7 @@
     <properties>
         <maven.compile.source>1.8</maven.compile.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <hibernate-version>5.4.10.Final</hibernate-version>
     </properties>
 
     <!-- https://mkyong.com/maven/maven-source-value-1-5-is-obsolete-and-will-be-removed-in-a-future-release/ -->
@@ -71,38 +72,89 @@
             <version>42.2.13</version>
         </dependency>
 
+        <!-- to start need only this -->
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.4.10.Final</version>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-version}</version>
         </dependency>
 
-        <!--        ДЛя аннотаций -->
-        <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+        <!-- optional from https://javastudy.ru/hibernate/hibernate-quick-start/ -->
         <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-osgi</artifactId>
+            <version>${hibernate-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-envers</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-proxool</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-infinispan</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+
+        <!--END Hibernate -->
+
+        <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+        <!--        <dependency>-->
+        <!--            <groupId>javax.annotation</groupId>-->
+        <!--            <artifactId>javax.annotation-api</artifactId>-->
+        <!--            <version>1.3.2</version>-->
+        <!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.2.Final</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.hibernate.javax.persistence</groupId>-->
+        <!--            <artifactId>hibernate-jpa-2.1-api</artifactId>-->
+        <!--            <version>1.0.2.Final</version>-->
+        <!--        </dependency>-->
+
+        <!--        DONT WORK _ после отключения, ссылка активируещяя работу с Hibernate стала значительно быстрее!  -->
+        <!-- for using org.springframework.web.filter.HiddenHttpMethodFilter -->
+        <!--        // https://javarush.ru/groups/posts/523-vashe-pervoe-prilozhenie-s-ispoljhzovaniem-java-servletov-->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework</groupId>-->
+        <!--            <artifactId>spring-webmvc</artifactId>-->
+        <!--            <version>5.2.7.RELEASE</version>-->
+        <!--        </dependency>-->
 
 
         <!--        Simple JSON - бысрее Jackson'a и без глюков  .....................................-->
         <!--        ClassNotFoundException: org.json.simple.JSONValue - лечитсяскачиванием
         *.jar и подключением его вручную File-> Project Structure ->.. -->
         <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-
     </dependencies>
 </project>

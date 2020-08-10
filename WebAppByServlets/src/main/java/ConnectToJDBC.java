@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class TmpSQL {
+public class ConnectToJDBC {
     public static void main(String[] args) {
         try {
             Class.forName("org.postgresql.Driver");

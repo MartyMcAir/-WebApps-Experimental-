@@ -62,8 +62,10 @@
                 <%--                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>--%>
                 <ul class="list-unstyled mt-3 mb-4">
                     <li><a class="text-muted" href="ajaxPages/ajaxGet.jsp">ajaxGet.jsp</a></li>
-                    <li><a class="text-muted" href="ajaxPages/ajaxJsonTblByPureJs.jsp">ajaxJsonTblByPureJs.jsp</a></li>
                     <li><a class="text-muted" href="ajaxPages/ajaxPost.jsp">ajaxPost.jsp</a></li>
+                    <li><a class="text-muted" href="ajaxPages/ajaxJsonTblByPureJs.jsp">CRUD ajaxJsonTblByPureJs.jsp</a>
+                    </li>
+                    <li><a class="text-muted" href="${contextPath}/HibernateAjaxListUser">CRUD ajax PureJs + Hibernate (Users)</a></li>
                 </ul>
             </div>
         </div>

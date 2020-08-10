@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class TmpTest {
+public class SqlExperimentTest {
     private static Tmp tmp;
 
     @BeforeAll

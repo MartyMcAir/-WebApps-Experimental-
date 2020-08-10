@@ -2,6 +2,7 @@ package hibernate.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -19,6 +20,8 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Auto> autos;
 
+    private String params;
+
     public User() {
     }
 
@@ -26,6 +29,17 @@ public class User {
         this.name = name;
         this.age = age;
         autos = new ArrayList<>();
+    }
+
+    public List<String> getAllFieldsNames() {
+        List<String> fieldsList = new ArrayList<>();
+        Collections.addAll(fieldsList, "name", "age");
+        return fieldsList;
+    }
+
+    public void setParamsAndLoadAllFields(List<String> paramsList) {
+        this.setName(paramsList.get(0));
+        this.setAge(Integer.parseInt(paramsList.get(1)));
     }
 
     public void addAuto(Auto auto) {
@@ -37,6 +51,7 @@ public class User {
         autos.remove(auto);
     }
 
+    //////////////////
     public int getId() {
         return id;
     }

@@ -6,22 +6,72 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->
-        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
-        <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">root</property>
-        <!-- JDBC connection pool (use the built-in) -->
-        <property name="hibernate.connection.pool_size">1</property>
-        <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">true</property>
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
-        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!-- NOTE that after automapping with IDEA property username and password will delete -->
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Z33_q77_888</property>
+        <!--and will be:  Initial SessionFactory failedorg.hibernate.service.spi.ServiceException: Unable to create requested service-->
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <!-- HibernateException: The internal connection pool has reached its maximum size and no connection is currently available! -->
+        <property name="hibernate.connection.pool_size">1</property>
+        <!-- Echo all executed SQL to stdout _ указывает что нужно отобразить сформированный запрос -->
+        <property name="show_sql">true</property>
+        <!--   запрос будет сформирован в читаемом виде     -->
+        <property name="format_sql">false</property>
+
+        <!-- Enable Hibernate automatic session context management -->
+        <!--        из hibernate\servlets\UserSimpleServlet.java doPut() .. -->
+        <!--        // при попытке обновить данные из формы обновления вылетает-->
+        <!--        // HibernateException: Illegal attempt to associate a collection with two open sessions. Collection :-->
+        <!--       https://javatalks.ru/topics/16168 -->
+        <!--        <property name="hibernate.current_session_context_class">org.hibnerate.context.ThreadLocalSessionContext</property>-->
+        <!--        а иначе ошибка использования 2х сессий -->
+        <property name="hibernate.current_session_context_class">
+            org.hibernate.context.internal.ThreadLocalSessionContext
+        </property>
+
+        <!--        <property name="hibernate.current_session_context_class">thread</property>-->
+        <!-- encode settings -->
         <property name="hibernate.connection.CharSet">utf8</property>
         <property name="hibernate.connection.characterEncoding">utf8</property>
         <property name="hibernate.connection.useUnicode">true</property>
 
-<!--        <mapping class="net.common.model.Person" />-->
+        <!-- HibernateException: The internal connection pool has reached its maximum size and no connection is currently available!       -->
+        <!--        <property name="connection.pool_size">10</property>-->
+
+
+        <!-- Drop and re-create the database schema on startup _ ..>create<.. -->
+        <!--  удаляет и создает БД с таблицами, при первом запуске      -->
+        <!-- DB schema will be updated if needed _ ..>update<.. -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Disable the second-level cache  -->
+        <!--        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>-->
+
+        <!--        <mapping class="net.common.model.Person" />-->
+        <mapping class="hibernate.models.User"/>
+        <mapping class="hibernate.models.Auto"/>
+        <!-- from https://stackoverflow.com/questions/18736594/location-of-hibernate-cfg-xml-in-project/18736719#18736719 -->
+        <!--        <mapping resource="config/Auto.hbm.xml"/>-->
+
+        <!--   from https://habr.com/ru/post/29694/   -->
+        <!--        fro using xml config for entity instead annotation -->
+        <!-- List of XML mapping files -->
+        <mapping resource="logic/Bus.hbm.xml"/>
+        <mapping resource="logic/Driver.hbm.xml"/>
+        <mapping resource="logic/Route.hbm.xml"/>
+
+        <!--   from https://javastudy.ru/hibernate/hibernate-quick-start/   -->
+        <mapping class="hibernateJavaStudy.model.ContactEntity"/>
+        <mapping class="hibernateJavaStudy.model.ContactHobbyDetailEntity"/>
+        <mapping class="hibernateJavaStudy.model.HobbyEntity"/>
+        <mapping class="hbExperiment.model.HibernateDevelopersEntity"/>
 
     </session-factory>
 </hibernate-configuration>

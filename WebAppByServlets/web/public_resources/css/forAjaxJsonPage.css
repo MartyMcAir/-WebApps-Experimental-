@@ -10,7 +10,12 @@
 /*    display: inline-block;*/
 /*}*/
 
+.tableFormIs {
+    text-align: inherit;
+}
+
 .tableFormIs input {
+    text-align: inherit;
     width: auto;
     display: inline-block;
     font-size: small;

@@ -133,7 +133,7 @@
                     <li><a class="text-muted" href="simpleJSP/jsPageRedirect.jsp">Java Script
                         PageRedirect.jsp БЕЗ маппинга</a></li>
                     <li><a class="text-muted" href="simpleJSP/jQueryPageRedirect.jsp">jQuery
-                        PageRedirect.jsp БЕЗ маппинга (неразобрался с jQuery)</a></li>
+                        PageRedirect.jsp БЕЗ маппинга (не разобрался с jQuery)</a></li>
 
                     <%--&lt;%&ndash; https://devcolibri.com/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-servlet-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE/                   &ndash;%&gt;--%>
                     <%--                    <li><a class="text-muted" href="simpleJSP/SetValueToJspPage.jsp">--%>
@@ -164,12 +164,15 @@
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
-                    <li><a class="text-muted" href="${contextPath}/hello-SessionServlet">SessionServlet
-                        через маппинг</a></li>
-                    <li><a class="text-muted" href="${contextPath}/hello-SessionCartServlet">SessionCartServlet
-                        через
-                        маппинг</a>
-                    </li>
+                    <strong>User
+                        <a href="https://javarush.ru/groups/posts/523-vashe-pervoe-prilozhenie-s-ispoljhzovaniem-java-servletov">
+                            from JavaRush</a> </strong>
+                    <li><a class="text-muted" href="${contextPath}/hibernateP/users">HibernateUsers by
+                        userSimpleServlets</a></li>
+
+                    <br/>
+                    <strong>MyHibernate Experiment</strong>
+                    <li><a class="text-muted" href="${contextPath}/HibernateListUsers">Hibernate CRUD list users</a></li>
                 </ul>
             </div>
         </div>

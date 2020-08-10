@@ -1,0 +1,92 @@
+h1{
+    margin:80px 0
+}
+.classClickLinkstyle {
+    background: #a01329;
+    border-radius: 3px;
+    color: #f9f0f0;
+    display: inline-block;
+    font-size: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+    transition: color .1s ease;
+}
+.classClickLinkstyle:hover {
+    background: #d01734;
+}
+.classClickLinkstyle.valokan-big {
+    font-size: 18px;
+    padding: 15px 20px;
+    min-width: 100px;
+}
+.classForBtnCloseStyle {
+    color: #e60023;
+    font-size: 30px;
+    text-decoration: none;
+    padding:10px;
+    position: absolute;
+    right: 7px;
+    top: 0;
+}
+.classForBtnCloseStyle:hover {
+    color: #333;
+}
+.classMainDiv:before {
+    content: "";
+    display: none;
+    background: rgba(0, 48, 230, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.classShowHover:before {
+    display: block;
+}
+.classShowHover .classInnerInMain {
+    transform: translate(0, 0);
+    top: 20%;
+}
+.classInnerInMain {
+    background: #fefefe;
+    border: #232222 solid 0px;
+    border-radius: 5px;
+    margin-left: -200px;
+    text-align:center;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    z-index: 11;
+    width: 450px;
+    box-shadow:0 5px 10px rgba(25, 24, 24, 0.3);
+    transform: translate(0, -500%);
+    transition: transform 0.3s ease-out;
+}
+.classPadding {
+    padding: 20px;
+}
+.classPadding input{
+    width:200px;
+    padding:8px;
+    border:1px solid #ddd;
+    color:#888;
+    outline:0;
+    font-size:14px;
+    font-weight:bold;
+    margin-top: 10px;
+}
+.classBorderBottom,
+.classPadding10and20{
+    padding: 10px 20px;
+}
+.classBorderBottom {
+    border-bottom: #eeeeee solid 1px;
+}
+.classBorderBottom h2 {
+    font-size: 20px;
+}

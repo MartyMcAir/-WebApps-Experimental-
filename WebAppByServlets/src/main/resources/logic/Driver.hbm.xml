@@ -1,0 +1,17 @@
+<!--from https://habr.com/ru/post/29694/ -->
+<hibernate-mapping>
+    <class name="hibernatePark.model_origin.Driver" table="driver">
+        <id column="driver_id" name="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+        <property column="name" name="name" type="java.lang.String"/>
+        <property column="surname" name="surname" type="java.lang.String"/>
+        <property column="age" name="age" type="java.lang.Integer"/>
+
+        <set name="busses" table="busDriver" lazy="false">
+            <key column="driver_id"/>
+            <many-to-many column="bus_id" class="hibernatePark.model.Bus"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

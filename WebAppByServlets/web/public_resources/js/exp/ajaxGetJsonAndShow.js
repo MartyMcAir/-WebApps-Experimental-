@@ -172,7 +172,7 @@ function createInnerForBodyTbl(contentsArr, tblBody, keysArr) {
     // <th scope="col"> _ создаем th тег для ID
     const thObj = document.createElement('th')
     thObj.setAttribute('scope', 'row')
-    thObj.setAttribute('id', 'thId')
+    // thObj.setAttribute('id', 'thId')
     thObj.textContent = contentsArr[keysArr[0]] + ' '
     // добавляем новый <th> на тот же <tr> объект
     trObj.appendChild(thObj)

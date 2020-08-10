@@ -3,8 +3,12 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/web/HibernatePages/hibernateDeleteUser.jsp" value="file://$PROJECT_DIR$/web/HibernatePages" />
+        <entry key="file://$PROJECT_DIR$/web/HibernatePages/hibernateListUsers.jsp" value="file://$PROJECT_DIR$/web/HibernatePages" />
         <entry key="file://$PROJECT_DIR$/web/appIndex.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/bootstrap.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/myPage.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/public_resources/HtmlProtoType/BootstrapExpSandBox.html" value="file://$PROJECT_DIR$/web/public_resources/HtmlProtoType" />
       </map>
     </option>
   </component>

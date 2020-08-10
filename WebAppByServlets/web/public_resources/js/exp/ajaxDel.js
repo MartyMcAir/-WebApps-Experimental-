@@ -2,7 +2,7 @@ responseType = 'text'
 contentType = 'application/x-www-form-url'
 servletNameDel = 'AjaxDeleteOneRowServlet'
 
-// таймер и интервал т.к. этот участок кода js _ не находит то что сформировал предыдуший js код
+// таймер и интервал т.к. этот участок кода js _ не находит то что сформировал предыдущий js код
 const intervalDelForm = setTimeout(createOptionsForDelInForm, 1600);
 // и прерываем интервал, чтоб не дублировался код
 // setTimeout(getHandlerOffInterval, 1600)
@@ -75,7 +75,7 @@ function connectToServerForDelRow(responseTypeIs, contentTypeIs, servletName, ge
             const rowIs = [selectId.value]
             deleteRowInTblDOM(rowIs)
 
-            clearAllOptionsInDelForm()  // зачищяем Options выбор id для удаления
+            clearAllOptionsInDelForm()  // зачищаем Options выбор id для удаления
             createOptionsForDelInForm() // и создаем по новой без удаленных вариантов
             // setTimeout(createOptionsForDelInForm, 1500)
             resultIs.textContent = 'your fields is deleted'

@@ -270,12 +270,71 @@
     </servlet-mapping>
 
     <!--    Hibernate Pages -->
-<!--    <servlet>-->
-<!--        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>-->
-<!--        <servlet-class>MyDB_CRUD.AjaxDeleteOneRowServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>-->
-<!--        <url-pattern>/AjaxDeleteOneRowServlet</url-pattern>-->
-<!--    </servlet-mapping>-->
+    <servlet>
+        <servlet-name>UserSimpleServlet</servlet-name>
+        <servlet-class>hibernate.servlets.UserSimpleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserSimpleServlet</servlet-name>
+        <url-pattern>/hibernateP/users</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowUser</servlet-name>
+        <!--        <jsp-file>/simpleJSP/secondJsp.jsp</jsp-file>-->
+        <jsp-file>/HibernatePages/showUsers.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowUser</servlet-name>
+        <url-pattern>/HibernatePages/usersFromJsp</url-pattern>
+    </servlet-mapping>
+
+    <!-- Hibernate Pages my Experiments -->
+    <servlet>
+        <servlet-name>HibernateListUsers</servlet-name>
+        <servlet-class>hibernate.servlets.HibernateListUsers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HibernateListUsers</servlet-name>
+        <url-pattern>/HibernateListUsers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HibernateUsersCrud</servlet-name>
+        <servlet-class>hibernate.servlets.HibernateUsersCrud</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HibernateUsersCrud</servlet-name>
+        <url-pattern>/HibernateUsersCrud</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HibernateAjaxCrudUser</servlet-name>
+        <servlet-class>hibernate.servlets.HibernateAjaxCrudUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HibernateAjaxCrudUser</servlet-name>
+        <url-pattern>/HibernateAjaxCrudUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HibernateAjaxListUser</servlet-name>
+        <servlet-class>hibernate.servlets.HibernateAjaxListUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HibernateAjaxListUser</servlet-name>
+        <url-pattern>/HibernateAjaxListUser</url-pattern>
+    </servlet-mapping>
+
+    <!--        DONT WORK _ после отключения, ссылка активируещяя работу с Hibernate стала значительно быстрее!  -->
+    <!--  https://javarush.ru/groups/posts/523-vashe-pervoe-prilozhenie-s-ispoljhzovaniem-java-servletov  -->
+    <!--    for using PUT and DELETE _ not only GET & POST    -->
+    <!--    <filter>-->
+    <!--        <filter-name>hiddenHttpMethodFilter</filter-name>-->
+    <!--        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>-->
+    <!--    </filter>-->
+    <!--    <filter-mapping>-->
+    <!--        <filter-name>hiddenHttpMethodFilter</filter-name>-->
+    <!--        <servlet-name>UserSimpleServlet</servlet-name>-->
+    <!--    </filter-mapping>-->
 </web-app>

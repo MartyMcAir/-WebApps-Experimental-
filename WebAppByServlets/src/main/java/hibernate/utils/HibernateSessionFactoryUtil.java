@@ -20,7 +20,6 @@ public class HibernateSessionFactoryUtil {
                 configuration.addAnnotatedClass(Auto.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
-
             } catch (Exception e) {
                 System.out.println("Исключение!" + e);
             }

@@ -11,65 +11,17 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="pricing.css" rel="stylesheet">
+    <link href="../js/jsTrash/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-    <style>
-        /*.tableIs {*/
-        /*    border-collapse: collapse;*/
-        /*    width: 100%;*/
-        /*    box-sizing: border-box;*/
-        /*    line-height: 1.5;*/
-        /*    padding: .75rem;*/
-        /*    vertical-align: top;*/
-        /*    border-top: 1px solid #dee2e6;*/
-        /*    text-align: inherit;*/
-        /*    display: inline-block;*/
-        /*}*/
-
-        .tableFormIs input {
-            width: auto;
-            display: inline-block;
-            font-size: small;
-            margin-right: 13px;
-            padding: revert;
-
-            /*/ / / / / / / / / / / / / / / / / / tttttttttttttttttt*/
-            /*margin-right: -3px;*/
-            /*padding: unset;*/
-
-            /*/ / / / / / / / / / tttttttttttttt*/
-            border-top: 1px solid #dee2e6;
-            vertical-align: top;
-            box-sizing: border-box;
-            border-collapse: collapse;
-
-            /*line-height: 1.5;*/
-            /*display: block;*/
-            /*padding: .375rem .75rem;*/
-            /*font-size: 1rem;*/
-        }
-    </style>
-
+    <link href="b_cssExpForHtml.css" rel="stylesheet">
+    <link href="modalCss1.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="pricing.css" rel="stylesheet">
+    <link href="../js/jsTrash/pricing.css" rel="stylesheet">
+
+    <!-- JS  -->
+    <script src="b_jsExpForHtml.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="modalJs1.js"></script>
 </head>
 <body>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -83,11 +35,207 @@
     <a class="btn btn-outline-primary" href="#">Sign up</a>
 </div>
 
+<!-- ............................................................................................................... -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Contact Form</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime repellat asperiores natus unde quos consequuntur aliquid temporibus doloremque nihil nulla quidem, expedita hic nobis ipsam quia fugiat. Sunt, maxime, fugit!</p>
+
+            <div class="popup-overlay"><!-- //оверлей - отображение формы на затемненном фоне -->
+
+                <div class="popWindow subscribe_window"><!-- //основное окно формы Подписки -->
+                    <p class="subcsribe-text">Subscribe to receive news and information</p>
+                    <form class="subscribe-form" autocomplete="off">
+                        <div>
+                            <input type="text" id="name-subscribe" name="Name" placeholder=" " required>
+                            <label for="name-subscribe">Name <span>*</span></label>
+                        </div>
+                        <div>
+                            <input type="email" id="email-subscribe" name="E-mail" placeholder=" " required>
+                            <label for="email-subscribe">Email <span>*</span></label>
+                        </div>
+                        <div class="aligncenter">
+                            <button type="submit" class="btn"><i class="fa fa-check" aria-hidden="true"></i> Subscribe</button>
+                        </div>
+                        <div class="req-fields"><sup>*</sup> required fields</div>
+                    </form>
+                    <div class="close-btn">&times;</div>
+                </div><!-- /subscribe_window -->
+
+                <div class="popWindow thank_you_window"><!-- //благодарственное окно после успешной отправки формы -->
+                    <p class="thank_you_title">Thank you for subscribing!</p>
+                    <p class="thank_you_body">We've sent some useful tips to your email. Go ahead and check them now!</p>
+                    <div class="close-btn">&times;</div>
+                </div><!-- /thank_you_window -->
+
+            </div><!-- /popup-overlay -->
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ............................................................................................................... -->
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h5 class="display-4">Pricing example</h5>
 </div>
 
 <div class="container">
+
+    <table class="table" id="expTable2">
+        <thead>
+        <tr>
+            <td scope="col">ID</td>
+            <td scope="col">Имя</td>
+            <td scope="col">Возраст</td>
+            <td scope="col">Действия</td>
+        </tr>
+        </thead>
+
+        <tbody>
+
+
+        <tr id="1">
+            <th scope="row">1</th>
+            <td>MartyMcAir</td>
+            <td>13</td>
+            <td>
+
+                <div class="inlineDivs">
+                    <form action="/WebAppByServlets_war_exploded/HibernateAjaxCrudUser" method="get" class="formClass">
+                        <input type="hidden" name="id" value="1">
+                        <input type="hidden" name="name" value="MartyMcAir">
+                        <input type="hidden" name="age" value="13">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Изменить">Изменить</button>
+                    </form>
+
+
+                    <form class="formClass delFormClass">
+                        <input type="hidden" name="id" value="1">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Удалить">Удалить</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="2">
+            <th scope="row">2</th>
+            <td>Thanos</td>
+            <td>999</td>
+            <td>
+
+                <div class="inlineDivs">
+                    <form action="/WebAppByServlets_war_exploded/HibernateAjaxCrudUser" method="get" class="formClass">
+                        <input type="hidden" name="id" value="2">
+                        <input type="hidden" name="name" value="Thanos">
+                        <input type="hidden" name="age" value="999">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Изменить">Изменить</button>
+                    </form>
+
+
+                    <form class="formClass delFormClass">
+                        <input type="hidden" name="id" value="2">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Удалить">Удалить</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="3">
+            <th scope="row">3</th>
+            <td>Thony Stark</td>
+            <td>33</td>
+            <td>
+
+                <div class="inlineDivs">
+                    <form action="/WebAppByServlets_war_exploded/HibernateAjaxCrudUser" method="get" class="formClass">
+                        <input type="hidden" name="id" value="3">
+                        <input type="hidden" name="name" value="Thony Stark">
+                        <input type="hidden" name="age" value="33">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Изменить">Изменить</button>
+                    </form>
+
+
+                    <form class="formClass delFormClass">
+                        <input type="hidden" name="id" value="3">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Удалить">Удалить</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="4">
+            <th scope="row">4</th>
+            <td>Nebula</td>
+            <td>13</td>
+            <td>
+
+                <div class="inlineDivs">
+                    <form action="/WebAppByServlets_war_exploded/HibernateAjaxCrudUser" method="get" class="formClass">
+                        <input type="hidden" name="id" value="4">
+                        <input type="hidden" name="name" value="Nebula">
+                        <input type="hidden" name="age" value="13">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Изменить">Изменить</button>
+                    </form>
+
+
+                    <form class="formClass delFormClass">
+                        <input type="hidden" name="id" value="4">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Удалить">Удалить</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="5">
+            <th scope="row">5</th>
+            <td>Gomora</td>
+            <td>16</td>
+            <td>
+
+                <div class="inlineDivs">
+                    <form action="/WebAppByServlets_war_exploded/HibernateAjaxCrudUser" method="get" class="formClass">
+                        <input type="hidden" name="id" value="5">
+                        <input type="hidden" name="name" value="Gomora">
+                        <input type="hidden" name="age" value="16">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Изменить">Изменить</button>
+                    </form>
+
+
+                    <form class="formClass delFormClass">
+                        <input type="hidden" name="id" value="5">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Удалить">Удалить</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="6">
+            <th scope="row">6</th>
+            <td>Thor</td>
+            <td>3000</td>
+            <td>
+
+                <div class="inlineDivs">
+                    <form action="/WebAppByServlets_war_exploded/HibernateAjaxCrudUser" method="get" class="formClass">
+                        <input type="hidden" name="id" value="6">
+                        <input type="hidden" name="name" value="Thor">
+                        <input type="hidden" name="age" value="3000">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Изменить">Изменить</button>
+                    </form>
+
+
+                    <form class="formClass delFormClass">
+                        <input type="hidden" name="id" value="6">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Удалить">Удалить</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
     <table id="expTable" class="table">
         <thead>

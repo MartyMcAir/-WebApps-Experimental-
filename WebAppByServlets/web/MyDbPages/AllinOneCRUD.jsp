@@ -19,16 +19,7 @@
 </head>
 
 <body>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Simple Web App (with bootstrap Examples)</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
-    </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
-</div>
+<page:bootstrapHeader/>
 
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
@@ -38,16 +29,11 @@
         </button>
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}"
-                       tabindex="-1">Назад на главную _ HOME</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}"
+                                        tabindex="-1">Назад на главную _ HOME</a></li>
                 <strong>-></strong>
-                <li>
-                    <a class="nav-link" href="${pageContext.request.contextPath}/MyDbPages/AllinOneCRUD.jsp"
-                       tabindex="-1">Назад на AllinOneCRUD.jsp</a>
-                </li>
-
+                <li><a class="nav-link" href="${pageContext.request.contextPath}/MyDbPages/AllinOneCRUD.jsp"
+                       tabindex="-1">Назад на AllinOneCRUD.jsp</a></li>
             </ul>
         </div>
     </nav>
