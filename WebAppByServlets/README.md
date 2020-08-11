@@ -35,7 +35,7 @@
 
 ![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/WebAppByServlets/web/WEB-INF/img/hibernatePageCrud.png)
 
-### Ajax (pure java script) CRUD Page using SQL
+### Ajax (pure java script) CRUD Page using SQL & JSON
 
 ![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/WebAppByServlets/web/WEB-INF/img/PureJS_CRUD.png)
 
