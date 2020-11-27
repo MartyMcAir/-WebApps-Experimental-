@@ -1,0 +1,8 @@
+TODO: Минусы данного примера
+§ не видит аннотацию вида.. @WebServlet(urlPatterns = {"/myServletLink"})
+	□ https://www.eclipse.org/jetty/documentation/current/using-annotations-embedded.html
+§ при использовании ссылки в inxe.jsp ссылаемой на путь к сервлету (а не jsp page), необходимо каждый такой сервлет,
+добалять перед запуском в.. servletContextHandler.addServlet(DateServlet.class, "/date/");
+§ При попытке запуска из примера для юза аннотаций:
+https://www.eclipse.org/jetty/documentation/current/using-annotations-embedded.html
+_ выдаёт кучу ошибок _ часть исправил, но всё равно не работает

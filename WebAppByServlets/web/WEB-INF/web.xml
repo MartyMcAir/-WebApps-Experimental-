@@ -326,6 +326,24 @@
         <url-pattern>/HibernateAjaxListUser</url-pattern>
     </servlet-mapping>
 
+    <!-- Mapping Examples -->
+    <servlet>
+        <servlet-name>MappingServlet</servlet-name>
+        <servlet-class>servlets.MappingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MappingServlet</servlet-name>
+        <!-- https://www.youtube.com/watch?v=Ic-kWTx0VqU&list=PLU2ftbIeotGoQGD51e0qb98lE0xhgNDF1&index=2 -->
+        <!-- * - указывает на то, что путь может быть любым на месте звездочки -->
+        <url-pattern>/MappingServletPathFromWebXml/id/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- https://www.youtube.com/watch?v=nTyrXZOINqk&list=PLU2ftbIeotGoQGD51e0qb98lE0xhgNDF1&index=3 -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
     <!--        DONT WORK _ после отключения, ссылка активируещяя работу с Hibernate стала значительно быстрее!  -->
     <!--  https://javarush.ru/groups/posts/523-vashe-pervoe-prilozhenie-s-ispoljhzovaniem-java-servletov  -->
     <!--    for using PUT and DELETE _ not only GET & POST    -->

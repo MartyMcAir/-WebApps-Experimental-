@@ -6,7 +6,7 @@
 - utf 8 encoding
 - Windows 10
 - DataGrip 2020.1.5
-- IntelliJ IDEA 2020.1
+- IntelliJ IDEA Ultimate 2020.1
   - created like Java EE project Web App and added Maven..
 
 

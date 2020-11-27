@@ -14,6 +14,26 @@
         <hibernate-version>5.4.10.Final</hibernate-version>
     </properties>
 
+    <!--    https://stackoverflow.com/questions/23835472/maven-eclipse-could-not-find-any-meta-inf-persistence-xml-file-in-the-classpath -->
+    <!--    <resources>-->
+    <!--        &lt;!&ndash; After this maven stopped to put parsistence.xml&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <resource>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <directory>src/main/resources/CATALINA_HOME/conf</directory>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <excludes>&ndash;&gt;-->
+    <!--        &lt;!&ndash;                <exclude>log4j.properties</exclude>&ndash;&gt;-->
+    <!--        &lt;!&ndash;                <exclude>jpa_stocks.properties</exclude>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            </excludes>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </resource>&ndash;&gt;-->
+    <!--        &lt;!&ndash; Brutal force to fix &ndash;&gt;-->
+    <!--        <resource>-->
+    <!--            <directory>src/main/resources/META-INF</directory>-->
+    <!--            <targetPath>META-INF</targetPath>-->
+    <!--            <includes>-->
+    <!--                <include>persistence.xml</include>-->
+    <!--            </includes>-->
+    <!--        </resource>-->
+    <!--    </resources>-->
+
     <!-- https://mkyong.com/maven/maven-source-value-1-5-is-obsolete-and-will-be-removed-in-a-future-release/ -->
     <!-- https://blog.softhints.com/java-8-warning-java-target-source-value-1-5-is-obsolete/ -->
     <!-- https://www.thetopsites.net/article/52114848.shtml -->
@@ -26,6 +46,20 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- from https://www.youtube.com/watch?v=Jnd4PQt44j0&list=PLU2ftbIeotGoQGD51e0qb98lE0xhgNDF1&index=1 -->
+            <!-- 13 minute -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.20.v20190813</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                        <contextPath>/my-app</contextPath>
+                    </webApp>
                 </configuration>
             </plugin>
         </plugins>
@@ -54,6 +88,16 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- from https://www.youtube.com/watch?v=nTyrXZOINqk&list=PLU2ftbIeotGoQGD51e0qb98lE0xhgNDF1&index=3 -->
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!--       ..........................................javax  -->
 
 
@@ -63,6 +107,14 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.7.0-M1</version>
             <scope>test</scope>
+        </dependency>
+
+		<!-- for database -->
+        <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.2.1</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -79,7 +131,7 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate-version}</version>
         </dependency>
-        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
+        <!-- for JPA & JPQL, use hibernate-entitymanager instead of hibernate-core -->
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -119,6 +171,14 @@
             <version>${hibernate-version}</version>
         </dependency>
 
+        <!-- for using JPQL in persistence.xml-->
+        <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.2.Final</version>
+        </dependency>
+
         <!--END Hibernate -->
 
         <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
@@ -128,14 +188,7 @@
         <!--            <version>1.3.2</version>-->
         <!--        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.hibernate.javax.persistence</groupId>-->
-        <!--            <artifactId>hibernate-jpa-2.1-api</artifactId>-->
-        <!--            <version>1.0.2.Final</version>-->
-        <!--        </dependency>-->
-
-        <!--        DONT WORK _ после отключения, ссылка активируещяя работу с Hibernate стала значительно быстрее!  -->
+        <!--        DONT WORK _ после отключения, ссылка активирующая работу с Hibernate стала значительно быстрее!  -->
         <!-- for using org.springframework.web.filter.HiddenHttpMethodFilter -->
         <!--        // https://javarush.ru/groups/posts/523-vashe-pervoe-prilozhenie-s-ispoljhzovaniem-java-servletov-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
@@ -146,15 +199,31 @@
         <!--        </dependency>-->
 
 
-        <!--        Simple JSON - бысрее Jackson'a и без глюков  .....................................-->
-        <!--        ClassNotFoundException: org.json.simple.JSONValue - лечитсяскачиванием
+        <!--        Simple JSON - быстрее Jackson'a и без глюков  .....................................-->
+        <!--        ClassNotFoundException: org.json.simple.JSONValue - лечится скачиванием
         *.jar и подключением его вручную File-> Project Structure ->.. -->
         <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
+
+        <!--        ................................ -->
+        <!-- for using EJBGlassfishJPA -->
+        <!-- https://devcolibri.com/web-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-ejb3-glassfish-%D0%B8-jpa2/ -->
+        <!-- впрочем не заработало и с данными зависимостями .. -->
+        <!--        <dependency>-->
+        <!--            <groupId>javaee</groupId>-->
+        <!--            <artifactId>javaee-api</artifactId>-->
+        <!--            <version>5</version>-->
+        <!--        </dependency>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>javax</groupId>-->
+        <!--            <artifactId>javaee-web-api</artifactId>-->
+        <!--            <version>6.0</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
     </dependencies>
 </project>

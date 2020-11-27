@@ -2,7 +2,7 @@
 <hibernate-mapping>
     <!-- Тег class имеет два параметра: параметр name — Имя класса (необходимо указывать полный путь
     с учетом структуры пакетов) и параметр table — имя таблицы в базе данных, на которую будет маппиться наш класс. -->
-    <class name="hibernatePark.model_origin.Route" table="route">
+    <class name="hibernatePark.model_origin.RouteOrig" table="route">
         <!-- Тег id описывает идентификатор. Параметр column указывает на какую колонку в таблице будет ссылаться
          поле id нашего объекта, так же указываем класс и указываем generator, который отвечает за генерацию id. -->
         <id column="route_id" name="id" type="java.lang.Long">

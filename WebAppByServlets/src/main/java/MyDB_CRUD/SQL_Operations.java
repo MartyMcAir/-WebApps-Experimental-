@@ -10,6 +10,19 @@ public class SQL_Operations {
     public SQL_Operations() {
         DBConnectionPoolVector dbConnectionPoolVector = new DBConnectionPoolVector(3);
         this.connection = dbConnectionPoolVector.retrieve();
+
+
+        try (Statement statement = connection.createStatement();) {
+            DBConnectionPoolVector conPool = new DBConnectionPoolVector(3);
+            Connection connection = conPool.retrieve(); // using DriverManager.getConnection(..
+
+            String sql_tblBooks = "CREATE TABLE IF NOT EXISTS books( " +
+                    "    Id serial PRIMARY KEY );";
+
+            statement.execute(sql_tblBooks);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     private void addToListAllColumns(String label, List<String> list, ResultSet resultSet) throws SQLException {

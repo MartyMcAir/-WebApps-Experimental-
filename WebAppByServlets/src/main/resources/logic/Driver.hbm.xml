@@ -1,6 +1,6 @@
 <!--from https://habr.com/ru/post/29694/ -->
 <hibernate-mapping>
-    <class name="hibernatePark.model_origin.Driver" table="driver">
+    <class name="hibernatePark.model_origin.DriverOrig" table="driver">
         <id column="driver_id" name="id" type="java.lang.Long">
             <generator class="increment"/>
         </id>

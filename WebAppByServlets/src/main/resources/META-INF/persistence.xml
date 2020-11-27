@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+            http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <!--    <persistence-unit name="example-unit" transaction-type="JTA">-->
+    <persistence-unit name="myUnitXml" transaction-type="RESOURCE_LOCAL">
+        <description>
+            Persistence unit for Hibernate User Guide
+        </description>
+
+        <!--        <provider>oracle.toplink.essentials.ejb.cmp3.EntityManagerFactoryProvider</provider>-->
+        <!--         from       https://www.baeldung.com/hibernate-no-persistence-provider -->
+        <!--        <provider>org.hibernate.ejb.HibernatePersistence</provider>-->
+
+        <!-- from https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html -->
+        <!--        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>-->
+        <!--        <provider>javax.persistence.spi.PersistenceProvider</provider>-->
+        <!--        <provider>jakarta.persistence.spi.PersistenceProvider</provider>-->
+        <!-- Provided in latest release of hibernate -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+        <class>dbUtilsExperimental.entity.Employee</class>
+        <class>dbUtilsExperimental.entity.EmployeeForCriteriaApi</class>
+
+        <!-- https://habr.com/ru/post/420827/ -->
+        <!-- В качестве jta-data-source используем jndi-name, которое указали при создании datasource.
+        Если забыли, можно посмотреть на 127.0.0.1:9990 в разделе Configuration->Subsystems->Datasources->
+        Наш datasource->View->Attributes->строка JNDI. -->
+        <!--        <jta-data-source>java:/PostgresDS</jta-data-source>-->
+
+
+        <properties>
+            <!-- https://coderoad.ru/37402336/JPA-persistence-xml-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-postgresql-JTA -->
+            <!-- Когда вы ссылаетесь на какой-либо источник данных, вам не нужно ставить ниже часть в вас persistence.xml. -->
+            <property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
+            <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="toplink.jdbc.user" value="postgres"/>
+            <property name="toplink.jdbc.password" value="Z33_q77_888"/>
+            <property name="toplink.ddl-generation" value="create-tables"/>
+
+            <!-- https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html -->
+            <!-- update create -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+        </properties>
+
+    </persistence-unit>
+
+    <!-- from https://gist.github.com/aleroddepaz/f5c0870a61160e6559f26b950d762301 -->
+    <!-- Hibernate + H2 -->
+    <persistence-unit name="standalonePu" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>dbUtilsExperimental.entity.Employee</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:h2:mem:dbname;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

@@ -128,6 +128,9 @@
                     <li><a class="text-muted" href="simpleJSP/pageRedirect.jsp">pageRedirect.jsp БЕЗ
                         маппинга</a>
                     </li>
+                    <li><a class="text-muted" href="simpleJSP/pageRedirect.jsp">pageRedirect.jsp БЕЗ
+                        маппинга</a>
+                    </li>
                     <li><a class="text-muted" href="simpleJSP/startPageForRedirect.jsp">startPageForRedirect.jsp
                         Redirect Examples Page</a></li>
                     <li><a class="text-muted" href="simpleJSP/jsPageRedirect.jsp">Java Script
@@ -172,15 +175,50 @@
 
                     <br/>
                     <strong>MyHibernate Experiment</strong>
-                    <li><a class="text-muted" href="${contextPath}/HibernateListUsers">Hibernate CRUD list users</a></li>
+                    <li><a class="text-muted" href="${contextPath}/HibernateListUsers">Hibernate CRUD list users</a>
+                    </li>
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Mapping Examples and oth</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li><a class="text-muted" href="${contextPath}/MappingServletPathFromWebXml/id/">Mapping by
+                        web.xml</a></li>
+                    <li><a class="text-muted" href="${contextPath}/MappingServletPathFrom@WebServlet/id/">Mapping by
+                        @WebServlet annotation</a></li>
+                    <li><a class="text-muted" href="${contextPath}/MappingServletAlternatePathFrom@WebServlet">Mapping
+                        by @WebServlet alternate Path
+                    </a></li>
+                    <li><a class="text-muted"
+                           href="${contextPath}/MappingServletPathFrom@WebServlet/id/?key=value&one=1&one=1zero&twoParam=myParam">Mapping
+                        by @WebServlet annotation with Random Params</a></li>
+
+                    <strong>others..</strong>
+                    <li><a class="text-muted"
+                           href="${contextPath}/simpleJSP/getFileFromUserExamplePage.jsp">getFileFromUserExamplePage.jsp</a>
+                    </li>
+                    <li><a class="text-muted"
+                           href="${contextPath}/GetFileFromUser">GetFileFromUser using @WebServlet mapping</a>
+                    </li>
+                    <%--&lt;%&ndash; https://devcolibri.com/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-servlet-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE/                   &ndash;%&gt;--%>
+                    <%--                    <li><a class="text-muted" href="simpleJSP/SetValueToJspPage.jsp">--%>
+                    <%--                        SetValueToJspPage.jsp (Передаем данные с Servlet на JSP)</a></li>--%>
+                </ul>
+            </div>
+        </div>
+
         <%--  class="card-deck mb-3 text-center"  --%>
     </div>
+
     <%--   class="container"   --%>
 </div>
-
 <page:bootStrapFooter/>
 </body>
 </html>

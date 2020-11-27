@@ -1,2 +1,4 @@
 Todo: Разобраться с зависимостями OneToMany.. ManyToMany..
-По создавать СRUD сервисы с примерами юза HQL JPQL и с аннотациями
+
+Todo: JPQL src\main\java\dbUtilsExperimental\JpqlUtils.java
+Todo: Criteria API src/main/java/dbUtilsExperimental/CriteriaUtils.java

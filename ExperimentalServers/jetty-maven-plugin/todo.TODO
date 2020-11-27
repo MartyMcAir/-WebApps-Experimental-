@@ -1,0 +1,6 @@
+TODO: Минусы данного примера
+§ не видит аннотацию вида.. @WebServlet("/myServletLink") or @WebServlet(urlPatterns = {"/myServletLink"})
+	□ помогает _ только мэпинг на каждый сервлет в web.xml
+§ При запуске пишет Starting scanner at interval of 1 seconds _ но при этом скан не производится и страница не обновляется (при её изменении)
+§ Jetty: run exploded - выдаёт ошибки (stack over flow не помог)
+§ Непонятно как задать context path

@@ -42,6 +42,13 @@
         <property name="hibernate.connection.characterEncoding">utf8</property>
         <property name="hibernate.connection.useUnicode">true</property>
 
+        <!-- https://stackoverflow.com/questions/21574236/how-to-fix-org-hibernate-lazyinitializationexception-could-not-initialize-prox -->
+        <!-- при попытке load byId SimpleEntity, Exception _ помогло _ или юзать get instead load -->
+<!--        <property name="hibernate.enable_lazy_load_no_trans">true</property>-->
+        <!-- а это не помогло -->
+        <!--        <property name="current_session_context_class">thread</property>-->
+
+
         <!-- HibernateException: The internal connection pool has reached its maximum size and no connection is currently available!       -->
         <!--        <property name="connection.pool_size">10</property>-->
 
@@ -72,6 +79,10 @@
         <mapping class="hibernateJavaStudy.model.ContactHobbyDetailEntity"/>
         <mapping class="hibernateJavaStudy.model.HobbyEntity"/>
         <mapping class="hbExperiment.model.HibernateDevelopersEntity"/>
+
+
+        <!--        <mapping class="hbLinkedTables.models.Article"/>-->
+        <!--        <mapping class="hbLinkedTables.models.Tag_for_article"/>-->
 
     </session-factory>
 </hibernate-configuration>

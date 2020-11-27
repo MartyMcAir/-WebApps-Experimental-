@@ -27,7 +27,7 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration().configure();
-                // при такому добавлени анотированных классов и в конфигах
+                // при такому добавлении аннотированных классов и в конфигах
                 // <property name="hbm2ddl.auto">update</property> or >create<_
                 // HB сам создает таблицы
                 configuration.addAnnotatedClass(Bus.class);

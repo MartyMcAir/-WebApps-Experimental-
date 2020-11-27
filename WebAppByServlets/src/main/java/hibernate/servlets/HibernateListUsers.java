@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+// http://localhost:8080/WebAppByServlets_war_exploded/deleteUser
+//@WebServlet("/deleteUser")
 public class HibernateListUsers extends HttpServlet {
 
     @Override

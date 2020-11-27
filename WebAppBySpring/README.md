@@ -7,7 +7,7 @@
 
 - utf 8 encoding
 - Windows 10
-- IntelliJ IDEA 2020.1
+- IntelliJ IDEA Ultimate 2020.1
   - created like maven project-archetype-webapp (org.apache..)
 
 

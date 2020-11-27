@@ -13,7 +13,7 @@ public class FirstServlet extends HttpServlet {
         super.doPost(req, resp);
     }
 
-//    для получения данных c сервера при заходе на сраницу
+    //    для получения данных c сервера при заходе на сраницу
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter printWriter = resp.getWriter();

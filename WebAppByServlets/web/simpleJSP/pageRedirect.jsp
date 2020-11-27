@@ -29,7 +29,7 @@
 
 <form name="stay on page" action="${pageContext.request.contextPath}/simpleJSP/pageRedirect.jsp"<%= name %>>
     Query: <input type="text" name="name"><br>
-    <button type="submit">Отправить Параметр и остаться на этой же страницце</button>
+    <button type="submit">Отправить Параметр и остаться на этой же странице</button>
 </form>
 
 <%-- ${pageContext.request.contextPath}/RedirectForward --%>

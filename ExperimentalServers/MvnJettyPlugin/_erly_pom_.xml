@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>MvnJettyPlugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- war for web -->
+    <packaging>war</packaging>
+
+    <properties>
+        <!-- https://stackoverflow.com/questions/42525139/maven-build-compilation-error-failed-to-execute-goal-org-apache-maven-plugins -->
+        <!-- Maven build Compilation error : Failed to execute goal  -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- https://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html -->
+            <!-- The following jetty:run parameters are NOT applicable:
+            scanTargets
+            scanTargetPatterns
+            scanClassesPattern
+            scanTestClassesPattern -->
+            <!-- The following container configuration options are NOT applicable for this goal:
+            scanIntervalSeconds
+            Not supported. This goal will not monitor and redeploy the webapp. -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.20.v20190813</version>
+                <configuration>
+                    <!-- Auto Redeploy in 1 seconds _ auto load changes from Project -->
+                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                    <reload>automatic</reload>
+                    <webApp>
+                        <!-- path for app localhost:8080/myApp/servletName -->
+                        <contextPath>/myApp</contextPath>
+                        <!-- The path to the web.xml file for your webapp -->
+                        <!--                        <desriptor>src/main/webapp/WEB-INF/web.xml</desriptor>-->
+                        <!-- The path from which Jetty serves static resources. Defaults to src/main/webapp -->
+                        <!--                        <baseResource>src/main/webapp</baseResource>-->
+                    </webApp>
+                    <!--                    <jettyXml>jetty.xml,jetty-ssl.xml,jetty-https.xml</jettyXml>-->
+                    <httpConnector>
+                        <!--                        exception -->
+                        <!--                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">-->
+                        <port>8888</port>
+                        <!--                        </connector>-->
+                    </httpConnector>
+                    <!-- Location of your compiled classes for the webapp -->
+                    <!--                    <classesDirectory>${project.basedir}/somewhere/else</classesDirectory>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- from https://vaadin.com/blog/developing-without-server-restarts -->
+        <dependency>
+            <groupId>org.hotswapagent</groupId>
+            <artifactId>hotswap-agent</artifactId>
+            <version>1.3.0</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 public class HbRunTest {
     public static void main(String[] args) {
 //        originTest();
-//        myModification();
+        myModification();
 
     }
 
