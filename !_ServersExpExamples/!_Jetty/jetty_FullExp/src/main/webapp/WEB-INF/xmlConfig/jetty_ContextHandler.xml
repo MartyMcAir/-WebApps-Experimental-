@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN"
+        "http://www.eclipse.org/jetty/configure.dtd">
+
+<!-- ============================================================= -->
+<!-- Configure the Jetty Server instance with an ID "Server"       -->
+<!-- by adding a HTTP connector.                                   -->
+<!-- This configuration must be used in conjunction with jetty_BaseConfig.xml -->
+<!-- ============================================================= -->
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+
+    <!-- =========================================================== -->
+    <!-- Set handler Collection Structure                            -->
+    <!-- =========================================================== -->
+    <Set name="handler">
+        <New id="Handlers" class="org.eclipse.jetty.server.handler.HandlerCollection">
+            <Set name="handlers">
+                <Array type="org.eclipse.jetty.server.Handler">
+                    <Item>
+                        <New id="Contexts" class="org.eclipse.jetty.server.handler.ContextHandlerCollection"/>
+                    </Item>
+                    <Item>
+                        <New class="org.eclipse.jetty.servlet.ServletContextHandler">
+                            <Set name="contextPath">/bsfile</Set>
+                            <Set name="resourceBase">D:/bsfile</Set>
+                            <Call name="addServlet">
+                                <Arg>org.eclipse.jetty.servlet.DefaultServlet</Arg>
+                                <Arg>/</Arg>
+                            </Call>
+                        </New>
+                    </Item>
+                    <Item>
+                        <New class="org.eclipse.jetty.servlet.ServletContextHandler">
+                            <Set name="contextPath">/assests</Set>
+                            <Set name="resourceBase">D:\assests</Set>
+                            <Call name="addServlet">
+                                <Arg>org.eclipse.jetty.servlet.DefaultServlet</Arg>
+                                <Arg>/</Arg>
+                            </Call>
+                        </New>
+                    </Item>
+                    <Item>
+                        <New id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"/>
+                    </Item>
+                </Array>
+            </Set>
+        </New>
+    </Set>
+
+</Configure>
