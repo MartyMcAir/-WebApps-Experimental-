@@ -20,7 +20,7 @@ To change this template use File | Settings | File Templates.
   <body>
     <page:bootstrapHeader/>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Wellcome to Jetty</h1>
+      <h1 class="display-4">Wellcome to Jetty (bootstrap.jsp)</h1>
       <p class="lead">Just for example to use.</p>
     </div>
 
@@ -57,7 +57,7 @@ To change this template use File | Settings | File Templates.
         </ul>
         <li><a class="text-muted" href="${contextPath}/firstServlet">FirstServlet from contextPath DntWrk ( </a></li>
         <li><a class="text-muted" href="./firstServlet">FirstServlet</a></li>
-        <li><a class="text-muted" href="./servletForward">ServletForward</a></li>
+        <li><a class="text-muted" href="./forwardServlet">ServletForward</a></li>
       </ul>
     </div>
   </div>

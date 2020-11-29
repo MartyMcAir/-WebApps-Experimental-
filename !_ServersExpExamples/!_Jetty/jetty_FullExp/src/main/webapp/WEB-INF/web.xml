@@ -15,4 +15,13 @@
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/firstServlet</url-pattern>
     </servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>ForwardServlet</servlet-name>-->
+<!--        <servlet-class>mainPack.servlets.ForwardServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>ForwardServlet</servlet-name>-->
+<!--        <url-pattern>/mappingForwardServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>

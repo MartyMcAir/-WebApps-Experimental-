@@ -57,7 +57,8 @@ To change this template use File | Settings | File Templates.
         </ul>
         <li><a class="text-muted" href="${contextPath}/firstServlet">FirstServlet from contextPath DntWrk ( </a></li>
         <li><a class="text-muted" href="./firstServlet">FirstServlet</a></li>
-        <li><a class="text-muted" href="./servletForward">ServletForward</a></li>
+        <li><a class="text-muted" href="./forwardServlet">ServletForward</a></li>
+        <li><a class="text-muted" href="./mappingForwardServlet">mappingForwardServlet</a></li>
       </ul>
     </div>
   </div>
