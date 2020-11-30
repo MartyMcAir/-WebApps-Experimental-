@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="zetCodeSprJetty" />
+        <module name="SpringWebMvcThemeleafMinimal" />
         <module name="zetCodeSprJetty_SprWebMvc" />
       </profile>
     </annotationProcessing>

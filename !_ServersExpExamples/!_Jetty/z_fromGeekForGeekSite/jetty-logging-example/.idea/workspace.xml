@@ -181,14 +181,181 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="132c7587-91be-4f62-9e84-2ae9226056f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jetty_FullExp/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../jetty_FullExp/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jetty_FullExp/src/main/java/mainPack/servlets/FirstServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../jetty_FullExp/src/main/java/mainPack/servlets/FirstServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jetty_FullExp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../jetty_FullExp/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jetty_FullExp/src/main/webapp/bootstrap.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../jetty_FullExp/src/main/webapp/bootstrap.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jettyMinimalXmlExp/.idea/jettyMinimalXmlExp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../z_Spring/SpringWebMvcThemeleafMinimal/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../z_Spring/SpringWebMvcThemeleafXml/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/MvnJettyPlugin.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/_erly_pom_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/pom_oth2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/src/main/java/myPkj/MyServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/src/main/java/myPkj/Tmp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/src/main/webapp/WEB-INF/jetty.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MvnJettyPlugin/todo.TODO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_apache_taglibs_taglibs_standard_impl_1_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_apache_taglibs_taglibs_standard_spec_1_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jdt_ecj_3_19_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_apache_jsp_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_annotations_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_jndi_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_plus_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_4_31_v20200723.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_eclipse_jetty_toolchain_jetty_schemas_3_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_mortbay_jasper_apache_el_8_5_54.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_mortbay_jasper_apache_jsp_8_5_54.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_ow2_asm_asm_7_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_ow2_asm_asm_analysis_7_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_ow2_asm_asm_commons_7_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/libraries/Maven__org_ow2_asm_asm_tree_7_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/runConfigurations/Main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/embedded-jetty-jsp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/com/acme/Counter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/com/acme/Date2Tag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/com/acme/DateServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/com/acme/DateTag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/com/acme/TagListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/org/eclipse/jetty/demo/LoggingUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/org/eclipse/jetty/demo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/org/eclipse/jetty/demo/MyMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/org/eclipse/jetty/demo/SystemOutHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/java/pkj/MyServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/jetty-logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/WEB-INF/acme-taglib.tld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/WEB-INF/acme-taglib2.tld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/WEB-INF/tags/panel.tag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/static/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/bean1.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/bean2.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/dump.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/expr.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/foo/foo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/jstl.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/tag.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/tag2.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/main/resources/webroot/test/tagfile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/src/test/java/org/eclipse/jetty/demo/JstlTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../embedded-jetty-jsp/todo.TODO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/etc/jetty.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/java/org/eclipse/demo/ErrorServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/java/org/eclipse/demo/MyServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/java/org/eclipse/demo/TimeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/resources/jetty-logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/webapp/dump.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/todo.TODO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jetty-maven-plugin/webapp-2.5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jettyMinimalXmlExp/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../jettyMinimalXmlExp/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/libraries/apache_jsp_8_0_3_v20140313.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/myJettyPrj.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/myJettyPrj.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/myWebApp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/myWebApp/src/main/java/Tmp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/myWebApp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/myWebApp/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/server/src/main/java/org/example/JettyServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/server/src/main/java/org/example/PingHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/server/src/test/java/org/example/JettyServerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/todo.TODO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/webapp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/webapp/src/main/java/myPkg/Tmp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/webapp/src/main/java/myPkg/testServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/webapp/src/main/webapp/WEB-INF/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/webapp/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myJettyPrj/webapp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../z_Spring/SpringWebMvcThemeleafMinimal/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../z_Spring/SpringWebMvcThemeleafMinimal/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__jstl_jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_apache_jsp_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_annotations_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_jndi_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_plus_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_2_11_v20150529.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_orbit_org_eclipse_jdt_core_3_8_2_v20130121.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_eclipse_jetty_toolchain_jetty_schemas_3_1_M0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_mortbay_jasper_apache_el_8_0_9_M3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_mortbay_jasper_apache_jsp_8_0_9_M3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_ow2_asm_asm_5_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_ow2_asm_asm_commons_5_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/libraries/Maven__org_ow2_asm_asm_tree_5_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/jetty-jsp-example.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/src/main/java/com/javacodegeeks/snippets/enterprise/jettyjsp/FirstServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/src/main/java/com/javacodegeeks/snippets/enterprise/jettyjsp/JettyJspExampleMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/src/main/webapp/example.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jetty-jsp-example/src/main/webapp/hello.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +388,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jettyMinimalAnnotateExp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jetty-resourcehandler-example" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -259,26 +426,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="914" y="278" key="FileChooserDialogImpl" timestamp="1606643904841">
+    <state x="914" y="278" key="FileChooserDialogImpl" timestamp="1606744718323">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="914" y="278" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1606643904841" />
-    <state width="1204" height="274" key="GridCell.Tab.0.bottom" timestamp="1606643906640">
+    <state x="914" y="278" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1606744718323" />
+    <state width="1253" height="274" key="GridCell.Tab.0.bottom" timestamp="1606744719249">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1204" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1606643906640" />
-    <state width="1204" height="274" key="GridCell.Tab.0.center" timestamp="1606643906639">
+    <state width="1253" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1606744719249" />
+    <state width="1253" height="274" key="GridCell.Tab.0.center" timestamp="1606744719249">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1204" height="274" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1606643906639" />
-    <state width="1204" height="274" key="GridCell.Tab.0.left" timestamp="1606643906639">
+    <state width="1253" height="274" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1606744719249" />
+    <state width="1253" height="274" key="GridCell.Tab.0.left" timestamp="1606744719248">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1204" height="274" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1606643906639" />
-    <state width="1204" height="274" key="GridCell.Tab.0.right" timestamp="1606643906640">
+    <state width="1253" height="274" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1606744719248" />
+    <state width="1253" height="274" key="GridCell.Tab.0.right" timestamp="1606744719249">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1204" height="274" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1606643906640" />
+    <state width="1253" height="274" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1606744719249" />
     <state x="358" y="240" width="583" height="566" key="find.popup" timestamp="1606636014940">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
