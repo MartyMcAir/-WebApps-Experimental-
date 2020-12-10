@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Books on the table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
+    <meta content="Coderthemes" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!--    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>-->
+    <!--    <spring:url value="/resources/css/bootstrap.css" var="bootstrap"/>-->
+    <spring:url value="/" var="contextPath"/>
+
+    <!--   favicon   -->
+    <link rel="shortcut icon" href="resources/images/favicon.ico"/>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/datatables.css">
+</head>
+
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Books on the table ;)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=".\login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="account-pages mt-5 mb-5">
+        <div class="container">
+            <h2>Hello</h2>
+            <ul>
+                <li><a href=".\hello"> hello-world</a></li>
+                <li><a href=".\login"> login</a></li>
+                <li><a href=".\exp"> exp</a></li>
+                <!--            <li><a href=".\books"> books</a></li>-->
+            </ul>
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end page -->
+
+</div>
+
+<footer class="footer footer-alt text-white-50">
+    <script>document.write(new Date().getFullYear())</script> &copy;
+    Bootstrap theme by <a href="https://getbootstrap.com" class="text-white-50">Twitter Bootstrap</a>
+</footer>
+
+
+<script src="resources/js/script.js"></script>
+<script src="resources/js/datatables.js"></script>
+<script src="resources/js/jquery.min.js"></script>
+<script src="resources/js/popper.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script>
+    $('#example').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "/employees",
+            "type": "POST",
+            "dataType": "json",
+            "contentType": "application/json",
+            "data": function (d) {
+                return JSON.stringify(d);
+            }
+        },
+        "columns": [
+            {"data": "name", "width": "20%"},
+            {"data": "position","width": "20%"},
+            {"data": "office", "width": "20%"},
+            {"data": "start_date", "width": "20%"},
+            {"data": "salary", "width": "20%"}
+        ]
+    });
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <title>Books on the table</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
-    <meta content="Coderthemes" name="author"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <!-- App favicon -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-    <spring:url value="/" var="contextPath"/>
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
 </head>
 
-
 <body>
-<div class="account-pages mt-5 mb-5">
-    <div class="container">
-        <h2>Hello</h2>
-        <ul>
-            <li><a href=".\hello"> hello-world</a></li>
-            <li><a href=".\login"> login</a></li>
-            <li><a href=".\exp"> exp</a></li>
-            <!--            <li><a href=".\books"> books</a></li>-->
-        </ul>
+
+<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',
+current_user='user', user_loggIn='loggedIn' )">&nbsp;
+</header>
+
+<hr/>
+<div class="container">
+    <br/>
+
+    <div class="d-flex justify-content-center h-100" id="formContent">
+        <h1>Hello to main page</h1>
     </div>
+
     <!-- end container -->
 </div>
-<!-- end page -->
 
+<hr class="navbar fixed-bottom"/>
 
-<footer class="footer footer-alt text-white-50">
-    2015 -
-    <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="" class="text-white-50">Coderthemes</a>
-</footer>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
 
 </body>
 </html>

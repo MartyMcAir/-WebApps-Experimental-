@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head(title_text='John')">
+
+<body>
+
+<div th:replace="fragments/header :: header">&nbsp;</div>
+
+<div class="container">
+    <div class="account-pages mt-5 mb-5">
+        <div class="container">
+            <h2>Hello</h2>
+            <ul>
+                <li><a href=".\hello"> hello-world</a></li>
+                <li><a href=".\login"> login</a></li>
+                <li><a href=".\exp"> exp</a></li>
+                <li><a th:href="@{/}"> index</a></li>
+                <!--            <li><a href=".\books"> books</a></li>-->
+            </ul>
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end page -->
+</div>
+
+<div th:insert="~{fragments/footer :: footer}">&copy; 2017 The Static Templates</div>
+
+</body>
+</html>

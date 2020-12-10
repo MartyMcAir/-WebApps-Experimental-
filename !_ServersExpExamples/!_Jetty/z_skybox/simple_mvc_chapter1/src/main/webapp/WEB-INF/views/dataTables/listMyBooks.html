@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',
+current_user='user', user_loggIn='loggedIn' )">&nbsp;
+</header>
+
+<hr/>
+<div class="container">
+    <br/>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th th:text="#{msg.id}"/>
+            <th th:text="#{msg.name}"/>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book, iStat : ${bookPage.content}"
+            th:style="${iStat.odd}? 'font-weight: bold;'"
+            th:alt-title="${iStat.even}? 'even' : 'odd'">
+            <td th:text="${book.id}"/>
+            <td th:text="${book.name}"/>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${bookPage.totalPages > 0}" class="pagination"
+         th:each="pageNumber : ${pageNumbers}">
+        <a th:href="@{/listBooks(size=${bookPage.size}, page=${pageNumber})}"
+           th:text=${pageNumber}
+           th:class="${pageNumber==bookPage.number + 1} ? active"></a>
+    </div>
+
+    <!-- end container -->
+</div>
+
+<hr class="navbar fixed-bottom"/>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

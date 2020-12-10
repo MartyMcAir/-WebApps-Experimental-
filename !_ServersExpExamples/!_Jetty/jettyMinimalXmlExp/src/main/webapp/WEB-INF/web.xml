@@ -26,7 +26,6 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>FirstServlet</servlet-name>
         <servlet-class>mainPkg.servlets.FirstServlet</servlet-class>

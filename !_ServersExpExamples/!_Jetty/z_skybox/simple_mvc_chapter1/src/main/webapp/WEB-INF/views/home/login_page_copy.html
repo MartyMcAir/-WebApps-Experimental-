@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Book shelf login</title>
+</head>
+
+<body>
+<header th:replace="fragments/header :: header(home='', login='(current)', services='', contact='')">&nbsp;</header>
+
+<div class="container">
+
+    <form method="post" th:action="@{/login/auth}" th:object="${loginForm}">
+        <img class="login_item" th:src="@{/images/book_icon.png}">
+        <img class="login_item" th:src="@{/resources/images/book_icon.png}">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email" th:field="*{username}>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                   th:field="*{password}>
+        </div>
+
+        <div class=" form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" value="login" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div id="login_form">
+        <form method="post" th:action="@{/login/auth}" th:object="${loginForm}">
+
+            <img class="login_item" th:src="@{/images/book_icon.png}">
+            <img class="login_item" th:src="@{/resources/images/book_icon.png}">
+
+            <!--        <spring:url value="/resources/images/book_icon.png" var="book_icon"/>-->
+            <br>
+            <input class="login_item" type="text" placeholder="enter username" th:field="*{username}">
+            <br>
+            <input class="login_item" type="password" placeholder="password" th:field="*{password}">
+            <br>
+            <input class="login_item" type="submit" value="login">
+        </form>
+    </div>
+    <!-- end container -->
+</div>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div id="scripts" th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

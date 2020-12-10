@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="simple_mvc" />
         <module name="simple_mvc_1" />
+        <module name="simple_mvc_chapter1" />
       </profile>
     </annotationProcessing>
   </component>
