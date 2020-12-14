@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>SpringMVC_FromBook2</artifactId>
+    <artifactId>SpringMVC_jetty_LogBack_XmlConfig</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>SpringMVC_FromBook2 Maven Webapp</name>
+    <name>SpringMVC_jetty_LogBack_XmlConfig</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
