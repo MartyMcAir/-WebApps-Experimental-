@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app id="struts_blank" version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>Hello Spring MVC</display-name>
+
+    <listener>   <!-- включает чтение дополнительных файлов конфигов из др xml  -->
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- сообщаем ContextLoaderListener'у, какие конфиг файлы необходимо загрузить -->
+    <!-- на случай если конфиги разборосанны по нескольким jar'никам -->
+    <!-- префикс classpath: -для возможности загрузки из библиотеки классов приложения -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/appConfig-root.xml
+            <!--            classpath:persistence-context.xml-->
+            <!--            classpath:dataSource-context.xml-->
+        </param-value>
+    </context-param>
+
+    <servlet>   <!-- фронт сервлет, главный сервлет по умолчанию обрабатывающий все запросы -->
+        <!-- будет искать файл настроек с именем вида servlet-name-servlet.xml
+         т.е. в нашем случае это dispatcher-servlet.xml -->
+        <!-- в param-value не указываем xml файл ведь мы его разбили на несколько.. -->
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>   <!-- статус логгера ./lbClassicStatus https://logback.qos.ch/manual/configuration.html -->
+        <servlet-name>ViewStatusMessages</servlet-name>
+        <servlet-class>ch.qos.logback.classic.ViewStatusMessagesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewStatusMessages</servlet-name>
+        <url-pattern>/lbClassicStatus</url-pattern>
+    </servlet-mapping>
+
+</web-app>

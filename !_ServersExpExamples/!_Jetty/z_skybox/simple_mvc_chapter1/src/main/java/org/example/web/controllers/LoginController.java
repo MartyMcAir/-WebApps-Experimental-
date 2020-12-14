@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 import org.example.app.services.LoginService;
 import org.example.web.dto.LoginForm;
 import org.example.web.fake_utils.FakeSession;
-import org.example.web.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

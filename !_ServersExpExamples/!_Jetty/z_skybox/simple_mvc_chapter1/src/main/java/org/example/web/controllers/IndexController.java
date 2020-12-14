@@ -1,7 +1,6 @@
 package org.example.web.controllers;
 
 import org.example.web.fake_utils.FakeSession;
-import org.example.web.model.User;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
