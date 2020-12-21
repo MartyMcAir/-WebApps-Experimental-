@@ -21,7 +21,7 @@
         <java-version>${jdk.version}</java-version>
 
         <!-- в версиях по выше, например 5.2.8 - конфликт с Thymeleaf -->
-        <spring-framework-version>5.2.1.RELEASE</spring-framework-version>
+        <spring-framework-version>5.2.4.RELEASE</spring-framework-version>
         <spring-security-version>4.0.2.RELEASE</spring-security-version>
         <spring-data-version>2.3.3.RELEASE</spring-data-version>
         <org.hibernate-version>4.3.5.Final</org.hibernate-version>
