@@ -17,25 +17,25 @@ public class AlbumController {
     private AlbumRepository repository;
 
     @GetMapping("/all")
-    public List<AlbumDTO> getAllAlbum(){
+    public List<AlbumDTO> getAllAlbum() {
         AlbumDTO albumDTO = new AlbumDTO();
         return albumDTO.getAllAlbumDTOList(repository.findAll());
     }
 
     @PostMapping("/add")
-    public Album addAlbum(@RequestBody Album album){
+    public Album addAlbum(@RequestBody Album album) {
         return repository.save(album);
     }
 
     @DeleteMapping("/del/{id}")
-    public void delAlbum(@PathVariable long id ){
+    public void delAlbum(@PathVariable long id) {
         repository.deleteById(id);
     }
 
     @PutMapping("/upd/{id}")
-    public ResponseEntity<Object> updAlbum(@RequestBody Album album, @PathVariable long id){
+    public ResponseEntity<Object> updAlbum(@RequestBody Album album, @PathVariable long id) {
         Optional<Album> albumOptional = repository.findById(id);
-        if (!albumOptional.isPresent()){
+        if (!albumOptional.isPresent()) {
             return ResponseEntity.notFound().build();
         }
         album.setId(id);
