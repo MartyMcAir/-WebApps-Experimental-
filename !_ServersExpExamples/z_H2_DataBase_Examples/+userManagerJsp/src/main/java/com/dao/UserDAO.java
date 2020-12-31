@@ -1,0 +1,36 @@
+package com.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import com.model.User;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+@Component
+public class UserDAO {
+
+    // использует низкоуровневый EntityManager
+    @PersistenceContext
+    private EntityManager em;
+
+    public List<User> getAllUsers() {
+        TypedQuery<User> query = em.createQuery(
+                "SELECT u FROM User u ORDER BY u.id", User.class);
+        return query.getResultList();
+    }
+
+    @Transactional
+    public void delete(int userId) {
+        User user = em.getReference(User.class, userId);
+        em.remove(user);
+    }
+
+    @Transactional
+    public void save(User aUser) {
+        em.persist(aUser);
+    }
+}
