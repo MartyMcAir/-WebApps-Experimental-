@@ -17,12 +17,15 @@
     </li>
     </br>
     <li>
-        <a href="./hello">hello</a>
+        <a href="./hello">hello validator</a>
     </li>
     </br>
     <li>
         <a href="./user"> users </a>
     </li>
+        <li>
+            <a href="./customer"> customers </a>
+        </li>
     </br>
 </ul>
 </body>
