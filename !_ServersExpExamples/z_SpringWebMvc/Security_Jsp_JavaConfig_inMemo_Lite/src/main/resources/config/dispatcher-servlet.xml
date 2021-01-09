@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <!--Scanning components in base-package (look for annotations) -->
+    <context:component-scan base-package="com.*"/>
+    <!--Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired and so on-->
+    <context:annotation-config/>
+
+    <!--    -->
+    <!--    -->
+    <!--    -->
+    <!-- указываем расположение внешнего файла конфига app.properties -->
+    <!--    <context:property-placeholder location="classpath:application.properties"/>-->
+
+    <!--    https://stackoverflow.com/questions/10044789/accessing-application-properties-in-spring-mvc -->
+    <!--    <util:properties id="myProps" location="classpath:application.properties"/>-->
+
+    <!--    <bean id="foldersConfig" class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
+    <!--        <property name="location">-->
+    <!--            <value>src/main/resources/application.properties</value>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+    <!--    -->
+    <!--    -->
+    <!--    -->
+
+
+    <import resource="mvc_config.xml"/>
+    <!--    -->
+    <!--    -->
+    <!--   JPA CONFIG   (путь указываем относительно текущего файла..)   -->
+    <import resource="data_config.xml"/>
+
+    <import resource="security_configLite.xml"/>
+    <!--    <import resource="security_config.xml"/>-->
+
+
+    <!--    <context:property-placeholder location="classpath:properties/application.properties"/>-->
+</beans>
