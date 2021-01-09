@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans
+        xmlns="http://www.springframework.org/schema/security"
+        xmlns:b="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security
+		https://www.springframework.org/schema/security/spring-security.xsd
+">
+
+    <!--    <http pattern="/*" security="none"/>-->
+
+    <!-- https://habr.com/ru/sandbox/109692/ -->
+    <!-- Это сокращенный синтаксис, отвечает за установку логина на основе веб-формы, базовый логин и выход из приложения -->
+    <http auto-config="true" use-expressions="true">
+
+        <!-- если объявлен intercept-url pattern="/" то авто редирект,
+        на login page при попадании на главн страницу app отключается -->
+        <!-- dnt wrk requires-channel="https" and requires-channel="any" -->
+        <!--        <intercept-url pattern="/" access="hasRole('USER')" requires-channel="https"/>-->
+
+        <!-- доступ к url адресу app/admin только для админов -->
+        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+        <!-- доступ к url адресу app/admin только для залогинившихся юзеров -->
+        <intercept-url pattern="/sub_main/news" access="hasRole('ROLE_USER')"/>
+
+        <!-- if access denied forbidden error 403 -->
+        <!-- https://www.baeldung.com/spring-security-custom-access-denied-page -->
+        <access-denied-handler error-page="/sub_main/accessDenied"/>
+
+        <!--        <intercept-url pattern="/" access="hasRole('ROLE_USER')"/>-->
+        <!--        <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>-->
+        <!--        <intercept-url pattern="habr482/login*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+        <!--        <intercept-url pattern="/welcome" access="hasRole('ROLE_USER')"/>-->
+        <!-- Задает шаблон, с которым сравниваются URL-адреа входящих запросов, тоесть что бы попасть в любой файл(так как у нас в pattern="/") нам нужно иметь доступ админа -->
+        <!--        <intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')"/>-->
+
+
+        <!--        <form-login/>-->
+        <!--        <form-login login-page="/login"-->
+        <!--                    login-processing-url="perform_login"-->
+
+        <!--                    authentication-failure-url="/login?error"-->
+        <!--                    default-target-url="/sub_main"-->
+        <!--                    always-use-default-target='true'-->
+
+        <!--                    username-parameter="username" password-parameter="password"-->
+        <!--        />-->
+
+        <!--        <logout/>-->
+        <!--        <logout logout-success-url="/login?logout"/>-->
+
+        <!--        <session-management invalid-session-url="/invalidSession.htm"/>-->
+    </http>
+
+    <!-- password: 1234 from: https://bcrypt-generator.com/ -->
+    <!-- new BCryptPasswordEncoder().encode("password") -->
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider>
+            <password-encoder ref="bcryptEncoder"/>   <!-- for encoding password -->
+
+            <user-service>   <!-- Добавляем пользователя который будет иметь права админа -->
+                <user name="admin"
+                      password="$2y$12$JPIWBBP6Te8xxrbFrBxrde/m1WiNIo9U0P/Pi1dLDbcRG0uMz.9Au"
+                      authorities="ROLE_ADMIN, ROLE_USER"/>
+                <user name="user1"
+                      password="$2y$12$JPIWBBP6Te8xxrbFrBxrde/m1WiNIo9U0P/Pi1dLDbcRG0uMz.9Au"
+                      authorities="ROLE_USER"/>
+            </user-service>
+
+        </authentication-provider>
+    </authentication-manager>
+
+    <!-- Encoded password does not look like BCrypt -->
+    <!--    <b:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">-->
+    <!--        <b:constructor-arg name="strength" value="11"/>-->
+    <!--    </b:bean>-->
+    <b:bean name="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+</b:beans>

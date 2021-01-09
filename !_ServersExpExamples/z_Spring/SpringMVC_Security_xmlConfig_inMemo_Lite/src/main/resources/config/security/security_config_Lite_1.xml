@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans
+        xmlns="http://www.springframework.org/schema/security"
+        xmlns:b="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security
+		https://www.springframework.org/schema/security/spring-security.xsd
+">
+
+    <http auto-config="true"> <!-- Это сокращенный синтаксис, отвечает за установку логина на основе веб-формы, базовый логин и выход из приложения -->
+        <!-- Задает шаблон, с которым сравниваются URL-адреа входящих запросов, тоесть что бы попасть в любой файл(так как у нас в pattern="/") нам нужно иметь доступ админа -->
+        <!-- при попытке доступа к данной странице будет предложенно войти -->
+        <intercept-url pattern="/secret/**" access="hasRole('ROLE_ADMIN')"/>
+
+
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/news/**" access="hasRole('ROLE_USER')"/>
+
+        <!--        <form-login login-page="/login"-->
+        <!--                    default-target-url="/welcome"-->
+        <!--                    authentication-failure-url="/login?error"-->
+        <!--                    username-parameter="username" password-parameter="password"/>-->
+    </http>
+
+    <!-- auto redirect: http://localhost:8080/simple_mvc/login -->
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <!-- Добавляем пользователя который будет иметь права админа -->
+                <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+                <!-- пользователи -->
+                <user name="user1" password="user1" authorities="ROLE_USER"/>
+
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</b:beans>
