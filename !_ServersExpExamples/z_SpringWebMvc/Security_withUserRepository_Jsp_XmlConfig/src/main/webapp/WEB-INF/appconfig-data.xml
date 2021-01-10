@@ -31,6 +31,8 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
+                <!--                <prop key="hibernate.hbm2ddl.import_files">import_data.sql</prop>-->
+                <!--                <entry key="hibernate.hbm2ddl.import_files" value="/db/h2/import_data.sql"/>-->
             </props>
         </property>
     </bean>

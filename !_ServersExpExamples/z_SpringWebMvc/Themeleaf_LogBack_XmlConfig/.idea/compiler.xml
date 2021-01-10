@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringMVC_FromBook2" />
+        <module name="Themeleaf_LogBack_XmlConfig" />
         <module name="SpringMVC_jetty_LogBack_XmlConfig" />
       </profile>
     </annotationProcessing>

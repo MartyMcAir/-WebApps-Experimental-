@@ -18,7 +18,8 @@
     <!--    -->
     <!--    -->
     <!--   JPA CONFIG   (путь указываем относительно текущего файла..)   -->
-    <import resource="data_config.xml"/>
+    <!-- <import resource="data_config.xml"/> -->
+    <import resource="data_config_Lite.xml"/>
 
     <!-- Security Config -->
     <!-- Full -->

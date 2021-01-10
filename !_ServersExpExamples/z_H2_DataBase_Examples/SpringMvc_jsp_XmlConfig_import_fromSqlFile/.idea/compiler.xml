@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringMVC_XML_minimal" />
-        <module name="Jsp_XmlConfig_Minimal" />
+        <module name="my_clear_H2_import" />
+        <module name="!_H2_jsp_import_lite" />
       </profile>
     </annotationProcessing>
   </component>
