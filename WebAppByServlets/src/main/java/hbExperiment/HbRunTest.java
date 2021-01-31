@@ -3,7 +3,7 @@ package hbExperiment;
 import hbExperiment.dao.HbDevelopersDaoImpl;
 import hbExperiment.dao.HbMyDevelopersDao;
 import hbExperiment.model.HibernateDevelopersEntity;
-import hbExperiment.util.HibernateSessionFactoryUtil;
+import util.HibernateSessionFactoryUtil;
 import org.hibernate.SessionFactory;
 
 

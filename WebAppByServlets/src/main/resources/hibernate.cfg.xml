@@ -68,7 +68,7 @@
         <!--        <mapping resource="config/Auto.hbm.xml"/>-->
 
         <!--   from https://habr.com/ru/post/29694/   -->
-        <!--        fro using xml config for entity instead annotation -->
+        <!--        fro using xml config for model instead annotation -->
         <!-- List of XML mapping files -->
         <mapping resource="logic/Bus.hbm.xml"/>
         <mapping resource="logic/Driver.hbm.xml"/>
@@ -81,8 +81,8 @@
         <mapping class="hbExperiment.model.HibernateDevelopersEntity"/>
 
 
-        <!--        <mapping class="hbLinkedTables.models.Article"/>-->
-        <!--        <mapping class="hbLinkedTables.models.Tag_for_article"/>-->
+        <!--        <mapping class="hbLinkedTbls_oneToManyAnd.models.Article"/>-->
+        <!--        <mapping class="hbLinkedTbls_oneToManyAnd.models.Tag_for_article"/>-->
 
     </session-factory>
 </hibernate-configuration>

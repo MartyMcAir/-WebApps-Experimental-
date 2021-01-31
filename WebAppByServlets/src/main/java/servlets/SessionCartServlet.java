@@ -1,6 +1,6 @@
 package servlets;
 
-import entity.Cart;
+import model.Cart;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

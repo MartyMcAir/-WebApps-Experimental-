@@ -3,9 +3,9 @@ package hibernatePark.dao;
 import hibernatePark.model.Bus;
 import hibernatePark.model.Driver;
 import hibernatePark.model.Route;
-import hibernatePark.util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import util.HibernateSessionFactoryUtil;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ public class DriverDaoImpl implements DriverDao {
     public void addDriver(Driver Driver) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.save(Driver);
             session.getTransaction().commit();
@@ -35,7 +35,7 @@ public class DriverDaoImpl implements DriverDao {
     public void updateDriver(Long Driver_id, Driver Driver) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.update(Driver);
             session.getTransaction().commit();
@@ -52,7 +52,7 @@ public class DriverDaoImpl implements DriverDao {
         Session session = null;
         Driver Driver = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             Driver = (Driver) session.load(Driver.class, Driver_id);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'findById'",
@@ -70,7 +70,7 @@ public class DriverDaoImpl implements DriverDao {
         Session session = null;
         List<Driver> Driveres = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             Driveres = session.createCriteria(Driver.class).list();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'getAll'",
@@ -85,7 +85,7 @@ public class DriverDaoImpl implements DriverDao {
     public void deleteDriver(Driver Driver) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.delete(Driver);
             session.getTransaction().commit();
@@ -104,7 +104,7 @@ public class DriverDaoImpl implements DriverDao {
         Session session = null;
         List<Driver> Drivers;
         try {
-            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Long driver_id = bus.getId();
             Query query = session.createQuery(" select b "
@@ -125,7 +125,7 @@ public class DriverDaoImpl implements DriverDao {
         Session session = null;
         List<Driver> Drivers;
         try {
-            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Long route_id = route.getId();
 //            Query query = session.createQuery("from Driver where route_id = :routeId ")

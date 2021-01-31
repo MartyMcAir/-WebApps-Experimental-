@@ -2,9 +2,9 @@ package hibernate.dao;
 
 
 import hibernate.models.User;
-import hibernate.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import util.HibernateSessionFactoryUtil;
 
 import java.util.List;
 

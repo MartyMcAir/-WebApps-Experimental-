@@ -226,7 +226,7 @@
     <!--  AJAX SERVLETS  -->
     <servlet>
         <servlet-name>ExpAjaxServletGetTableHead</servlet-name>
-        <servlet-class>ajaxServlets.ExpAjaxServletGetTableHead</servlet-class>
+        <servlet-class>ajaxServlets.controllers.ExpAjaxServletGetTableHead</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ExpAjaxServletGetTableHead</servlet-name>
@@ -235,7 +235,7 @@
 
     <servlet>
         <servlet-name>ExpAjaxServletGetFromForm</servlet-name>
-        <servlet-class>ajaxServlets.ExpAjaxServletGetFromForm</servlet-class>
+        <servlet-class>ajaxServlets.controllers.ExpAjaxServletGetFromForm</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ExpAjaxServletGetFromForm</servlet-name>
@@ -244,7 +244,7 @@
 
     <servlet>
         <servlet-name>ExpAjaxServletGetJson</servlet-name>
-        <servlet-class>ajaxServlets.ExpAjaxServletGetJson</servlet-class>
+        <servlet-class>ajaxServlets.controllers.ExpAjaxServletGetJson</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ExpAjaxServletGetJson</servlet-name>

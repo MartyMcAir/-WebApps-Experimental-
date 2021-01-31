@@ -18,7 +18,7 @@
     <li><a href="test/jstl.jsp">JSTL Expression</a></li>
     <li><a href="test/foo/">Mapping to &lt;jsp-file&gt;</a></li>
     <li><a href="date/">Servlet Forwarding to JSP demo</a></li>
-    <li><a href="/myServletLink"> My test servlet link</a></li>
+    <li><a href="./myServletLink"> My test servlet link</a></li>
   </ul>
 </body>
 </html>

@@ -4,7 +4,6 @@ import hibernatePark.dao.DriverDao;
 import hibernatePark.model.Bus;
 import hibernatePark.model.Driver;
 import hibernatePark.model.Route;
-import hibernatePark.util.Factory;
 
 import java.sql.SQLException;
 import java.util.Collection;

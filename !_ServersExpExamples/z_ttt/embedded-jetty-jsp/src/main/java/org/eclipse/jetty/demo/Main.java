@@ -40,6 +40,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.component.AbstractLifeCycle;
 import org.eclipse.jetty.webapp.Configuration;
+import pkj.MyServlet;
 
 /**
  * Example of using JSP's with embedded jetty and using a
@@ -111,6 +112,8 @@ public class Main {
         holderDefault.setInitParameter("dirAllowed", "true");
         servletContextHandler.addServlet(holderDefault, "/");
         server.setHandler(servletContextHandler);
+
+        servletContextHandler.addServlet(MyServlet.class, "/myServletLink");
 
         // Start Server
         server.start();

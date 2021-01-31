@@ -4,7 +4,7 @@
     <module name="WebAppByServlets" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="hibernate.*" />
+        <option name="PATTERN" value=".*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

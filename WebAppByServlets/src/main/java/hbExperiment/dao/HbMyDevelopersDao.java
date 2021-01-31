@@ -1,7 +1,7 @@
 package hbExperiment.dao;
 
 import hbExperiment.model.HibernateDevelopersEntity;
-import hbExperiment.util.HibernateSessionFactoryUtil;
+import util.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

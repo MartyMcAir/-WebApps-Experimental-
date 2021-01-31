@@ -21,8 +21,8 @@ public class PersistenceUnitInfoImpl implements PersistenceUnitInfo {
     private URL puRoot;
 
     public PersistenceUnitInfoImpl(URL puRoot, String[] mappingFiles) {
-        this.mappingFiles = new ArrayList<String>( mappingFiles.length );
-        this.mappingFiles.addAll( Arrays.asList( mappingFiles ) );
+        this.mappingFiles = new ArrayList<String>(mappingFiles.length);
+        this.mappingFiles.addAll(Arrays.asList(mappingFiles));
         this.puRoot = puRoot;
     }
 
@@ -61,7 +61,7 @@ public class PersistenceUnitInfoImpl implements PersistenceUnitInfo {
     }
 
     public Properties getProperties() {
-        properties.setProperty( Environment.HBM2DDL_AUTO, "create-drop" );
+        properties.setProperty(Environment.HBM2DDL_AUTO, "create-drop");
         return properties;
     }
 

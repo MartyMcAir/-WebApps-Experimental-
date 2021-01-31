@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN"
+        "http://www.eclipse.org/jetty/configure_9_3.dtd">
+
+<Configure id="UQHServer" class="org.eclipse.jetty.server.Server">
+
+    <!-- if NIO is not available, use org.eclipse.jetty.server.ssl.SslSocketConnector -->
+
+    <New id="sslContextFactory" class="org.eclipse.jetty.util.ssl.SslContextFactory$Server">
+        <Set name="KeyStorePath"><Property name="jetty.home" default="."/>/etc/keystore
+        </Set>
+        <Set name="KeyStorePassword">PWD</Set>
+        <Set name="KeyManagerPassword">PWD</Set>
+        <!--    <Set name="TrustStore"><Property name="jetty.home" default="." />/etc/keystore</Set>
+            <Set name="TrustStorePassword">USHURMEREACHMOB</Set>-->
+    </New>
+
+    <!--  HTTP Config -->
+    <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
+        <Set name="SecureScheme">https</Set>
+        <Set name="SecurePort">8575</Set>
+        <Set name="OutputBufferSize">32768</Set>
+    </New>
+
+    <!--  HTTP Connector-->
+    <Call name="addConnector">
+        <Arg>
+            <New class="org.eclipse.jetty.server.ServerConnector">
+                <Arg>
+                    <Get id="server" name="server"/>
+                </Arg>
+                <Arg>
+                    <New class="org.eclipse.jetty.server.HttpConnectionFactory">
+                        <Arg>
+                            <Ref id="httpConfig"></Ref>
+                        </Arg>
+                    </New>
+                </Arg>
+            </New>
+
+        </Arg>
+        <Set name="Port">9006</Set>
+        <Set name="IdleTimeOut">30000</Set>
+
+    </Call>
+
+    <!--  Secure  Customizer-->
+
+    <New class="secureCustomizer">
+        <Set name="StsMaxAge">2000</Set>
+
+    </New>
+
+    <!--  HTTPS Config-->
+
+    <New id="httpsConfig" class="org.eclipse.jetty.server.HttpConfiguration">
+        <Arg>
+            <Ref id="httpConfig"></Ref>
+        </Arg>
+        <Set name="Customizer">
+            <Ref id="secureCustomizer"></Ref>
+        </Set>
+
+    </New>
+
+    <!--  HTTPS Connector-->
+    <Call name="addConnector">
+        <Arg>
+            <New class="org.eclipse.jetty.server.ServerConnector">
+                <Arg>
+                    <Get id="server" name="server"/>
+                </Arg>
+                <Arg>
+                    <New class="org.eclipse.jetty.server.SslConnectionFactory">
+                        <Arg>
+                            <Ref id="sslContextFactory"></Ref>
+
+                        </Arg>
+                        <Arg type="String">
+                            HTTP/1.1
+                        </Arg>
+                    </New>
+                </Arg>
+                <Arg>
+                    <New class="org.eclipse.jetty.server.HttpConnectionFactory">
+                        <Arg>
+                            <Ref id="httpsConfig"></Ref>
+                        </Arg>
+                    </New>
+                </Arg>
+            </New>
+
+        </Arg>
+        <Set name="Port">8575</Set>
+        <Set name="IdleTimeOut">500000</Set>
+
+    </Call>
+
+</Configure>

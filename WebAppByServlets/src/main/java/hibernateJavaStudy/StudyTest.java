@@ -1,8 +1,8 @@
 package hibernateJavaStudy;
 
 import hibernateJavaStudy.model.ContactEntity;
-import hibernateJavaStudy.utils.HibernateSessionFactoryTest;
 import org.hibernate.Session;
+import util.HibernateSessionFactoryUtil;
 
 // from https://javastudy.ru/hibernate/hibernate-quick-start/
 public class StudyTest {
@@ -10,7 +10,7 @@ public class StudyTest {
         System.out.println("Hibernate tutorial");
 
 //        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        Session session = HibernateSessionFactoryTest.getSessionFactory().openSession();
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
 
         session.beginTransaction();
 

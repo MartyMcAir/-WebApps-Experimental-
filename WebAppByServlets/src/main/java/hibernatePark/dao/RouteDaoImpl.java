@@ -2,9 +2,9 @@ package hibernatePark.dao;
 
 import hibernatePark.model.Driver;
 import hibernatePark.model.Route;
-import hibernatePark.util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import util.HibernateSessionFactoryUtil;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ public class RouteDaoImpl implements RouteDao {
     public void addRoute(Route Route) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.save(Route);
             session.getTransaction().commit();
@@ -34,7 +34,7 @@ public class RouteDaoImpl implements RouteDao {
     public void updateRoute(Long Route_id, Route Route) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.update(Route);
             session.getTransaction().commit();
@@ -51,7 +51,7 @@ public class RouteDaoImpl implements RouteDao {
         Session session = null;
         Route Route = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             Route = (Route) session.load(Route.class, Route_id);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'findById'",
@@ -69,7 +69,7 @@ public class RouteDaoImpl implements RouteDao {
         Session session = null;
         List<Route> Routees = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             Routees = session.createCriteria(Route.class).list();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'getAll'",
@@ -84,7 +84,7 @@ public class RouteDaoImpl implements RouteDao {
     public void deleteRoute(Route Route) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.delete(Route);
             session.getTransaction().commit();
@@ -103,7 +103,7 @@ public class RouteDaoImpl implements RouteDao {
         Session session = null;
         List<Route> Routes;
         try {
-            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Long driver_id = driver.getId();
             Query query = session.createQuery(" select b "
@@ -124,7 +124,7 @@ public class RouteDaoImpl implements RouteDao {
         Session session = null;
         List<Route> Routes;
         try {
-            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Long route_id = route.getId();
 //            Query query = session.createQuery("from Route where route_id = :routeId ")

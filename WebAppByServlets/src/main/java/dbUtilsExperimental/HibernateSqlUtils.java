@@ -1,6 +1,6 @@
 package dbUtilsExperimental;
 
-import dbUtilsExperimental.connectToDb.HibernateConnect;
+import util.HibernateConnect;
 import dbUtilsExperimental.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

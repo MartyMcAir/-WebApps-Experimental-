@@ -3,9 +3,9 @@ package hibernatePark.dao;
 import hibernatePark.model.Bus;
 import hibernatePark.model.Driver;
 import hibernatePark.model.Route;
-import hibernatePark.util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import util.HibernateSessionFactoryUtil;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ public class BusDaoImpl implements BusDao {
     public void addBus(Bus bus) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.save(bus);
             session.getTransaction().commit();
@@ -35,7 +35,7 @@ public class BusDaoImpl implements BusDao {
     public void updateBus(Long bus_id, Bus bus) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.update(bus);
             session.getTransaction().commit();
@@ -52,7 +52,7 @@ public class BusDaoImpl implements BusDao {
         Session session = null;
         Bus bus = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             bus = (Bus) session.load(Bus.class, bus_id);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'findById'",
@@ -70,7 +70,7 @@ public class BusDaoImpl implements BusDao {
         Session session = null;
         List<Bus> buses = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             buses = session.createCriteria(Bus.class).list();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'getAll'",
@@ -85,7 +85,7 @@ public class BusDaoImpl implements BusDao {
     public void deleteBus(Bus bus) throws SQLException {
         Session session = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.delete(bus);
             session.getTransaction().commit();
@@ -104,7 +104,7 @@ public class BusDaoImpl implements BusDao {
         Session session = null;
         List<Bus> buses;
         try {
-            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Long driver_id = driver.getId();
             Query query = session.createQuery(" select b "
@@ -125,7 +125,7 @@ public class BusDaoImpl implements BusDao {
         Session session = null;
         List<Bus> buses;
         try {
-            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session = HibernateSessionFactoryUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Long route_id = route.getId();
 //            Query query = session.createQuery("from Bus where route_id = :routeId ")

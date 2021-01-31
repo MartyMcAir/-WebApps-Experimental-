@@ -22,8 +22,8 @@
         <!-- Provided in latest release of hibernate -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
-        <class>dbUtilsExperimental.entity.Employee</class>
-        <class>dbUtilsExperimental.entity.EmployeeForCriteriaApi</class>
+        <class>dbUtilsExperimental.model.Employee</class>
+        <class>dbUtilsExperimental.model.EmployeeForCriteriaApi</class>
 
         <!-- https://habr.com/ru/post/420827/ -->
         <!-- В качестве jta-data-source используем jndi-name, которое указали при создании datasource.
@@ -54,7 +54,7 @@
     <!-- Hibernate + H2 -->
     <persistence-unit name="standalonePu" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>dbUtilsExperimental.entity.Employee</class>
+        <class>dbUtilsExperimental.model.Employee</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.url"
