@@ -3,7 +3,7 @@
 
 ###### https://howtodoinjava.com/wp-content/downloads/spring-boot-pagination-sorting.zip
 
-![](https://github.com/MartyMcAir/OtherCodeAndTrash/blob/master/feynman_1123_629.png)
+![](https://github.com/MartyMcAir/-WebApps-Experimental-/blob/master/!_ServersExpExamples/z_SpringBoot/Thymeleaf_PaginationSort_impJSON/img/Screenshot_1.jpg)
 
 use links in: **src\main\java\com\howtodoinjava\demo\web\EmplController.java**
 
