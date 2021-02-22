@@ -1,0 +1,23 @@
+ajaxServlet - JSON exp & сервлеты редирект..
+
+app - AppModel, сервлеты с мэппингом и редиректами.. /appView/list.jsp
+
+dbUtilsExperimental - model: Employee & Student __ PersistenceUnitInfoImpl, FakeDataSource
+		_ CriteriaUtils, ExperimentalDbMethods, HibernateHqUtils,
+		HibernateSqlUtils, JdbcSqlUtils, JpqlUtils
+
+hbExperiment - HbMyDevelopersDao
+
+hbLinkedTables - model: Stock Author Book _ OneToMany and ManyToMany and..
+
+hibernate - URL Path /ajax/hibernate, User and Auto,
+
+hibernateJavaStudy - model: Contact, Hobby
+
+hibernatePark - model: Bus Route Driver,
+
+model - Cart, User
+
+MyDb_CRUD - URL redirect /MyDbPages/AllinOneCRUD.jsp, /MyDbPages/AllinOneCRUD.jsp,
+
+servlets - redirect to /simpleJSP/getFileFromUserExamplePage.jsp

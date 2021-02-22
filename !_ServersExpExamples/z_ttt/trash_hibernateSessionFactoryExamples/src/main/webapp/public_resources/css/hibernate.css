@@ -1,0 +1,51 @@
+.formClass {
+    width: inherit;
+    height: auto;
+    display: inline-flex;
+    margin-right: 6px;
+}
+
+.inlineDivs {
+    display: inline-flex;
+}
+
+.marginRight {
+    margin-right: 6px;
+}
+
+/* ................................................................................................... */
+/*  minimal Css For PopUp Modal Dialog Window */
+.classMainDiv:before {
+    content: "";
+    display: none;
+    background: rgba(0, 48, 230, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.classShowHover:before {
+    display: block;
+}
+.classShowHover .classInnerInMain {
+    transform: translate(0, 0);
+    top: 20%;
+}
+.classInnerInMain {
+    background: #fefefe;
+    border: #232222 solid 0px;
+    border-radius: 5px;
+    margin-left: -200px;
+    text-align:center;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    z-index: 11;
+    width: 450px;
+    box-shadow:0 5px 10px rgba(25, 24, 24, 0.3);
+    transform: translate(0, -500%);
+    transition: transform 0.3s ease-out;
+}
+/* ................................................................................................... */

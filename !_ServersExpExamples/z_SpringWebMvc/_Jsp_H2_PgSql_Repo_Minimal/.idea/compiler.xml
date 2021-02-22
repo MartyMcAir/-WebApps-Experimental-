@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringMvcMix_Clear" />
         <module name="_SpringMvcTable_" />
+        <module name="_Jsp_H2_PgSql_Repo_Minimal" />
       </profile>
     </annotationProcessing>
   </component>

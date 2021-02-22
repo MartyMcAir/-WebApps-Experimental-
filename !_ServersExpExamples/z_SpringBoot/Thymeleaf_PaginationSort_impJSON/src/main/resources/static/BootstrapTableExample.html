@@ -1,0 +1,136 @@
+<html><head>
+    <title>Bootstrap Table Examples</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="An extended Bootstrap table with radio, checkbox, sort, pagination, and other added features.">
+    <meta name="keywords" content="table, bootstrap, bootstrap plugin, bootstrap resources, bootstrap table, jQuery plugin">
+    <meta name="author" content="Zhixin Wen, and Bootstrap table contributors">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.5.1/hint.min.css">
+    <link rel="stylesheet" href="assets/css/docs.min.css">
+    <link rel="stylesheet" href="assets/css/template.css?v=134">
+
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.1.2/sprintf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://unpkg.com/flexibility@2.0.1/flexibility.js"></script>
+    <script src="assets/js/template.js?v=134"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-132747866-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {window.dataLayer.push(arguments)}
+    gtag('js', new Date())
+    gtag('config', 'UA-132747866-1')
+  </script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet"><script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script></head>
+<body>
+<div class="header-wrapper">
+    <div class="title-desc">
+        <h2 class="bd-title" id="content">
+            <span>Multiple Select Row</span>
+        </h2>
+        <p class="bd-lead"><p>Use <code>multipleSelectRow</code> to the multiple selection row. Can use the ctrl+click to select one row or use shift+click to select a range of rows.</p>
+        </p>
+        <h3> from : https://examples.bootstrap-table.com/template.html?v=96&url=options/multiple-select-row.html </h3>
+        <a href="https://examples.bootstrap-table.com/template.html?v=96&url=options/multiple-select-row.html">click</a>
+    </div>
+
+    <div class="header-right">
+        <div id="gg"><script async="" src="https://cdn.carbonads.com/carbon.js?serve=CK7DL2J7&amp;placement=bootstrap-tablecom" id="_carbonads_js"></script></div>
+        <script src="https://gg.wenzhixin.net.cn/bootstrap-table/gg.js"></script>
+    </div>
+</div>
+
+<div id="example"><script>
+  init({
+    title: 'Multiple Select Row',
+    desc: 'Use `multipleSelectRow` to the multiple selection row. Can use the ctrl+click to select one row or use shift+click to select a range of rows.',
+    links: ['bootstrap-table.min.css'],
+    scripts: ['bootstrap-table.min.js']
+  })
+</script>
+
+    <div class="bootstrap-table bootstrap4">
+        <div class="fixed-table-toolbar"><div class="columns columns-right btn-group float-right"><div class="keep-open btn-group" title="Columns">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-label="Columns" title="Columns">
+                <i class="fa fa-th-list"></i>
+
+                <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right"><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="id" value="1" checked="checked"> <span>ID</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="name" value="2" checked="checked"> <span>Item Name</span></label><label class="dropdown-item dropdown-item-marker"><input type="checkbox" data-field="price" value="3" checked="checked"> <span>Item Price</span></label></div></div></div>
+            <div class="float-right search btn-group">
+                <input class="form-control
+
+        search-input" type="search" placeholder="Search" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="fixed-table-container" style="padding-bottom: 0px;">
+            <div class="fixed-table-header" style="display: none;"><table></table></div>
+            <div class="fixed-table-body">
+                <div class="fixed-table-loading table table-bordered table-hover" style="top: 50px;">
+      <span class="loading-wrap">
+      <span class="loading-text" style="font-size: 32px;">Loading, please wait</span>
+      <span class="animation-wrap"><span class="animation-dot"></span></span>
+      </span>
+
+                </div>
+                <table id="table" data-toggle="bootstrap-table" data-show-columns="true" data-multiple-select-row="true" data-click-to-select="true" data-pagination="true" data-search="true" data-url="https://examples.wenzhixin.net.cn/examples/bootstrap_table/data" data-side-pagination="server" class="table table-bordered table-hover">
+                    <thead><tr><th class="bs-checkbox " style="width: 36px; " data-field="state"><div class="th-inner "><label><input name="btSelectAll" type="checkbox"><span></span></label></div><div class="fht-cell"></div></th><th style="" data-field="id"><div class="th-inner sortable both">ID</div><div class="fht-cell"></div></th><th style="" data-field="name"><div class="th-inner sortable both">Item Name</div><div class="fht-cell"></div></th><th style="" data-field="price"><div class="th-inner sortable both">Item Price</div><div class="fht-cell"></div></th></tr></thead>
+                    <tbody><tr data-index="0"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="0" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>0</td><td>Item 0</td><td>$0</td></tr><tr data-index="1"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="1" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>1</td><td>Item 1</td><td>$1</td></tr><tr data-index="2"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="2" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>2</td><td>Item 2</td><td>$2</td></tr><tr data-index="3"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="3" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>3</td><td>Item 3</td><td>$3</td></tr><tr data-index="4"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="4" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>4</td><td>Item 4</td><td>$4</td></tr><tr data-index="5"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="5" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>5</td><td>Item 5</td><td>$5</td></tr><tr data-index="6"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="6" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>6</td><td>Item 6</td><td>$6</td></tr><tr data-index="7"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="7" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>7</td><td>Item 7</td><td>$7</td></tr><tr data-index="8"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="8" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>8</td><td>Item 8</td><td>$8</td></tr><tr data-index="9"><td class="bs-checkbox " style="width: 36px; "><label>
+                        <input data-index="9" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label></td><td>9</td><td>Item 9</td><td>$9</td></tr></tbody></table></div>
+            <div class="fixed-table-footer"><table><thead><tr></tr></thead></table></div>
+        </div>
+        <div class="fixed-table-pagination" style=""><div class="float-left pagination-detail"><span class="pagination-info">
+      Showing 1 to 10 of 800 rows
+      </span><span class="page-list"><span class="btn-group dropdown dropup">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="page-size">
+        10
+        </span>
+        <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu"><a class="dropdown-item active" href="#">10</a><a class="dropdown-item " href="#">25</a><a class="dropdown-item " href="#">50</a><a class="dropdown-item " href="#">100</a></div></span> rows per page</span></div><div class="float-right pagination"><ul class="pagination"><li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li><li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li><li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li><li class="page-item"><a class="page-link" aria-label="to page 3" href="javascript:void(0)">3</a></li><li class="page-item"><a class="page-link" aria-label="to page 4" href="javascript:void(0)">4</a></li><li class="page-item"><a class="page-link" aria-label="to page 5" href="javascript:void(0)">5</a></li><li class="page-item page-last-separator disabled"><a class="page-link" aria-label="" href="javascript:void(0)">...</a></li><li class="page-item"><a class="page-link" aria-label="to page 80" href="javascript:void(0)">80</a></li><li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li></ul></div></div>
+    </div><div class="clearfix"></div>
+</div>
+<pre class="source-pre"><code id="source" class="html"></code></pre>
+
+
+</body></html>

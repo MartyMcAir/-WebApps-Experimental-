@@ -1,0 +1,73 @@
+<table contains in jsp:
+	ajaxGet.jsp contains in:
+		ExpAjaxServletGetTableHead.java - // commented //
+	ajaxHibrnateListUsers.jsp
+	showUsers.jsp contains in:
+		web.xml -> /HibernatePages/usersFromJsp
+	AddDataToBase.jsp
+	AllinOneCRUD.jsp contains in:
+		package MyDB_CRUD.
+				DeleteColumnsServlet.java
+				AddColumnsServlet.java
+				DeleteOneRowServlet.java
+				UserSimpleServlet.java - // commented //
+	ShowSomeAll.jsp
+	ajaxJsonTblByPureJs.jsp
+	ajaxPost.jsp
+_______________________________________________________
+CRUD JSP links:
+	appIndex.jsp App CRUD from JavaRush ___ only jsp with out bootstrap and JS
+		used in: app/servlets/ListServlet.java _
+			web/appView/list.jsp
+			data load from ArrayList
+
+	list table ShowSomeAll.jsp ___ only jsp with out bootstrap and JS
+		err in oth prj: Only a type can be imported. util.SQL_Operations resolves to a package
+		used in: src/main/java/MyDB_CRUD/AddColumnsServlet.java
+				and DeleteColumnsServlet and AddDataServlet and DeleteOneRowServlet
+			MyDbPages/ShowSomeAll.jsp
+			data load from SQL query 
+		List<String> columnNames = sql_operations.getAllColumnsNamesFromTable("books");
+			links: 
+		https://mkyong.com/jdbc/jdbc-how-to-print-all-table-names-from-a-database/
+		https://www.studentstutorial.com/java-project/jsp-retrieve-data-using-mysql.php
+
+	All CRUD AllinOneCRUD.jsp _ only jsp with out bootstrap and JS_
+					по сути всё то что в ShowSomeAll.jsp..
+		used in: util/SQL_Operations.java
+
+	HibernateUsers by userSimpleServlets ___ перебор в JSP идёт без js
+		used UserService and-> UseDao -> HibernateSessionFactoryUtil
+		used in: hibernate.servlets.UserSimpleServlet.java
+			web/HibernatePages/showUsers.jsp
+	Hibernate CRUD list users ___
+		used in: hibernate.servlets.HibernateListUsers.java (link HibernateListUsers)
+			web/HibernatePages/showUsers.jsp
+
+_______________________________________________________
+CRUD AJAX links:
+	ajaxPages/ajaxGet.jsp
+				use JS: /public_resources/js/exp/ajaxMainGet.js
+					and ajaxGetTableHeadPlainText.js and ajaxGetFromForm.js
+	ajaxPages/ajaxPost.jsp
+				use JS: /public_resources/js/examples/ajaxPostJsonRequest.js
+					and ajaxFetchPost.js
+	ajaxPages/ajaxJsonTblByPureJs.jsp
+				use JS: /public_resources/js/exp/ajaxMainGet.js
+					and ajaxGetJsonAndShow.js and ajaxAdd.js and ajaxDel.js 
+					and JSON_iteration.js
+					
+Перенаправление всех CRUD операции с JS идёт в сервлет: 
+	src/main/java/hibernate/servlets/HibernateAjaxCrudUser.java
+		как и с JSP страницы: web/ajaxPages/ajaxHibernateUpdateUser.jsp	
+
+	HibernateAjaxListUser
+		used in: hibernate.servlets.HibernateAjaxListUser.java
+			/ajaxPages/ajaxHibernateListUsers.jsp
+				use JS: /public_resources/js/ajaxForHibernate/ajaxHibernateMainGet.js
+					and ajaxHibernateDelete.js and ajaxHibernateAdd.js 
+					and ajaxHibernateUpdate.js
+	hello-LibraryServletSQL ___ - экспериментальный сервлет ничего интересного
+		used in: servlets.LibraryServletSQL.java
+
+

@@ -1,4 +1,4 @@
-<%@ page import="MyDB_CRUD.SQL_Operations" %>
+<%@ page import="util.SQL_Operations" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.util.List" %>
 <%--

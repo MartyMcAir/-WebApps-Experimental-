@@ -42,7 +42,7 @@ function clickAndShowFormListener() {
 clickAndShowFormListener()
 
 function listenerForSubmitDataToServer(idFormObj, idIs, classMainDivObj) {
-    const currentFormObj = idFormObj.querySelector('#idSubmitUpdForm' + idIs.value)
+    const currentFormObj = idFormObj.querySelector('#idSubmitUpdForm' + idIs.value)servletName
     currentFormObj.addEventListener('submit', function (event) {
         event.preventDefault()
         const pObj = getParamsFromForm(idFormObj)

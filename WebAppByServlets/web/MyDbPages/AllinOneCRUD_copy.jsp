@@ -1,4 +1,4 @@
-<%@ page import="MyDB_CRUD.SQL_Operations, java.sql.ResultSet, java.util.List" %>
+<%@ page import="util.SQL_Operations, java.sql.ResultSet, java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: marty

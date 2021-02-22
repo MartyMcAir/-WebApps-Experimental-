@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- encode settings -->
+        <property name="hibernate.connection.CharSet">utf8</property>
+        <property name="hibernate.connection.characterEncoding">utf8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+
+        <!-- Database connection settings -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Z33_q77_888</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <!-- HibernateException: The internal connection pool has reached its maximum size and no connection is currently available! -->
+        <property name="hibernate.connection.pool_size">1</property>
+        <!-- Echo all executed SQL to stdout _ указывает что нужно отобразить сформированный запрос -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">false</property><!--   запрос будет сформирован в читаемом виде     -->
+
+        <!-- Enable Hibernate automatic session context management -->
+        <property name="hibernate.current_session_context_class">
+            org.hibernate.context.internal.ThreadLocalSessionContext
+        </property>
+
+        <!--   !!!
+        validate: проверить схему, не вносить изменения в базу данных.
+        если схема не существует в БД, она не создается. Вместо этого он выдаст ошибку: - Table not found:<table name>
+
+        update: обновить схему. если схема отсутствует в БД, тогда создается схема.
+
+        create: создает схему, уничтожая предыдущие данные.
+        create-drop: отказаться от схемы, когда SessionFactory закрывается явно, как правило, когда приложение остановлено.
+         при закрытии сеанса схема не будет удалена. Он падает только при закрытии SessionFactory.   -->
+        <property name="hbm2ddl.auto">update</property>
+
+
+        <!-- https://stackoverflow.com/questions/21574236/how-to-fix-org-hibernate-lazyinitializationexception-could-not-initialize-prox -->
+        <!-- при попытке load byId SimpleEntity, Exception _ помогло _ или юзать get instead load -->
+        <!--        <property name="hibernate.enable_lazy_load_no_trans">true</property>-->
+        <!-- а это не помогло -->
+        <!--        <property name="current_session_context_class">thread</property>-->
+
+        <!-- HibernateException: The internal connection pool has reached its maximum size and no connection is currently available!       -->
+        <!--        <property name="connection.pool_size">10</property>-->
+
+
+        <!-- Disable the second-level cache  -->
+        <!--        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>-->
+
+
+        <!--   Mapping   -->
+        <!--   from https://javastudy.ru/hibernate/hibernate-quick-start/   -->
+        <mapping class="com.model.Student"/>
+        <!--   from https://habr.com/ru/post/29694/   -->
+        <!--        fro using xml config for entity instead annotation -->
+        <!-- List of XML mapping files -->
+        <!--        <mapping class="logic.Student.hbm.xml"/>-->
+
+    </session-factory>
+</hibernate-configuration>

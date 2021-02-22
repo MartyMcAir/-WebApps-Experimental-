@@ -1,0 +1,110 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <display-name>Jetty SSL example</display-name>
+
+    <!--    указываем главную страницу -->
+    <welcome-file-list>
+        <!--        <welcome-file>myPage.jsp</welcome-file>-->
+        <welcome-file>bootstrap.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--    -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Secure resources</web-resource-name>
+            <url-pattern>/secure/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <!-- My examples Page for SQL CRUD..  -->
+    <servlet>
+        <servlet-name>AddColumnsServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AddColumnsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddColumnsServlet</servlet-name>
+        <url-pattern>/AddColumns</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteColumnsServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.DeleteColumnsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteColumnsServlet</servlet-name>
+        <url-pattern>/DeleteColumns</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddDataServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AddDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddDataServlet</servlet-name>
+        <url-pattern>/AddData</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteOneRowServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.DeleteOneRowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteOneRowServlet</servlet-name>
+        <url-pattern>/DeleteOneRow</url-pattern>
+    </servlet-mapping>
+
+    <!--	-->
+    <!--	-->
+    <!--	-->
+    <!--  AJAX SERVLETS  -->
+    <servlet>
+        <servlet-name>ExpAjaxServletGetTableHead</servlet-name>
+        <servlet-class>ajaxServlets.controllers.ExpAjaxServletGetTableHead</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpAjaxServletGetTableHead</servlet-name>
+        <url-pattern>/ExpAjaxServletGetTableHead</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExpAjaxServletGetFromForm</servlet-name>
+        <servlet-class>ajaxServlets.controllers.ExpAjaxServletGetFromForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpAjaxServletGetFromForm</servlet-name>
+        <url-pattern>/ExpAjaxServletGetFromForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExpAjaxServletGetJson</servlet-name>
+        <servlet-class>ajaxServlets.controllers.ExpAjaxServletGetJson</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpAjaxServletGetJson</servlet-name>
+        <url-pattern>/ExpAjaxServletGetJson</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjaxAddDataServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AjaxAddDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjaxAddDataServlet</servlet-name>
+        <url-pattern>/AjaxAddDataServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>
+        <servlet-class>MyDB_CRUD.AjaxDeleteOneRowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjaxDeleteOneRowServlet</servlet-name>
+        <url-pattern>/AjaxDeleteOneRowServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>

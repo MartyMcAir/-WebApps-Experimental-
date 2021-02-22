@@ -153,6 +153,16 @@
         <!--            <version>2.4.1</version>-->
         <!--        </dependency>-->
         <!-- <<< -->
+
+        <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+        <!-- for CSV parsing -->
+        <!-- with that Exception: org.apache.commons.logging.Log scanned from multiple locations: -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -184,6 +194,22 @@
 
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
+                <!-- FOR USING OPEN CSV -->
+                <!-- https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/maven-dependency-when-using-opencsv-unable-to-start-bundle/qaq-p/364750 -->
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <instruction>
+                            <Embed-Dependency>*;
+                                |opencsv
+                            </Embed-Dependency>
+                            <Embed-Transitive>true</Embed-Transitive>
+                        </instruction>
+                    </configuration>
+                </plugin>
+
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
