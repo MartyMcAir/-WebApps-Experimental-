@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jetty_ssl_xmlConf" />
+        <module name="jetty9_3_ssl_xmlsConfs_mix" />
         <module name="Aexp_Jsp_H2_PgSql_Repo_Minimal" />
         <module name="SpringMvcMix_Clear" />
         <module name="_SpringMvcTable_" />
