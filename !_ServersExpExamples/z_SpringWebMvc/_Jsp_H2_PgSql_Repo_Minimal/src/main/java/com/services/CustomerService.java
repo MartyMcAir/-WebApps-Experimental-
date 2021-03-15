@@ -12,29 +12,29 @@ import java.util.List;
 @Transactional
 public class CustomerService {
     @Autowired
-    CustomerRepository repo;
+    CustomerRepository repository;
 
     public void save(Customer customer) {
-        repo.save(customer);
+        repository.save(customer);
     }
 
     public List<Customer> listAll() {
-        return (List<Customer>) repo.findAll();
+        return (List<Customer>) repository.findAll();
     }
 
     public List<Customer> getAllCustomersBySQL() {
-        return (List<Customer>) repo.findAll();
+        return (List<Customer>) repository.findAll();
     }
 
     public Customer get(Long id) {
-        return repo.findById(id).get();
+        return repository.findById(id).get();
     }
 
     public void delete(Long id) {
-        repo.deleteById(id);
+        repository.deleteById(id);
     }
 
     public List<Customer> search(String keyword) {
-        return repo.search(keyword);
+        return repository.search(keyword);
     }
 }

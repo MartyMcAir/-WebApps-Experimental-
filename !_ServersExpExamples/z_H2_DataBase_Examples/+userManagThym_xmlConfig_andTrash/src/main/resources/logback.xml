@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>   <!-- https://logback.qos.ch/manual/ -->
+<configuration debug="true">
+    <!-- for using variables https://logback.qos.ch/manual/configuration.html -->
+    <!--    <property name="USER_HOME" value="/home/sebastien"/>-->
+    <!--    <property file="src/main/java/chapters/configuration/variables1.properties" />-->
+
+    <!-- Appender_s https://logback.qos.ch/manual/appenders.html -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--   <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{15}#%line %msg\n</pattern>   -->
+            <pattern>%logger{20} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--   <file>${USER_HOME}/myApp.log</file>   -->
+        <file>logs/slf4jLogbackExample.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>logs/slf4jLogback.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Храним файлы логов 3 дней -->
+            <maxHistory>3</maxHistory>
+            <!-- Максимальный размер файлов лога 1 гигабайт -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{dd.MM.yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{20} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">-->
+    <!--        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">-->
+    <!--            <driverClass>com.mysql.jdbc.Driver</driverClass>-->
+    <!--            <url>jdbc:mysql://host_name:3306/datebase_name</url>-->
+    <!--            <user>username</user>-->
+    <!--            <password>password</password>-->
+    <!--        </connectionSource>-->
+    <!--    </appender>-->
+
+    <!-- логгируемые пакеты и классы -->
+    <logger name="org.springframework" level="info" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="com.*" level="info" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <!--    <logger name="org.hibernate.SQL" level="info" additivity="false"/>-->
+    <!--    <logger name="org.hibernate.type.descriptor.sql" level="info" additivity="false"/>-->
+
+
+    <!-- ставим уровень логирования level, и appender-ref,
+    т.е. какие аппендеры использовать для ведения логов -->
+    <!-- OFF
+    FATAL	x
+    ERROR	x	x		^- будут залогированы: error и fatal сообщения
+    WARN	x	x	x
+    INFO	x	x	x	x		^-залогир.:info, warn, error, fatal
+    DEBUG	x	x	x	x	x
+    TRACE	x	x	x	x	x	x
+    ALL	x	x	x	x	x	x	x -->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

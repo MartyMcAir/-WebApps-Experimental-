@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<span th:replace="layout:: header"></span>
+<h1>Edit</h1>
+<span th:text="${mess}"></span>
+<h1><a th:href="@{'/landscapes'}">Back to list landscapes</a></h1>
+<form th:object="${landscape}" method="post">
+    <table>
+        <tr hidden="hidden">
+            <td>name</td>
+            <td><input type="text"  th:field="*{id}"/></td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td><input type="text" name="name" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td><input type="text" name="content" th:field="*{content}"/></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td>
+                <select th:field="*{country}">
+                    <th:block th:each="country1:${listcountries}">
+                        <option th:value="${country1.id}" th:text="${country1.name}"></option>
+                    </th:block>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="edit"></td>
+        </tr>
+    </table>
+</form>
+<span th:replace="layout::footer"></span>
+</body>
+</html>

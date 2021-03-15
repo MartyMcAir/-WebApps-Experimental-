@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Main Page</title>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+
+    <style> .error{color:red}
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+<h2 class="hello-title" th:text="'Hello ' + ${name} + '!'"></h2>
+
+<a href="./">main</a>
+
+<form action="check" modelAttribute="emp" th:object="${emp}" method="post">
+    <!--        <input type="number" id="id" name="id" th:placeholder="*{id}"/>-->
+    Name
+    <input type="text" name="name" th:value="*{name}"/>
+    Pass
+    <!--    <input type="password" name="pass" th:value="*{pass}"/>-->
+    <!--    <input type="password" name="pass"/>-->
+
+    <!--    -->
+    <!--    -->
+    <!--    -->
+    <!--    <input type="text" th:field="*{pass}"/>-->
+
+    <input type="text" th:field="*{pass}" class="small"/>
+    <p th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" th:errorclass="error">
+        Incorrect date</p>
+
+    <!--    -->
+    <!--    -->
+    <!--    -->
+
+    <button type="submit" name="saveButton">save</button>
+</form>
+
+</body>
+</html>

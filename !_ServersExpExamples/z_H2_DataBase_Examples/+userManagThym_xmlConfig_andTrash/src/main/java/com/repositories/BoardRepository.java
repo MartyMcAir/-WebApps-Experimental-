@@ -1,0 +1,10 @@
+package com.repositories;
+
+
+import com.model.Board;
+import com.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BoardRepository extends JpaRepository<Board, Long> {
+    Board findByUser(User user);
+}

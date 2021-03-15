@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xsi:schemaLocation="
+             http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+>
+
+    <!--    <persistence-unit name="h2Base">-->
+    <persistence-unit name="h2Base" transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <!--            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>-->
+            <!-- http://h2database.com/html/features.html#in_memory_databases -->
+            <!-- https://qastack.ru/programming/5763747/h2-in-memory-database-table-not-found -->
+            <!-- По умолчанию закрытие последнего соединения с базой данных закрывает базу данных.
+             Для базы данных в памяти это означает, что содержимое потеряно. Чтобы сохранить базу данных открытой,
+              добавьте ;DB_CLOSE_DELAY=-1в базу данных URL. Чтобы сохранить содержимое базы данных в памяти,
+              пока виртуальная машина жива, используйте jdbc:h2:mem:test;DB_CLOSE_DELAY=-1. -->
+            <!--            <property name="javax.persistence.jdbc.url"-->
+            <!--                      value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER = false;"/>-->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER = false;"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!--            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="show_sql" value="true"/>
+            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

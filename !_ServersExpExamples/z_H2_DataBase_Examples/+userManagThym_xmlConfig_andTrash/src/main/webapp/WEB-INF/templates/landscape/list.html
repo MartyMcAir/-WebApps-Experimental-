@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List landscapes</title>
+</head>
+<body>
+<h1>List landscapes</h1>
+<form>
+    Search by first name:
+    <input name="s" type="text" th:value="${s}"/>
+    <input type="submit" value="Search"/>
+</form><br/>
+<h1><a th:href="@{'/landscapes/create'}">Create new landscape</a></h1>
+<table>
+    <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>country</th>
+        <th>image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="landscape, loop: ${landscapes}">
+    <tr>
+        <td th:text="${loop.count}"></td>
+        <td th:text="${landscape.getName()}"></td>
+        <td th:text="${landscape.getCountry().name}"></td>
+        <td><img th:src="@{'/i/'+ ${landscape.image}}" width="100"/></td>
+        <td><a th:href="@{'/landscapes/edit/'+${landscape.id}}">Edit</a></td>
+        <td><a th:href="@{'/landscapes/delete/'+${landscape.id}}">Delete</a></td>
+    </tr>
+
+</th:block>
+</table>
+<div>
+    <a th:href="@{'/landscapes'(page=${landscapes.number - 1},s=${s})}" th:if="${landscapes.hasPrevious()}">Previous</a>
+    <span th:text="${landscapes.number + 1}"></span>/<span th:text="${landscapes.totalPages}"></span>
+    <a th:href="@{'/landscapes'(page=${landscapes.number + 1},s=${s})}" th:if="${landscapes.hasNext()}">Next</a>
+</div>
+<a href="/countries">Go to country</a>
+</body>
+</html>

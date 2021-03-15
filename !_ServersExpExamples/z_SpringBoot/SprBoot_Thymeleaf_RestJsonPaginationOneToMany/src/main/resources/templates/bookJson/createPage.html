@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <!--    <link rel="stylesheet" type="text/css" href="./resources/static/css/style.css">-->
+  <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+  <!--    <script src="./resources/static/js/script.js"></script>-->
+  <script th:src="@{/js/script.js}"></script>
+</head>
+<body>
+  <h1 class="myClass">Create Page</h1>
+
+  <form th:action="@{/json_books/create}" method="post" th:object="${book}">
+    <input  th:field="*{name}" placeholder="here book name"/>
+    <button type="submit">submit</button>
+  </form>
+
+  <form action="#" th:action="@{/json_books/createPerson}" th:object="${book}" method="post">
+      <p>Id: <input type="text" th:field="*{id}" /></p>
+      <p>Message: <input type="text" th:field="*{name}" /></p>
+      <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+  </form>
+
+</body>
+</html>

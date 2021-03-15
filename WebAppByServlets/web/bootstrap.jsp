@@ -6,8 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib tagdir="/WEB-INF/tags/page" prefix="page" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!doctype html>
@@ -54,6 +54,7 @@
 
     <%--  //////////////////////////////////////////////////////////////////////////////  --%>
     <div class="card-deck mb-3 text-center">
+
         <div class="card mb-4 shadow-sm">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">?q= Parameters _ ..</h4>
@@ -61,6 +62,7 @@
             <div class="card-body">
                 <%--                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>--%>
                 <ul class="list-unstyled mt-3 mb-4">
+
                     <li><a class="text-muted" href="simpleJSP/pageForFirstServlet.jsp">pageForFirstServlet</a></li>
                     <li><a class="text-muted" href="${contextPath}/hello-FirstServlet">сервлет
                         FirstServlet</a></li>
@@ -70,6 +72,7 @@
                         secondJsp.jsp через
                         маппинг</a></li>
                     <li><a class="text-muted" href="showCart.jsp">showCart.jsp БЕЗ маппинга</a></li>
+
                 </ul>
             </div>
         </div>

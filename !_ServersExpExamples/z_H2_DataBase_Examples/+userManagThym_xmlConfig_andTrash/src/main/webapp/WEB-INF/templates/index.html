@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Main Page</title>
+  <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+
+  <h2 class="hello-title" th:text="'Hello ' + ${name} + '!'"></h2>
+
+  <ul>
+    <li>
+      <a href="./">main</a>
+    </li>
+  </br>
+  <li>
+    <a href="./valid">validator</a>
+  </li>
+</br>
+<li>
+  <a href="./customer"> customers </a>
+</li>
+
+    </br>
+    <li>
+      <a href="./tmp"> tmp for test </a>
+    </li>
+
+</br>
+<h1>Pagination examples</h1>
+<li>
+  <a href="./empl/list3">employee, from howtodoinjava.com</a>
+</li>
+</br>
+<li>
+  <a href="./empl2">employee, from javaguides.net</a>
+</li>
+
+<h2>Don't work Pagination</h2>
+<h6>No primary or default constructor found for interface org.springframework.data.domain.Pageable</h6>
+</br>
+<li>
+  <a href="./users"> users </a>
+</li>
+</br>
+<li>
+  <a href="./board/list">board</a>
+</li>
+</br>
+<li>
+  <a href="./landscapes">landscapes</a>
+</li>
+</br>
+<li>
+  <a href="./pelamar/list">pelamar</a>
+</li>
+</br>
+<li>
+  <a href="./products">products</a>
+</li>
+</br>
+<li>
+  <a href="./singers">singers from git hub</a>
+</li>
+</br>
+</ul>
+
+</body>
+</html>

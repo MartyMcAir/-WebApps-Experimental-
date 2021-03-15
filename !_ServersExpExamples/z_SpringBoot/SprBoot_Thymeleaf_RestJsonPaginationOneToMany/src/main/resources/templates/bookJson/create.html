@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <!--    <link rel="stylesheet" type="text/css" href="./resources/static/css/style.css">-->
+  <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+  <!--    <script src="./resources/static/js/script.js"></script>-->
+  <script th:src="@{/js/script.js}"></script>
+</head>
+<body>
+<h1 class="myClass">Book Json Page</h1>
+
+  <ul>
+    <li><a th:href="@{/json_books/list_PageableResponseEntity}" target="_blank">list list_PageableResponseEntity</a></li>
+    <li><a th:href="@{/json_books/listBook}" target="_blank">get listBook</a></li>
+    <li><a th:href="@{/json_books/getListAndSetOnAttributeForPage}" target="_blank">getListAndSetOnAttributeForPage ModelAndView</a></li>
+  </ul>
+</body>
+</html>

@@ -1,4 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -18,12 +20,12 @@
     </br>
     </br>
         <li>
-            <a href="./customerRepository"> customers Using Repository </a>
+            <a href="${contextPath}/customerRepository"> customers Using Repository </a>
         </li>
     </br>
     </br>
         <li>
-            <a href="./lbClassicStatus"> lbClassicStatus </a>
+            <a href="${contextPath}/lbClassicStatus"> lbClassicStatus </a>
         </li>
     </br>
     </br>

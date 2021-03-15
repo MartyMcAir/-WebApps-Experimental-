@@ -18,7 +18,7 @@
         <file>logs/slf4jLogbackExample.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>slf4jLogback.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>logs/slf4jLogback.%d{yyyy-MM-dd}.log</fileNamePattern>
             <!-- Храним файлы логов 10 дней -->
             <maxHistory>10</maxHistory>
             <!-- Максимальный размер файлов лога 1 гигабайт -->
