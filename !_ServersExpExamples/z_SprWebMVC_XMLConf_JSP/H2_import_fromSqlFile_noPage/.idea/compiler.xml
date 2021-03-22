@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="H2_import_fromSqlFile" />
-        <module name="my_clear_H2_import" />
         <module name="!_H2_jsp_import_lite" />
+        <module name="H2_import_fromSqlFile_noPage" />
+        <module name="my_clear_H2_import" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,0 +1,11 @@
+--DROP TABLE IF EXISTS `crimson`;
+--CREATE TABLE `crimson` (
+--  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+--  `name` varchar(50) DEFAULT NULL,
+--  PRIMARY KEY (`id`)
+--);
+--
+--INSERT INTO `cap` (name) VALUES ('Santosh');
+--INSERT INTO `cap` (name) VALUES ('Kumar');
+--INSERT INTO `xap` (name) VALUES ('Walking');
+--INSERT INTO `person` (name) VALUES ('Techie');

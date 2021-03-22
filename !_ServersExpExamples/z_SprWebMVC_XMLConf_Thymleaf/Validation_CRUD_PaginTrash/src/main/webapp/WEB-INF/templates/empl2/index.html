@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+
+    <meta charset="ISO-8859-1">
+    <title>Employee Management System</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container my-2">
+    <h1>Employees List</h1>
+
+    <a th:href="@{/empl2/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3"> Add Employee </a>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>
+                <a th:href="@{'/empl2/page/' + ${currentPage} + '?sortField=id&sortDir=' + ${reverseSortDir}}">
+                    ID</a>
+            </th>
+            <th>
+                <a th:href="@{'/empl2/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir}}">
+                    Employee First Name</a>
+            </th>
+            <th>
+                <a th:href="@{'/empl2/page/' + ${currentPage} + '?sortField=lastName&sortDir=' + ${reverseSortDir}}">
+                    Employee Last Name</a>
+            </th>
+            <th>
+                <a th:href="@{'/empl2/page/' + ${currentPage} + '?sortField=email&sortDir=' + ${reverseSortDir}}">
+                    Employee Email</a>
+            </th>
+            <th> Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${listEmployees}">
+
+            <!-- ___ https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html#checkbox-fields ___ -->
+            <!-- <tr>
+            <td><form:label path = "${employee.receivePaper}">Subscribe Newsletter</form:label></td>
+            <td><form:checkbox path = "${employee.receivePaper}" /></td>
+        </tr> -->
+            <!-- <td form:checkbox="${employee.receivePaper}"></td> -->
+            <!-- <input type="checkbox" th:field="${employee.receivePaper}" /> -->
+            <!-- <td form:checkbox="${employee.receivePaper}"></td> -->
+
+            <td>
+                <input
+                        th:id="${employee.id}"
+                        th:value="${employee.id}"
+                        class="id_checkbox"
+                        type="checkbox"
+                        name="checkedid"
+                />
+                <label for="features3" th:text="${employee.id}"/>
+            </td>
+
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td><a th:href="@{/empl2/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/empl2/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${totalPages > 1}">
+        <div class="row col-sm-10">
+            <div class="col-sm-2">
+                Total Rows: [[${totalItems}]]
+            </div>
+            <div class="col-sm-1">
+								<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+									<a th:if="${currentPage != i}"
+                                       th:href="@{'/empl2/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+									<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+								</span>
+            </div>
+
+            <div class="col-sm-1">
+                <a th:if="${currentPage > 1}"
+                   th:href="@{'/empl2/page/' + ${currentPage - 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Prev</a>
+                <span th:unless="${currentPage > 1}">Prev</span>
+            </div>
+
+            <div class="col-sm-1">
+                <a th:if="${currentPage < totalPages}"
+                   th:href="@{'/empl2/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+                <span th:unless="${currentPage < totalPages}">Next</span>
+            </div>
+
+            <div class="col-sm-1">
+                <a th:if="${currentPage < totalPages}"
+                   th:href="@{'/empl2/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+                <span th:unless="${currentPage < totalPages}">Last</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+<!--  -->
+<!--  -->
+<script src="resources/js/myJs.js"></script>
+<!-- tha too -->
+<!-- <script th:src="@{/resources/js/myJs.js}"></script> -->
+
+<button onclick="myPrint()">myPrint</button>
+<button onclick="myFunction()">Click me</button>
+<p id="demo"></p>
+
+<p class="testClass">one</p>
+<p class="testClass">two</p>
+<p class="testClass">three</p>
+
+<input id="21" value="21" class="id_checkbox" type="checkbox" name="checkedid">
+<input id="22" value="22" class="id_checkbox" type="checkbox" name="checkedid">
+<input id="23" value="23" class="id_checkbox" type="checkbox" name="checkedid">
+
+<h2>Send JSON to server</h2>
+<a href="https://www.geeksforgeeks.org/how-to-send-a-json-object-to-a-server-using-javascript/">source</a>
+<!-- Making a text input -->
+<form class="" action="#" method="post">
+    <input type="text" id="name" placeholder="Your name">
+    <input type="email" id="email" placeholder="Email">
+    <!-- Button to send data -->
+    <button onclick="sendJSON()">Send JSON</button>
+</form>
+<!-- For printing result from server -->
+<p class="result" style="color:green">Here result</p>
+<!--  -->
+<!--  -->
+<!--  -->
+
+</body>
+</html>

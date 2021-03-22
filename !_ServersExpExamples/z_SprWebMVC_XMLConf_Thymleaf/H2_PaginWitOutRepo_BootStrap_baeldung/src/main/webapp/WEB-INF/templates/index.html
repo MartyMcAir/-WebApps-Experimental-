@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+  <title>Home Page</title>
+</head>
+
+<body>
+
+  <!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+  <header th:replace="fragments/header">&nbsp;
+  </header>
+
+  <hr/>
+  <div class="container">
+
+    <h2 class="hello-title" th:text="'Hello ' + ${name} + '!'"></h2>
+    <script th:src="@{/resources/js/script.js}"></script>
+
+    <ul>
+      <li>
+        <a href="./hello">hello</a>
+      </li>
+      <li>
+        <a href="./customer"> customer</a>
+      </li>
+    </ul>
+
+    <h2>Exp</h2>
+
+    <ul>
+      <li><a th:href="@{/expHome}">expHome</a></li>
+      <li><a th:href="@{/listBooks}">listBooks Pagination WithOut Pegeable</a></li>
+      <li><a th:href="@{/dates}">dates ERR NestedServletException</a></li>
+      <li><a th:href="@{/objects}">objects Thymleaf expression Examples</a></li>
+      <li><a th:href="@{/layout}">layout (trash) </a></li>
+      <li><a th:href="@{/listTeachers}">listTeachers WithOut Pagination</a></li>
+
+      <h5>StudentController</h5>
+      <li><a th:href="@{/saveStudent}">saveStudent POST request</a></li>
+      <li><a th:href="@{/addStudent}">addStudent</a></li>
+      <li><a th:href="@{/listStudents}">listStudents WithOut Pagination</a></li>
+
+      <h2>(Thymleaf Examples insert replace etc..)</h2>
+      <h6>FragmentsController</h6>
+      <li><a th:href="@{/fragments}">fragments</a></li>
+      <li><a th:href="@{/markup}">markup</a></li>
+      <li><a th:href="@{/params}">params</a></li>
+      <li><a th:href="@{/other}">other</a></li>
+
+      <h6>InliningController</h6>
+      <li><a th:href="@{/html}">html</a></li>
+      <li><a th:href="@{/js}">js NestedServletException</a></li>
+      <li><a th:href="@{/plain}">plain NestedServletException</a></li>
+    </ul>
+
+  </div> <!-- <div class="container"> -->
+
+    <hr class="navbar fixed-bottom"/>
+
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+    <div th:replace="~{fragments/footer :: scripts}"></div>
+
+  </body>
+  </html>

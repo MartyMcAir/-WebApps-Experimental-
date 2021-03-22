@@ -9,6 +9,7 @@
         <module name="my_ClearApp_JspXml_Security" />
         <module name="Secur_inMemo_Lite" />
         <module name="my_JspXml_Security" />
+        <module name="+Secur_inMemo_devColibri_habr" />
         <module name="myJspXml_Security" />
       </profile>
     </annotationProcessing>

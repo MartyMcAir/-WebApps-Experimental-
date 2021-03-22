@@ -86,6 +86,39 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+//..............................................................................................................................................................
+public static final String REALM_NAME = "memorynotfound.com";
+//
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http
+//                .csrf()
+//                    .disable()
+//                .authorizeRequests()
+//                    .anyRequest().authenticated()
+//                .and()
+//                    .httpBasic()
+//                .and()
+//                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//    }
+//
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication()
+//                .withUser("user")
+//                    .password("password")
+//                    .roles("USER")
+//            .and()
+//                .withUser("manager")
+//                    .password("password")
+//                    .credentialsExpired(true)
+//                    .accountExpired(true)
+//                    .accountLocked(true)
+//                    .authorities("WRITE_PRIVILEGES", "READ_PRIVILEGES")
+//                    .roles("MANAGER");
+//    }
+//..............................................................................................................................................................
+
     //    https://dzone.com/articles/password-encoder-migration-with-spring-security-5
 //    @Bean
 //    public PasswordEncoder getShaPasswordEncoder() {

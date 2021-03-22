@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="HibernateExamples_SessionFactory_EntityM_Repo" />
+        <module name="SpringMvc_jsp_Hibernate_H2Base_XmlConfig_lite" />
+        <module name="HibernateMixTrash_SessionFactory_EntityM_Repo" />
+        <module name="HibernateExamplesMix_SpringMvc" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

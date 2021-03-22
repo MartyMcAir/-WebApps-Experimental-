@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+
+<hr/>
+<div class="container">
+
+    <h2 class="hello-title" th:text="'Hello ' + ${name} + '!'"></h2>
+    <script th:src="@{/resources/js/script.js}"></script>
+
+    <ul>
+        <li><a href="./hello">hello</a></li>
+        <li><a href="./customer"> customer</a></li>
+        <li><a th:href="@{/listBooks}">listBooks Pagination WithOut Pegeable</a></li>
+        <li><a th:href="@{/empl/list3}">employee, from howtodoinjava.com</a></li>
+        <li><a th:href="@{/empl2}">employee, from javaguides.net</a></li>
+    </ul>
+
+</div> <!-- <div class="container"> -->
+
+<hr class="navbar fixed-bottom"/>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

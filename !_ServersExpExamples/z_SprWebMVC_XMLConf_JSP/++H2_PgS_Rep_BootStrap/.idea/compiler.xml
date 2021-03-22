@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="_Jsp_H2_PgSql_Repo_BootStrap" />
+        <module name="SpringMvcMix_Clear" />
+        <module name="_Jsp_H2_PgS_Rep_BootS_FROM-WebAppByServlet" />
+        <module name="_SpringMvcTable_" />
+        <module name="_Jsp_H2_PgSql_Repo_Minimal" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

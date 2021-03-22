@@ -9,6 +9,7 @@
         <module name="Minimal" />
         <module name="SpringMVC_XML_minimal" />
         <module name="Jsp_XmlConfig_Minimal" />
+        <module name="Minimal_conf" />
       </profile>
     </annotationProcessing>
   </component>

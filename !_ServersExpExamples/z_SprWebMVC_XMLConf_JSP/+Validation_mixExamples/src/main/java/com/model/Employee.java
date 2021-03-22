@@ -13,6 +13,8 @@ import java.util.Date;
 
 public class Employee {
 
+    private int id;
+
     @Size(min = 2, max = 30, message = "required min 2 max 30")
     private String name;
 
@@ -106,5 +108,13 @@ public class Employee {
             this.birthday = simpleDateFormat.parse(birthday);
         } catch (ParseException ignore) {
         }
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 }
