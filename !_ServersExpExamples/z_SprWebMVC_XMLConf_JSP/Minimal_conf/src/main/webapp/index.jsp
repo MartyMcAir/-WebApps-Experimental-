@@ -5,6 +5,5 @@
   </head>
     <body>
       <h2>Hello World!</h2>
-      <a href="./static_page"> static_page </a>
     </body>
 </html>

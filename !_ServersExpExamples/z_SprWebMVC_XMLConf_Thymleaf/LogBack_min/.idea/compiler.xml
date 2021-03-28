@@ -10,6 +10,7 @@
         <module name="Themeleaf_LogBack_XmlConfig" />
         <module name="Thymeleaf_LogBack_XmlConfig" />
         <module name="LogBack" />
+        <module name="LogBack_min" />
         <module name="SpringMVC_jetty_LogBack_XmlConfig" />
       </profile>
     </annotationProcessing>

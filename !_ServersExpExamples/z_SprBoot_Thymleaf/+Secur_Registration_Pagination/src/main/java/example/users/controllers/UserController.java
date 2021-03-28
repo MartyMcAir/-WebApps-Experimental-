@@ -82,9 +82,7 @@ class UserController {
      */
     @RequestMapping(method = RequestMethod.POST)
     public Object register(UserForm userForm, BindingResult binding, Model model) {
-
         userForm.validate(binding, userService);
-
         if (binding.hasErrors()) {
             return "users";
         }
@@ -107,9 +105,7 @@ class UserController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public String listUsers(Model model, UserForm userForm) {
-
         model.addAttribute("userForm", userForm);
-
         return "users";
     }
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="a_Trash_WebMvc_XmlConf_JSP_Secur_Valid" />
+        <module name="_SpringMvcTable_" />
+        <module name="_Jsp_H2_PgSql_Repo_Minimal" />
+        <module name="H2_PgSql_RepoCRUD_lite" />
+        <module name="a_TrashWebMvc_XmlConfJSP_Secur_Valid" />
+        <module name="H2_PgSql_RepoCRUD_mix" />
+        <module name="H2_PgSql_Repo_Minimal" />
+        <module name="err_Secur_H2_Repo_mixTrash" />
+        <module name="SpringMvcMix_Clear" />
+        <module name="H2_RepoCRUD_ImgDownl_mix" />
+        <module name="Secur_H2_Repo_mixTrash" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

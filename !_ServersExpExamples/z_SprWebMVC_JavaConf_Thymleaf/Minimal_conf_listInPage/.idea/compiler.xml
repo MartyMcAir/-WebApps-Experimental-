@@ -11,6 +11,7 @@
         <module name="Thymeleaf_JavaConfig_Minimal" />
         <module name="SpringWebMvcThemeleafMinimal" />
         <module name="Minimal" />
+        <module name="Minimal_conf_listInPage" />
       </profile>
     </annotationProcessing>
   </component>

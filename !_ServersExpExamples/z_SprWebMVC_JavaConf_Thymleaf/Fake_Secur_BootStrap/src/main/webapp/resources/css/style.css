@@ -1,0 +1,30 @@
+
+/* footer */
+footer {
+  text-align: center;
+}
+
+/* login_page */
+#login_form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}ø
+.login_item {
+  margin-bottom: 10px;
+}
+
+/* ... */
+
+/* for close button */
+.fade.in {
+  opacity: 1
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear
+}

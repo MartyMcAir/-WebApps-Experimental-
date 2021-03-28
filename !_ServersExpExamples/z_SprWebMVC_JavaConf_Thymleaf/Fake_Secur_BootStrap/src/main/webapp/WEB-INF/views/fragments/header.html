@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--<header th:fragment="header(home, login, services, contact)">-->
+<header th:fragment="header(home, login, services, contact, current_user, user_loggIn)">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="./">Books on the table ;)</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li th:class="${#bools.isTrue(home)} ? 'nav-item active' : 'nav-item'">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+
+                    <li th:class="${#bools.isTrue(services)} ? 'nav-item active' : 'nav-item'">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+
+                    <li th:class="${#bools.isTrue(contact)} ? 'nav-item active' : 'nav-item'">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+
+                    <td>
+                        <span th:if="${#bools.isTrue(!loggedIn)}">
+                             <li th:class="${#bools.isTrue(login)} ? 'nav-item active' : 'nav-item'">
+                                 <a class="nav-link" href=".\login">Login</a></li>
+                        </span>
+
+                        <span th:if="${#bools.isTrue(loggedIn)}">
+                             <div th:object="${user}">
+                                <p>Hello: <span th:text="*{name}?: '(no name specified)'">bro</span>.</p>
+                            </div>
+                        </span>
+                    </td>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+</html>

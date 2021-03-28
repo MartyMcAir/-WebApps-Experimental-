@@ -18,7 +18,7 @@
     <!--    -->
     <!--    -->
     <!--   JPA CONFIG   (путь указываем относительно текущего файла..)   -->
-    <!-- <import resource="data_config.xml"/> -->
+    <!-- <import resource="data_config_2.xml"/> -->
     <import resource="data_config_Lite.xml"/>
 
     <!-- Security Config -->
@@ -29,7 +29,7 @@
     <!-- Lite -->
     <!--    <import resource="security/security_config_Lite_0.xml"/>-->
     <!--    <import resource="security/security_config_Lite_2.xml"/>-->
-    <import resource="security/security_config_v_1.xml"/>
+    <import resource="security_config_v_1.xml"/>
     <!--    <import resource="security/security_config_Lite_5.xml"/>-->
 
 </beans>

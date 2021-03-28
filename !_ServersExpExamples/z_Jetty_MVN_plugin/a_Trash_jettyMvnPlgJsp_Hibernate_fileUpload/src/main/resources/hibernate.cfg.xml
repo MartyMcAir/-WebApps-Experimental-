@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <!-- NOTE that after automapping with IDEA property username and password will delete -->
+        <!--and will be:  Initial SessionFactory failedorg.hibernate.service.spi.ServiceException: Unable to create requested service-->
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Z33_q77_888</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="hibernate.connection.pool_size">1</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <!-- Enable Hibernate automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- encode settings -->
+        <property name="hibernate.connection.CharSet">utf8</property>
+        <property name="hibernate.connection.characterEncoding">utf8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- Disable the second-level cache  -->
+        <!--        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>-->
+
+        <!--        <mapping class="net.common.model.Person" />-->
+        <mapping class="hibernate.models.User"/>
+        <mapping class="hibernate.models.Auto"/>
+        <!-- from https://stackoverflow.com/questions/18736594/location-of-hibernate-cfg-xml-in-project/18736719#18736719 -->
+        <!--        <mapping resource="config/Auto.hbm.xml"/>-->
+
+    </session-factory>
+</hibernate-configuration>

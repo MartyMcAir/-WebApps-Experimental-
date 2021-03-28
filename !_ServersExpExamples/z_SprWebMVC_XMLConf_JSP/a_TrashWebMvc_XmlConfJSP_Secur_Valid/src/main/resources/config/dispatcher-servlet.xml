@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <!--Scanning components in base-package (look for annotations) -->
+    <context:component-scan base-package="com.*"/>
+    <!--Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired and so on-->
+    <context:annotation-config/>
+
+    <import resource="mvc_config.xml"/>
+    <!--    -->
+    <!--    -->
+    <!--   JPA CONFIG   (путь указываем относительно текущего файла..)   -->
+    <!-- <import resource="data_config.xml"/> -->
+    <import resource="data_config_Lite.xml"/>
+
+    <!-- Security Config -->
+    <!-- Full -->
+    <!--    <import resource="security/security_config.xml"/>-->
+    <!-- Middle-->
+    <!--    <import resource="security/security_config_Middle.xml"/>-->
+    <!-- Lite -->
+    <!--    <import resource="security/security_config_Lite_0.xml"/>-->
+    <!--    <import resource="security/security_config_Lite_2.xml"/>-->
+    <import resource="security_config_v_1.xml"/>
+    <!--    <import resource="security/security_config_Lite_5.xml"/>-->
+
+</beans>

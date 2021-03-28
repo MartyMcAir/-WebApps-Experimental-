@@ -13,7 +13,6 @@ import javax.sql.DataSource;
 @ComponentScan({"com.mkyong"})
 @Configuration
 public class SpringRootConfig {
-
     @Autowired
     DataSource dataSource;
 
@@ -35,24 +34,4 @@ public class SpringRootConfig {
         //DatabaseManagerSwing.main(new String[] { "--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", "" });
 
     }
-
-    //MethodInvokingBean example
-	/*
-	@PostConstruct
-	public void startDBM() {
-		MethodInvokingBean mBean = new MethodInvokingBean();
-
-		mBean.setTargetClass(DatabaseManagerSwing.class);
-		mBean.setTargetMethod("main");
-		String[] args = new String[] { "--url", "jdbc:hsqldb:mem:testdb", "--user", "sa", "--password", "" };
-		mBean.setArguments(args);
-		try {
-			mBean.prepare();
-			mBean.invoke();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}*/
-
 }

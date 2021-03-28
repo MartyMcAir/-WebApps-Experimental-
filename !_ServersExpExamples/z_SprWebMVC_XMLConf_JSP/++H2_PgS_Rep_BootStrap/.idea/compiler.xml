@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="_Jsp_H2_PgSql_Repo_BootStrap" />
+        <module name="++H2_PgS_Rep_BootStrap" />
         <module name="SpringMvcMix_Clear" />
         <module name="_Jsp_H2_PgS_Rep_BootS_FROM-WebAppByServlet" />
         <module name="_SpringMvcTable_" />

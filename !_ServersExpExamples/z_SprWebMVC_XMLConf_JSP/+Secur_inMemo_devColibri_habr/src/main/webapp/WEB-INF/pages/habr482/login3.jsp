@@ -27,11 +27,13 @@
 
 <body>
 
-<h1> Hello from login 3 </h1>
+<div class="container" style="width: 300px;">
+
+<h1> Hello from login3</h1>
 
 <c:if test="${not empty errorMessge}"><div style="color:red; font-weight: bold; margin: 30px 0px;">${errorMessge}</div></c:if>
 
-<div class="container" style="width: 300px;">
+
     <c:url value="/j_spring_security_check" var="loginUrl" />
 
     <form action="${loginUrl}" method="post">

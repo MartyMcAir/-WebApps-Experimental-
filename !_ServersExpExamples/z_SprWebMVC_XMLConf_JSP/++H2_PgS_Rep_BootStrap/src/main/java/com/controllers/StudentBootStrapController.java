@@ -2,10 +2,9 @@ package com.controllers;
 
 import com.model.Student;
 import com.services.StudentService;
-import com.utils.StudentUtils;
+import com.utils.StudentServiceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +17,7 @@ public class StudentBootStrapController {
     @Autowired
     private StudentService service;
     @Autowired
-    private StudentUtils utils;
+    private StudentServiceUtil utils;
 
     @GetMapping
     public ModelAndView home() {

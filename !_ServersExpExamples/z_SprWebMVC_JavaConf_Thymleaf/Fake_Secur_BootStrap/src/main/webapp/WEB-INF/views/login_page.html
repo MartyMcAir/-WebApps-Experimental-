@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Book shelf login</title>
+</head>
+
+<body>
+<header th:replace="fragments/header :: header(home='false', login='true', services='false', contact='false',
+current_user='user', user_loggIn='loggedIn' )">&nbsp;
+</header>
+
+<hr/>
+<div class="container">
+    <br/>
+
+    <div th:if="${param.error}">
+        Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+    <form th:action="@{/logged_complete}" method="post">
+        <div><label> User Name : <input type="text" name="username"/> </label></div>
+        <div><label> Password: <input type="password" name="password"/> </label></div>
+        <div><input type="submit" value="Sign In"/></div>
+    </form>
+
+    <!-- end container -->
+</div>
+
+<hr class="navbar fixed-bottom"/>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

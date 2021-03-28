@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+  <title>Home Page</title>
+</head>
+
+<body>
+
+  <!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+  <header th:replace="fragments/header">&nbsp;
+  </header>
+
+  <hr/>
+  <div class="container">
+
+    <h1 class="myClass">Home Page</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10"
+      aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">LINK ?</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">LINK ?</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <hr/>
+
+  <!--  .........................................................................................................  -->
+  <div class="card-deck mb-3 text-center">
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">api Books (JSON)</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><a th:href="@{/api_books/init}">init add more books in My Library</a></li>
+          <li><a th:href="@{/api_books/}">api_books</a></li>
+          <li><a th:href="@{/api_books/1}">api_books page 1</a></li>
+          <li><a th:href="@{/api_books/library/1}">api_books library 1</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">api_libraries (JSON)</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><a th:href="@{/api_libraries/importTestData}" target="_blank">api_libraries ERR</a></li>
+          <li><a th:href="@{/api_libraries/1}">api_libraries 1</a></li>
+          <li><a th:href="@{/api_libraries/importTestData}">api_libraries importTestData</a></li>
+          <li><a th:href="@{/api_libraries/listVersion_v4}">api_libraries listVersion_v4</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">json_books</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><a th:href="@{/json_books}">json_books page</a></li>
+          <li><a th:href="@{/json_books/1}">json_books 1</a></li>
+          <li><a th:href="@{/json_books/list_PageableResponseEntity}">list_PageableResponseEntity</a></li>
+          <li><a th:href="@{/json_books/listBook}">listBook</a></li>
+          <li><a th:href="@{/json_books/create}">create ERR</a></li>
+          <li><a th:href="@{/json_books/create2}">create2 ERR</a></li>
+          <li><a th:href="@{/json_books/createPage}">createPage Form</a></li>
+          <li><a th:href="@{/json_books/book}">book ERR</a></li>
+          <li><a th:href="@{/json_books/list_JsonResponseEntity}">book list_JsonResponseEntity</a></li>
+          <li><a th:href="@{/json_books/list_JsonResponseBody}">book list_JsonResponseBody</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">OneToMany  CRUD</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><a th:href="@{/oneToMany/listVersion4_exp}" target="_blank">oneToMany listVersion4_exp</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div> <!-- class="card-deck mb-3 text-center" -->
+    <!--  .........................................................................................................  -->
+
+  </div> <!-- <div class="container"> -->
+
+    <hr class="navbar fixed-bottom"/>
+
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+    <div th:replace="~{fragments/footer :: scripts}"></div>
+
+  </body>
+  </html>

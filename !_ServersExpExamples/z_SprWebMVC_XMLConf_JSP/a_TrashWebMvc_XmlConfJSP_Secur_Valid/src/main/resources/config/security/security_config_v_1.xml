@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans
+        xmlns="http://www.springframework.org/schema/security"
+        xmlns:b="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security
+		https://www.springframework.org/schema/security/spring-security.xsd
+">
+
+    <!-- https://habr.com/ru/sandbox/109692/ -->
+    <!-- Это сокращенный синтаксис, отвечает за установку логина на основе веб-формы, базовый логин и выход из приложения -->
+    <http auto-config="true" use-expressions="true">
+
+        <!-- доступ к url адресу app/admin только для админов -->
+        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+        <!-- доступ к url адресу app/admin только для залогинившихся юзеров -->
+        <intercept-url pattern="/sub_main/news" access="hasRole('ROLE_USER')"/>
+
+        <!-- if access denied forbidden error 403 -->
+        <!-- https://www.baeldung.com/spring-security-custom-access-denied-page -->
+        <access-denied-handler error-page="/sub_main/accessDenied"/>
+
+        <!-- login-page указываем url адрес, указанный в нашем контроллере на форму логина -->
+        <!-- login-processing-url url адрес, который будет обрабатываться Spring Security, после нажатия кнопки войти -->
+        <!-- username-parameter/password параметр указанный в нашей форме логина,
+                что бы Spring Security знал, какие параметры из формы обрабатывать -->
+        <form-login
+                login-page="/login"
+                login-processing-url="/j_spring_security_check"
+                default-target-url="/welcome"
+                authentication-failure-url="/login?error"
+                username-parameter="j_username"
+                password-parameter="j_password"
+                always-use-default-target="true"
+        />
+
+        <!-- при выходе перейдёт на главную страницу /welcome -->
+        <logout logout-success-url="/welcome"/>
+
+        <!-- для обеспечения безопасности от хакерских атак через формы.. используется csrf токен -->
+        <csrf disabled="true"/>
+    </http>
+
+    <!-- Setting for using user-service in XML withOut DataBase or userDetailsServiceImpl -->
+    <!-- password: 1234 from: https://bcrypt-generator.com/ -->
+    <!-- new BCryptPasswordEncoder().encode("password") -->
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider>
+            <password-encoder ref="bcryptEncoder"/>   <!-- for encoding password -->
+
+            <user-service>   <!-- Добавляем пользователя который будет иметь права админа -->
+                <user name="admin" authorities="ROLE_ADMIN, ROLE_USER"
+                      password="$2y$12$JPIWBBP6Te8xxrbFrBxrde/m1WiNIo9U0P/Pi1dLDbcRG0uMz.9Au"/>
+                <user name="user1" authorities="ROLE_USER"
+                      password="$2y$12$JPIWBBP6Te8xxrbFrBxrde/m1WiNIo9U0P/Pi1dLDbcRG0uMz.9Au"/>
+            </user-service>
+
+        </authentication-provider>
+    </authentication-manager>
+
+    <b:bean name="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+</b:beans>
