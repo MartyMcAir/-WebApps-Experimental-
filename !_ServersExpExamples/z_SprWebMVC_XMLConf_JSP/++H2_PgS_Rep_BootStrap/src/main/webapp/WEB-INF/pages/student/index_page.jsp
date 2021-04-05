@@ -20,6 +20,7 @@
 		<input type="text" name="keyword" />
 		<input type="submit" value="Search" />
 	</form>
+
 	<h3><a href="studentRepository/new">New Customer</a></h3>
 	<table border="1" cellpadding="5">
 		<tr>

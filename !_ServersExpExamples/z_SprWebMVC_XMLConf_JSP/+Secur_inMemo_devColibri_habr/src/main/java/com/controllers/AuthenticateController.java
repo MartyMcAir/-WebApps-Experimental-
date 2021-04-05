@@ -1,4 +1,4 @@
-package com.controllers.habr482;
+package com.controllers;
 
 import com.model.User;
 import org.springframework.stereotype.Controller;

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: head(~{::title})">
+  <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+
+  <meta charset="ISO-8859-1">
+  <title>Employee Management System</title>
+
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+</head>
+
+<body>
+  <!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+    <header th:replace="fragments/header">&nbsp;
+    </header>
+    <hr/>
+
+    <main class="container my-2 main" role="main">
+      <h3>Experimental use Fetch</h3>
+      <!-- >>> -->
+      <!-- >>> -->
+      <!-- >>> -->
+      <button onclick="loopJsonArray()">loop in console JSON Array</button>
+    </br>
+  </br>
+  <button onclick="sendJsonStringUseFetch()">send JSON String</button>
+</br>
+<button onclick="sendJsonIntegerUseFetch()">send JSON Integer</button>
+</br>
+<button onclick="sendJsonArrayIntegerUseFetch()">send JSON Array Integer</button>
+</br>
+<button onclick="sendJsonObjectProductUseFetch()">send JSON Object (Product)</button>
+</br>
+<button onclick="sendJsonListOfProductsUseFetch()">send JSON List (Products)</button>
+
+<script>
+  function loopJsonArray(){
+    const carsArray = ["Ford", "BMW", "Fiat"]
+    for(i in carsArray) console.log(carsArray[i])
+  }
+
+// Fetch send String
+function sendJsonStringUseFetch() {
+  let obj = ['MyString']
+  let request = new Request('http://localhost:8080/simple_mvc/product/experimentalGetJsonString', {
+    method: 'POST',
+    body: JSON.stringify(obj),
+    headers: {
+      'Content-Type': 'application/json',
+    },      });
+
+  fetch(request).then(
+      function(response) {   // if ok
+        console.log(response);
+      },
+      function(error) {   // else _ if error
+        console.error(error);
+      }      );
+  console.log('Request is pushed');
+}
+
+// Fetch send Integer
+function sendJsonIntegerUseFetch() {
+      // Cannot deserialize instance of `java.lang.Integer` out of START_ARRAY token
+      // let obj = [13]
+      let request = new Request('http://localhost:8080/simple_mvc/product/experimentalGetJsonInteger', {
+        method: 'POST',
+        body: JSON.stringify(13),
+        headers: {
+          'Content-Type': 'application/json',
+        },      });
+
+      fetch(request).then(
+          function(response) {   // if ok
+            console.log(response);
+          },
+          function(error) {   // else _ if error
+            console.error(error);
+          }      );
+      console.log('Request is pushed');
+    }
+
+// Fetch send Array of Integer
+function sendJsonArrayIntegerUseFetch() {
+  let obj2 = [13, 14, 15]
+  let request = new Request('http://localhost:8080/simple_mvc/product/experimentalGetJsonList', {
+    method: 'POST',
+    body: JSON.stringify(obj2),
+    headers: {
+      'Content-Type': 'application/json',
+    },      });
+
+  fetch(request).then(
+                  function(response) {   // if ok
+                    console.log(response);
+                  },
+                  function(error) {   // else _ if error
+                    console.error(error);
+                  }      );
+  console.log('Request is pushed');
+}
+
+// Fetch send Object of Product
+function sendJsonObjectProductUseFetch() {
+  let obj3 = {"id":0,"name":"TestName","price":3.14}
+  let request = new Request('http://localhost:8080/simple_mvc/product/experimentalGetJsonObject', {
+    method: 'POST',
+    body: JSON.stringify(obj3),
+    headers: {
+      'Content-Type': 'application/json',
+    },      });
+
+  fetch(request).then(
+                          function(response) {   // if ok
+                            console.log(response);
+                          },
+                          function(error) {   // else _ if error
+                            console.error(error);
+                          }      );
+  console.log('Request is pushed');
+}
+
+// Fetch send List of Object of Products
+function sendJsonListOfProductsUseFetch() {
+  let obj4 = [{"id":0,"name":"oneObj","price":0.3},
+  {"id":0,"name":"twoObj","price":0.8},
+  {"id":0,"name":"three","price":3.14}]
+  let request = new Request('http://localhost:8080/simple_mvc/product/experimentalGetJsonListOfObjects', {
+    method: 'POST',
+    body: JSON.stringify(obj4),
+    headers: {
+      'Content-Type': 'application/json',
+    },      });
+
+  fetch(request).then(
+function(response) {   // if ok
+                                    console.log(response);
+                                  },
+                                  function(error) {   // else _ if error
+                                    console.error(error);
+                                  }      );
+  console.log('Request is pushed');
+}
+</script>
+<!-- <<< -->
+<!-- <<< -->
+<!-- <<< -->
+</main>
+
+</br>
+</br>
+</br>
+<hr/>
+<hr class="navbar fixed-bottom"/>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

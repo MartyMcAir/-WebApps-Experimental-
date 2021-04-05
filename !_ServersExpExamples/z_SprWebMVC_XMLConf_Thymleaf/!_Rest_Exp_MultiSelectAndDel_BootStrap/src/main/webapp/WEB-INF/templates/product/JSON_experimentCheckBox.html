@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: head(~{::title})">
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+
+    <meta charset="ISO-8859-1">
+    <title>Management System</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+
+<body>
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+<hr/>
+
+<main class="container my-2 main" role="main">
+    <h3>Experimental</h3>
+
+    <!-- >>> -->
+    <!-- >>> -->
+    <!-- >>> -->
+    <button onclick="myLoopArrayInConsole()">loop array in console</button>
+    <button onclick="myCheckBoxIs()">myCheckBoxIs and Hello World</button>
+    <p id="demo"></p>
+
+    <label class="testClass">21
+        <input id="21" value="21" class="id_checkbox" type="checkbox" name="checkedid">
+    </label>
+    <label class="testClass">22
+        <input id="22" value="22" class="id_checkbox" type="checkbox" name="checkedid">
+    </label>
+    <label class="testClass">23
+        <input id="23" value="23" class="id_checkbox" type="checkbox" name="checkedid">
+    </label>
+
+    <h5>Send JSON to server use Form (from geeksForGeeks)</h5>
+    <a href="https://www.geeksforgeeks.org/how-to-send-a-json-object-to-a-server-using-javascript/" target="blank">source</a>
+    <!-- Making a text input -->
+    <form class="" action="#" method="post" id="exp_addForm">
+        <input type="text" id="name" placeholder="Your name">
+        <input type="number" id="price" placeholder="13">
+        <!-- Button to send data -->
+        <button onclick="geeksForGeeks_sendJSON()">Send JSON geeksForGeeks_sendJSON()</button>
+    </form>
+    <!-- For printing result from server -->
+    <p class="result" style="color:green">Here result</p>
+
+    </br>
+    </br>
+    </br>
+    <!-- <<< -->
+    <!-- <<< -->
+    <!-- <<< -->
+
+    <script>
+        const formPlace = document.querySelector('#exp_addForm')
+formPlace.addEventListener('submit', geeksForGeeks_sendJSON)
+
+// https://www.geeksforgeeks.org/how-to-send-a-json-object-to-a-server-using-javascript/
+function geeksForGeeks_sendJSON(event){
+    event.preventDefault();
+
+	let result = document.querySelector('.result');
+	const name = document.querySelector('#name');
+	const price = document.querySelector('#price');
+
+	// Creating a XHR object
+	const xhr = new XMLHttpRequest();
+	const url = 'http://localhost:8080/simple_mvc/product/experimentalGetJsonObject';
+
+	// open a connection
+	xhr.open("POST", url, true);
+
+	// Set the request header i.e. which type of content you are sending
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.setRequestHeader('charset', 'UTF-8') // ??? JSON ???????????? ????????
+
+	// Create a state change callback
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && xhr.status === 200) {
+
+			// Print received data from server
+//			result.innerHTML = this.responseText;
+			result.innerHTML = 'response status is: '+this.status;
+		}
+	};
+
+	// Converting JSON data to string
+	const data = JSON.stringify({ "name": name.value, "price": price.value });
+
+	// Sending data with the request
+	xhr.send(data);
+}
+    </script>
+
+</main>
+
+<hr/>
+<hr class="navbar fixed-bottom"/>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

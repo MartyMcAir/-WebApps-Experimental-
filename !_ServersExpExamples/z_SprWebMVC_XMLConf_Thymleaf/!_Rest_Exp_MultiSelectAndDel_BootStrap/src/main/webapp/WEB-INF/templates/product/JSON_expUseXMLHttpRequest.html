@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: head(~{::title})">
+  <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+
+  <meta charset="ISO-8859-1">
+  <title>Management System</title>
+
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+</head>
+
+<body>
+  <!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+    <header th:replace="fragments/header">&nbsp;
+    </header>
+    <hr/>
+
+    <main class="container my-2 main" role="main">
+      <h3>Experimental use XMLHttpRequest</h3>
+      <!-- >>> -->
+      <!-- >>> -->
+      <!-- >>> -->
+    </br>
+  </br>
+  <button onclick="sendJsonStringUseXMLHttpRequest()">send JSON String</button>
+</br>
+<button onclick="sendJsonIntegerUseXMLHttpRequest()">send JSON Integer</button>
+</br>
+<button onclick="sendJsonArrayIntegerUseXMLHttpRequest()">send JSON Array Integer</button>
+</br>
+<button onclick="sendJsonObjectProductUseXMLHttpRequest()">send JSON Object (Product)</button>
+</br>
+<button onclick="sendJsonListOfProductsUseXMLHttpRequest()">send JSON List (Products)</button>
+
+<!-- https://www.w3schools.com/js/js_ajax_http.asp -->
+<!-- https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest -->
+<script>
+// XMLHttpRequest send String
+function sendJsonStringUseXMLHttpRequest(){
+  let obj = ['MyString']
+
+  const xhr = new XMLHttpRequest();  // Creating a XHR object
+  // open a connection
+  xhr.open("POST", 'http://localhost:8080/simple_mvc/product/experimentalGetJsonString', true);
+  // Set the request header i.e. which type of content you are sending
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader('charset', 'UTF-8') // при JSON обязательный параметр
+
+  // Create a state change callback
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) { // if ok
+      // Print received data from server
+        // console.log(xhr.responseText);
+        // console.log(xhr.status);
+        console.log(xhr.statusText);
+      }  };
+
+  // Converting JSON data to string
+  const data = JSON.stringify(obj);
+  xhr.send(data);  // Sending data with the request
+}
+
+// XMLHttpRequest send Integer
+function sendJsonIntegerUseXMLHttpRequest(){
+  const xhr = new XMLHttpRequest();  // Creating a XHR object
+  xhr.open("POST", 'http://localhost:8080/simple_mvc/product/experimentalGetJsonInteger', true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader('charset', 'UTF-8') // при JSON обязательный параметр
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) { // if ok
+      console.log(xhr.statusText);
+    }  };
+
+  xhr.send(JSON.stringify(13));  // Sending data with the request
+}
+
+// XMLHttpRequest send Array of Integer
+function sendJsonArrayIntegerUseXMLHttpRequest(){
+  let obj2 = [13, 14, 15]
+
+  const xhr = new XMLHttpRequest();  // Creating a XHR object
+  xhr.open("POST", 'http://localhost:8080/simple_mvc/product/experimentalGetJsonList', true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader('charset', 'UTF-8') // при JSON обязательный параметр
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) { // if ok
+      console.log(xhr.statusText);
+    }  };
+    
+  xhr.send(JSON.stringify(obj2));  // Sending data with the request
+}
+
+// XMLHttpRequest send Object of Product
+function sendJsonObjectProductUseXMLHttpRequest(){
+  let obj3 = {"id":0,"name":"TestName","price":3.14}
+
+  const xhr = new XMLHttpRequest();  // Creating a XHR object
+  xhr.open("POST", 'http://localhost:8080/simple_mvc/product/experimentalGetJsonObject', true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader('charset', 'UTF-8') // при JSON обязательный параметр
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) { // if ok
+      console.log(xhr.statusText);
+    }  };
+    
+  xhr.send(JSON.stringify(obj3));  // Sending data with the request
+}
+
+// XMLHttpRequest send List of Object of Products
+function sendJsonListOfProductsUseXMLHttpRequest(){
+  let obj4 = [{"id":0,"name":"oneObj","price":0.3},
+  {"id":0,"name":"twoObj","price":0.8},
+  {"id":0,"name":"three","price":3.14}]
+
+  const xhr = new XMLHttpRequest();  // Creating a XHR object
+  xhr.open("POST", 'http://localhost:8080/simple_mvc/product/experimentalGetJsonListOfObjects', true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) { // if ok
+      console.log(xhr.statusText);
+    }  };
+    
+  xhr.send(JSON.stringify(obj4));  // Sending data with the request
+}
+</script>
+<!-- <<< -->
+<!-- <<< -->
+<!-- <<< -->
+</main>
+
+</br>
+</br>
+</br>
+<hr/>
+<hr class="navbar fixed-bottom"/>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

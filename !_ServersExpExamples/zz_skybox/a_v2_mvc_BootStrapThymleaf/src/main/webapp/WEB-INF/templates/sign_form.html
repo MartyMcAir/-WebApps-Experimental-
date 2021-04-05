@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+<hr/>
+
+<main class="container text-center" role="main">
+
+    <hr/>
+
+    <!--  .........................................................................................................  -->
+
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <img class="mb-4 opacity_0_7" th:src="@{/resources/img/book_icon_32.png}" alt="" width="64" height="64">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        </div>
+
+        <div class="form-label-group">
+            <label for="inputEmail">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
+                   autofocus="">
+        </div>
+
+        <div class="form-label-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2021-
+            <script>document.write(new Date().getFullYear())</script>
+        </p>
+    </form>
+
+    <!--  .........................................................................................................  -->
+
+</main> <!-- <div class="container"> -->
+
+<hr class="navbar"/>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

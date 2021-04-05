@@ -30,7 +30,7 @@ function sendContentToServerAndConsole(responseTypeIs, contentTypeIs, servletNam
     request.setRequestHeader('Content-Type', contentTypeIs)   // желательно указывать
 
     // Здесь мы получаем ответ от сервера на запрос, лучше сказать ждем ответ от сервера
-    request.addEventListener(events[0], () => {
+  request.addEventListener(events[0], () => {
         if (request.readyState === 4 && request.status === 200) {
             const responseText = request.responseText
             // console.log(contentTypeIs)

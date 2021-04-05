@@ -12,6 +12,7 @@
 </ul>
 
 <nav>
+
     <ul class="pagination" th:with="total = ${list.totalPages}">
         <li th:if="${list.hasPrevious()}">
             <a th:href="@{/listsExamples/listByFormValid3(page=${list.previousPageable().pageNumber},size=${list.size})}"
@@ -30,6 +31,7 @@
             </a>
         </li>
     </ul>
+
 </nav>
 
 <ol>

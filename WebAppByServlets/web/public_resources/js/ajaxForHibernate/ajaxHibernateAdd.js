@@ -6,6 +6,7 @@ servletName = 'HibernateAjaxCrudUser'
 // ..............................................................................................
 const formPlace = document.querySelector('#addForm')
 
+// submit click
 formPlace.addEventListener('submit', addInTbl)
 
 function addInTbl(event) {

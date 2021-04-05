@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="!_VariousPaginationExp_CRUD_BootStrap" />
+        <module name="!_H2_VariousPaginExp_CRUD_BootStrap" />
         <module name="+RestJsonPaginationOneToMany_BootStrap" />
         <module name="a_SprBoot_Thymeleaf_RestJson_OneToMany" />
         <module name="JavaConfig_ForThymeleaf_lite" />
@@ -20,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="!_H2_VariousPaginExp_CRUD_BootStrap" options="-parameters" />
       <module name="!_RestJsonPagination_BootStrap" options="-parameters" />
       <module name="!_VariousPaginationExp_BootStrap" options="-parameters" />
       <module name="!_VariousPaginationExp_CRUD_BootStrap" options="-parameters" />

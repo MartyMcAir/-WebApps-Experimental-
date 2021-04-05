@@ -100,11 +100,11 @@
                                   <form class="form-inline" action="${contextPath}/studentBootStrapRepository/filter" method="post">
                                     <th scope="row"><input  class="form-control" id="isId" type="text" name="id" placeholder="id"></th>
                                     <td><input  class="form-control" id="nameId" type="text" name="name" placeholder="Имя"></td>
-                                    <td><input  class="form-control" id="nameId" type="text" name="name" placeholder="Возраст"></td>
+                                    <td><input  class="form-control" id="nameId2" type="text" name="name" placeholder="Возраст"></td>
                                     <td>
                                       <div class="form-inline">
                                         <div>regex</div>
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" name="check">
                                           <button type="submit" value="Добавить" class="btn btn-sm btn-outline-secondary">Фильтровать</button>
                                         </div>
                                       </td>
@@ -141,6 +141,7 @@
                                             <label for="nameId" class="sr-only">Имя</label>
                                             <input  class="form-control" id="nameId" required type="text" name="name" placeholder="Имя">
                                             </div></td>
+
                                             <td>                    <div class="form-group mx-sm-3 mb-2">
                                               <label for="ageId" class="sr-only">Password</label>
                                               <input class="form-control" id="ageId" required type="text" name="age" placeholder="Возраст">
@@ -149,6 +150,7 @@
                                               <td>
                                                 <button type="submit" value="Добавить" class="btn btn-sm btn-outline-secondary">Добавить</button>
                                               </td>
+
                                             </form>
                                           </tr>
 

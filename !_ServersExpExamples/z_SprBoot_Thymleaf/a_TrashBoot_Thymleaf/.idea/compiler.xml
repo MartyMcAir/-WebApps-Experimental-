@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="a_TrashBoot_Thymleaf" />
         <module name="+RestJsonPaginationOneToMany_BootStrap" />
         <module name="a_SprBoot_Thymeleaf_RestJson_OneToMany" />
         <module name="JavaConfig_ForThymeleaf_lite" />
@@ -31,6 +32,7 @@
       <module name="a_SprBoot_Thymeleaf_RestJson_OneToMany" options="-parameters" />
       <module name="a_TrashBoot_Thym_" options="-parameters" />
       <module name="a_TrashBoot_Thym_RestJsonPagin" options="-parameters" />
+      <module name="a_TrashBoot_Thymleaf" options="-parameters" />
     </option>
   </component>
 </project>

@@ -11,6 +11,7 @@
         <module name="H2_PaginWitOutRepo_BootStrap_baeldung" />
         <module name="Themeleaf_LogBack_XmlConfig" />
         <module name="Thymeleaf_LogBack_XmlConfig" />
+        <module name="withTrash_H2_PaginWitOutRepo_BootStrap_baeldung" />
         <module name="H2_PaginWitOutPageable_BootStrap_baeldung" />
         <module name="SpringMVC_jetty_LogBack_XmlConfig" />
         <module name="!_expFor_ThymleafPag_inSprWebMVC" />
