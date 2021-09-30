@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+</head>
+
+<body class="text-center">
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+<hr/>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <div class="collapse navbar-collapse justify-content-md-center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">Главная</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" tabindex="-1" aria-disabled="true" th:href="@{/}">Регистрация</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/books}">Книги</a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/admin}">Админка</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+<hr/>
+
+<main class="container blog-main col-md-6" role="main">
+
+    <div class="card-deck mb-3 text-center">
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header"><h4 class="my-0 font-weight-normal">Вы успешно Зарегестрировались</h4></div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <!-- <h2>Forms</h2> -->
+                    <li><a th:href="@{/user/signIn}">Войти</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</main> <!-- <div class="container"> -->
+
+<hr class="navbar"/>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

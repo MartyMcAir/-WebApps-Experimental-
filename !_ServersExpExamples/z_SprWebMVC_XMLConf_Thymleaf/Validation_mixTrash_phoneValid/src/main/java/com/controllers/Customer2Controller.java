@@ -27,9 +27,7 @@ public class Customer2Controller {
     }
 
     @RequestMapping(value = "/save_action", method = RequestMethod.POST)
-    public String saveCustomerAction(
-            @Valid Customer customer,
-            BindingResult bindingResult, Model model) {
+    public String saveCustomerAction(@Valid Customer customer, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "customer2/custSave";
         }

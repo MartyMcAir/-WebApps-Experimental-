@@ -29,6 +29,7 @@
 
 
 <footer class="footer footer-alt text-white-50">
+
     2015 - <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="" class="text-white-50">Coderthemes</a>
 </footer>
 

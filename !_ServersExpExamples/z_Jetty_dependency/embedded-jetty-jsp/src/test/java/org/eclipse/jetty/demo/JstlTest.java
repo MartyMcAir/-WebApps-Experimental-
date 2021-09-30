@@ -13,7 +13,6 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class JstlTest {
-
     protected Server server;
     private Main main;
 
@@ -34,10 +33,10 @@ public class JstlTest {
     }
 
     public String resourceWithUrl(String uri) throws Exception {
-        URL url = new URL( uri );
+        URL url = new URL(uri);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         InputStream inputStream = connection.getInputStream();
-        byte[] response = new byte[ inputStream.available() ];
+        byte[] response = new byte[inputStream.available()];
         inputStream.read(response);
 
         return new String(response);

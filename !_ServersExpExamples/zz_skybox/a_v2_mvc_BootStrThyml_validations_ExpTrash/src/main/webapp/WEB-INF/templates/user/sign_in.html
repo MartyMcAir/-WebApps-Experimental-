@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+  <title>Home Page</title>
+</head>
+
+<body class="text-center">
+
+  <!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+  <header th:replace="fragments/header">&nbsp;
+  </header>
+  <hr/>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <div class="collapse navbar-collapse justify-content-md-center">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/}">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" tabindex="-1" aria-disabled="true" th:href="@{/}">Аутентификация</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/books}">Книги</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr/>
+
+  <main class="container blog-main col-md-6" role="main">
+
+    <div class="card bg-light">
+      <article class="card-body mx-auto" style="max-width: 400px;">
+
+        <form>
+          <!-- <h4 class="card-title mt-3 text-center">Аутентификация</h4> -->
+          <img class="mb-4 opacity_0_7" th:src="@{/resources/img/book_icon_64.png}" alt="" width="64" height="64">
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <input name="" class="form-control" placeholder="Имя или Email" type="text">
+          </div> <!-- form-group// -->
+
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input class="form-control" placeholder="password" type="password">
+          </div> <!-- form-group// -->
+
+          <div class="form-group checkbox mb-3">
+            <label class="text-info" for="remember_me">
+              Запомнить меня                        <input type="checkbox" name="remember_me">
+            </label>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Вход</button>
+          </div> <!-- form-group// -->
+          <p class="text-center">У вас нет аккаунта?   <a th:href="@{/user/signUp}">   Зарегистрируйтесь</a></p>
+        </form>
+
+      </article>
+    </div> <!-- card.// -->
+
+  </main> <!-- <div class="container"> -->
+
+    <hr class="navbar"/>
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+    <div th:replace="~{fragments/footer :: scripts}"></div>
+
+  </body>
+  </html>

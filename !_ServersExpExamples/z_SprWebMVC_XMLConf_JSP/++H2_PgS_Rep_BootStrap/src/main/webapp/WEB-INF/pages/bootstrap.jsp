@@ -69,5 +69,7 @@
     </main>
 
     <page:bootStrapFooter/>
+
+    <p>кириллицаотображаетсякорректно</p>
   </body>
 </html>

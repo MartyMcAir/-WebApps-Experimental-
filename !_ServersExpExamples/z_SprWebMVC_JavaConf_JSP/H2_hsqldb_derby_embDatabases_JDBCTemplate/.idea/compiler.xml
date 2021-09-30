@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-mvc-embedded-db" target="1.7" />
+      <module name="spring-mvc-embedded-db" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

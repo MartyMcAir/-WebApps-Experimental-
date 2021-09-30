@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+    <style>
+    body {
+    margin: auto;
+    width: 80%; }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+
+<hr/>
+<div class="container">
+
+    <h1 class="myClass">Home Page</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10"
+                aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="./webSocketsMainPage.jsp">LINK ?</a></li>
+                <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">LINK ?</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <hr/>
+
+    <!--  .........................................................................................................  -->
+    <div class="card-deck mb-3 text-center">
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">CRUD Rest Example</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li><a th:href="@{/crudNotes/list}">list</a></li>
+
+                    <h2>...</h2>
+
+                    <li><a th:href="@{/crudNotes/create}">create</a></li>
+                    <li><a th:href="@{/crudNotes/delete_request/1}">delete 1</a></li>
+                    <li><a th:href="@{/crudNotes/update/2}">update 2</a></li>
+                    <li><a th:href="@{/crudNotes/experimental}">experimental</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div> <!-- class="card-deck mb-3 text-center" -->
+    <!--  .........................................................................................................  -->
+
+</div> <!-- <div class="container"> -->
+
+<hr class="navbar fixed-bottom"/>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

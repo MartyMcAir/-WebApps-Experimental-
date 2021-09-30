@@ -1,0 +1,18 @@
+.myClass {
+  color: aqua;
+}
+
+
+/* footer */
+footer {
+  text-align: center;
+}
+
+.text-white-50 { color: rgba($white, .5) !important; }
+
+.displayLikeBlock { display: block ruby; }
+
+body {
+    margin: auto;
+    width: 80%;
+}

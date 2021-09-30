@@ -3,12 +3,12 @@ package com.experiment;
 import java.sql.*;
 
 public class H2test {
-//    @Test
+    //    @Test
     public void testDatabaseNoMem() throws SQLException {
         testDatabase("jdbc:h2:test");
     }
 
-//    @Test
+    //    @Test
     public void testDatabaseMem() throws SQLException {
         testDatabase("jdbc:h2:mem:test");
     }

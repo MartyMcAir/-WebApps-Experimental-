@@ -57,6 +57,7 @@
 </ul>
 
     <div class="footer">
+    <p>кириллицаотображаетсякорректно</p>
         <p>&copy; Devcolibri 2014</p>
     </div>
 

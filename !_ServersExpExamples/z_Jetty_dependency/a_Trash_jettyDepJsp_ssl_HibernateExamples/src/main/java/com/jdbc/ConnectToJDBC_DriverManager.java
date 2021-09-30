@@ -7,8 +7,7 @@ public class ConnectToJDBC_DriverManager {
         try {
             Class.forName("org.postgresql.Driver");
             // создаем подключение к БД
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/mydb", "postgres", "Z33_q77_888");
+            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mydb", "postgres", "Z33_q77_888");
 
             // Объект для совершения запросов к БД
             Statement statement = connection.createStatement();

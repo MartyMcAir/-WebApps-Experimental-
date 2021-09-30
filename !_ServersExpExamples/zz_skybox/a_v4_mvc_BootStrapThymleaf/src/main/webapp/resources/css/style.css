@@ -1,0 +1,47 @@
+.myClass {
+  color: aqua;
+}
+
+
+/* footer */
+footer {
+  text-align: center;
+}
+
+.text-white-50 { color: rgba($white, .5) !important; }
+
+.displayLikeBlock { display: block ruby; }
+
+/*
+white #fff !important
+muted or secondary #6c757d
+black rgba(0,0,0,.5)
+dark #6c757d
+oth #f8f9fa  rgba(255,255,255,.5)
+
+(^ whiter - vV darker)
+D3D3D3
+BDBDBD
+9E9E9E
+7D7D7D
+696969
+*/
+.navbar-dark .navbar-brand { color: #9E9E9E; opacity: 0.5; }
+.navbar-dark .navbar-brand:hover{ color: #BDBDBD; opacity: 1; }
+
+button.btn.btn-sm.bg-info.btn-outline-secondary { color: #fff; }
+
+.table.table-hover.table-sm { margin-bottom: 0px; }
+
+.opacity_0_7 { opacity: 0.7; }
+.opacity_0_5 { opacity: 0.5; }
+
+.table .thead-dark th a { color: #fff; }
+
+.invalid-feedback { display: block; }
+
+.form-group.input-group.was-validated { border-color: aquamarine; }
+
+.form-group.was-validated input.invalid { border-color: #dc3545; }
+
+select#inputState.invalid  { border-color: #dc3545; }

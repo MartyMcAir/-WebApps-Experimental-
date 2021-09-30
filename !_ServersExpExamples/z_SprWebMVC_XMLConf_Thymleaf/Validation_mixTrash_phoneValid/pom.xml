@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.devcases</groupId>
-    <artifactId>userManagerThymeleaf</artifactId>
-    <name>userManagerThymeleaf</name>
+    <artifactId>Validation_mixTrash_phoneValid</artifactId>
+    <name>Validation_mixTrash_phoneValid</name>
     <packaging>war</packaging>
     <version>1.0.0-BUILD-SNAPSHOT</version>
 
@@ -134,7 +134,7 @@
     </dependencies>
 
     <build>
-        <finalName>userManagerThymeleaf</finalName>
+        <finalName>Validation_mixTrash_phoneValid</finalName>
 
         <plugins>
             <plugin>

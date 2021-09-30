@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+</head>
+
+<body class="text-center">
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+<hr/>
+
+<main class="container blog-main col-md-6" role="main">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+        <div class="collapse navbar-collapse justify-content-md-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link disabled" tabindex="-1" aria-disabled="true" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/books}">Книги</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr/>
+
+
+    <form class="form-signin col-md-8">
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"
+             height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Пожалуйста Войдите</h1>
+
+        <label for="inputEmail" class="sr-only">Почтовый Адрес</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="" required="" autofocus="">
+
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+
+        <label for="inputPassword" class="sr-only">Повторите Пароль</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Повторите Пароль" required="">
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me">Запомнить
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+    </form>
+
+    <form class="form-signin col-md-8">
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"
+             height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Пожалуйста Войдите</h1>
+
+        <label for="inputEmail" class="sr-only">Почтовый Адрес</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="" required="" autofocus="">
+
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+
+        <label for="inputPassword" class="sr-only">Повторите Пароль</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Повторите Пароль" required="">
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me">Запомнить
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+    </form>
+
+    <!--  .........................................................................................................  -->
+    <hr/>
+
+    <form th:action="@{/exp/signUpPost}" modelAttribute="obj" th:object="${signupForm}" method="post"
+          class="form-signin">
+        <div class="text-center mb-6">
+            <img class="mb-4 opacity_0_7" th:src="@{/resources/img/book_icon_64.png}" alt="" width="64" height="64">
+            <h1 class="h3 mb-3 font-weight-normal">Пожалуйста войдите</h1>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputAuthor" class="col-sm-4 col-form-label">Имя пользователя</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{username}"/>
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:errorclass="error">
+                    Incorrect username</p>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputAuthor" class="col-sm-4 col-form-label">Пароль</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{password}"/>
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="error">
+                    Incorrect password</p>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputAuthor" class="col-sm-4 col-form-label">Подтверждение пароля</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{confirmPassword}"/>
+                <p th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
+                   th:errorclass="error">
+                    Incorrect confirmPassword</p>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputAuthor" class="col-sm-4 col-form-label">Почтовый адрес</label>
+            <div class="col-sm-6">
+                <input type="text" th:field="*{email}"/>
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="error">
+                    Incorrect email</p>
+            </div>
+        </div>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me">Запомнить меня
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Сохранить</button>
+    </form>
+
+    <!--  .........................................................................................................  -->
+
+</main> <!-- <div class="container"> -->
+
+<hr class="navbar"/>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

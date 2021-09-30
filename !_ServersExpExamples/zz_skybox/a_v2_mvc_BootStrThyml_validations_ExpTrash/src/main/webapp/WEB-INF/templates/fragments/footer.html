@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--<footer th:fragment="footer" class="bg-dark footer footer-alt text-white-50 navbar fixed-bottom d-flex justify-content-center">-->
+
+<footer th:fragment="footer" class="bg-dark footer text-white-50 d-flex justify-content-center
+pt-4 my-md-5 pt-md-5 border-top">
+    <!--    <footer th:fragment="footer" class="bg-dark footer footer-alt text-white-50 navbar d-flex justify-content-center-->
+    <!--pt-4 my-md-5 pt-md-5 border-top">-->
+    <!--    <footer th:fragment="footer" class="bg-dark footer footer-alt text-white-50 navbar d-flex justify-content-center">-->
+    <p>кириллицаотображаетсякорректно   </p>
+    <br/>
+    <br/>
+    <script>document.write(new Date().getFullYear())</script> &copy;
+    theme by <a href="https://getbootstrap.com" class="text-white-50">Twitter Bootstrap</a>
+</footer>
+
+<div th:fragment="scripts" id="scripts">
+    <!--	<div th:fragment="scripts" th:remove="tag">-->
+    <script th:src="@{/resources/bootstrap4_5/js/plugins/popper.min.js}"></script>
+    <script th:src="@{/resources/bootstrap4_5/js/plugins/jquery-3.5.1.slim.min.js}"></script>
+    <script th:src="@{/resources/bootstrap4_5/js/bootstrap.min.js}"></script>
+    <script th:src="@{/resources/js/script.js}"></script>
+</div>
+
+</html>

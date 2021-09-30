@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<!-- LINKS:-->
+<!--
+https://javastudy.ru/spring-mvc/i18n/
+https://mkyong.com/spring-mvc/spring-mvc-internationalization-example/
+https://github.com/kdnc/spring-java-config-reference-application - java config
+https://www.baeldung.com/spring-boot-internationalization#:~:text=By%20default%2C%20a%20Spring%20Boot,XX%20is%20the%20locale%20code.
+
+Q&A
+https://coderoad.ru/18420354/Spring-LocaleResolver-%D0%BD%D0%B5-%D1%80%D0%B5%D0%B0%D0%B3%D0%B8%D1%80%D1%83%D0%B5%D1%82-%D0%BD%D0%B0-locale
+https://stackoverflow.com/questions/59438839/spring-internationalization-works-from-xml-config-but-not-from-java-config
+https://stackoverflow.com/questions/58019480/spring-i18n-confusing-default-locales
+https://coderoad.ru/4659929/%D0%9A%D0%B0%D0%BA-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-UTF-8-%D0%B2-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0%D1%85-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%B0-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-ResourceBundle
+https://coderoad.ru/26260183/UTF-8-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B-%D1%81-%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%BE%D0%B9-Spring-resourcebundle-%D0%B4%D0%BB%D1%8F-%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2
+https://www.codesenior.com/en/tutorial/Solving-Spring-Message-Resource-Bundle-UTF-8-Problem
+https://stackoverflow.com/questions/26260183/utf-8-encoding-issues-with-spring-resourcebundle-for-special-characters
+-->
+
+    <!-- To activate the stereotype annotations -->
+    <context:component-scan base-package="com.spring.intl.controller"/>
+
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <mvc:annotation-driven/>
+
+    <context:annotation-config/>
+
+    <!-- https://www.codesenior.com/en/tutorial/Solving-Spring-Message-Resource-Bundle-UTF-8-Problem -->
+    <!-- For reading the properties files -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/message"/>
+        <!--            <property name="basename" value="classpath:messages" />-->
+        <property name="fallbackToSystemLocale" value="true"/>
+        <property name="fileEncodings" value="UTF-8"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="cacheSeconds" value="3600"/>
+    </bean>
+
+    <!--    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">-->
+    <!--        <property name="basename" value="/WEB-INF/message"/>-->
+    <!--&lt;!&ndash;        <property name="basename" value="messages"/>&ndash;&gt;-->
+    <!--        <property name="defaultEncoding" value="UTF-8"/>-->
+    <!--        <property name="cacheSeconds" value="3600"/>-->
+    <!--    </bean>-->
+
+    <!--    -->
+    <!--    -->
+    <!--    -->
+    <!-- https://coderoad.ru/6129179/Spring-MVC-3-Locale-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8-%D0%BD%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82 -->
+    <!-- i18n Configuration. Default language is english. Change language using ?language=en -->
+    <!--    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">-->
+    <!--        <property name="paramName" value="en"/>-->
+
+    <!--        <property name="fileEncodings" value="UTF-8"/>-->
+    <!--        <property name="defaultEncoding" value="UTF-8"/>-->
+    <!--        &lt;!&ndash; Invalid property 'language' &ndash;&gt;-->
+    <!--        &lt;!&ndash;        <property name="language" value="en"/>&ndash;&gt;-->
+    <!--    </bean>-->
+
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"/>
+            <!--            <property name="fileEncodings" value="UTF-8"/>-->
+            <!--            <property name="defaultEncoding" value="UTF-8"/>-->
+        </bean>
+    </mvc:interceptors>
+
+    <!-- Cookie Resolver -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en"/>
+        <!--        <property name="fileEncodings" value="UTF-8"/>-->
+        <!--        <property name="defaultEncoding" value="UTF-8"/>-->
+
+        <!--        <property name="defaultLanguage" value="en"/> INVALID PROPERTY -->
+        <!--        <property name="defaultLocale" value="Locale.US"/>-->
+    </bean>
+
+    <!--    MY !!!!!!!!!!!!!!! try crate def-->
+    <!--    <bean id="MessageSourceAccessor" class="org.springframework.context.support.MessageSourceAccessor">-->
+    <!--        &lt;!&ndash;        NEED CREATE BEAN for &ndash;&gt;-->
+    <!--        <constructor-arg index="0" ref="message_en"/>-->
+    <!--        <constructor-arg index="1" ref="Locale.US"/>-->
+    <!--    </bean>-->
+
+    <bean id="indexApp" class="java.util.Locale">
+        <constructor-arg index="0" value="en"/>
+    </bean>
+    <!--    -->
+    <!--    -->
+    <!--    -->
+
+    <!-- Locale Change Interceptor -->
+    <!--    <mvc:interceptors>-->
+    <!--        <mvc:interceptor>-->
+    <!--            <mvc:mapping path="/"/>-->
+    <!--            <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">-->
+    <!--                <property name="paramName" value="lang"/>-->
+    <!--            </bean>-->
+    <!--        </mvc:interceptor>-->
+    <!--    </mvc:interceptors>-->
+
+    <!-- Cookie Resolver -->
+    <!--    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">-->
+    <!--    </bean>-->
+
+    <!-- For resolving the view name and invoking the particular view page for
+        the user -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+</beans>

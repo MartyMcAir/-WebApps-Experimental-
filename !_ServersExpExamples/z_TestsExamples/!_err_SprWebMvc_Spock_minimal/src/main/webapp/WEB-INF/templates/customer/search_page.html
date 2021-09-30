@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Список</title>
+</head>
+
+<body>
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+
+<!--<hr/>-->
+
+<main class="container my-2 main" role="main">
+
+    <div align="center">
+        <h2>Search Result</h2>
+
+        <a href="./">main</a>
+
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Address</th>
+            </tr>
+
+            <!-- Load Data -->
+            <tr th:each="item : ${list}">
+                <th scope="row">
+                    <input th:id="${item.id}" th:value="${item.id}" class="cl_checkbox select-item checkbox"
+                           type="checkbox" name="checkedid select-item"/>
+                    <label th:text="${item.id}"/>
+                </th>
+
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.email}"></td>
+                <td th:text="${item.address}"></td>
+
+                <td>
+                    <a th:href="@{/customer/update/{id}(id=${item.id})}" class="btn btn-primary btn-sm">Обновить</a>
+                    <a th:href="@{/customer/delete/{id}(id=${item.id})}" class="btn btn-danger btn-sm">
+                        <img th:src="@{/resources/octicons/trash-16.svg}"></a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+</main> <!-- <div class="container my-2"> -->
+
+<hr/>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/footer :: scripts}"></div>
+<script th:src="@{/resources/js/books_list.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <meta charset="utf-8"/>
+    <title>Management System</title>
+</head>
+
+<body>
+
+<main class="container my-2 main" role="main">
+    <h1>List</h1>
+    <a th:href="@{/}"> Back to Home Page</a>
+    <br/>
+
+    <a th:href="@{/crudNotes/create}" class="btn btn-primary btn-sm mb-3"> Add item </a>
+    <a class="padding5px btn btn-secondary" href="/crudNotes/importTestData" role="button"
+       data-toggle="tooltip" data-placement="top"
+       title="????????????? ???????? ?????? (Import Test Data)">
+        <span class="fa fa-search form-control-feedback"></span>
+        Import</a>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>
+                <a th:href="@{'/crudNotes/page/' + ${currentPage} + '?sortField=id&sortDir=' + ${reverseSortDir}}">ID</a>
+            </th>
+            <th>
+                <a th:href="@{'/crudNotes/page/' + ${currentPage} + '?sortField=name&sortDir=' + ${reverseSortDir}}">Name</a>
+            </th>
+            <th> Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="item : ${list}">
+
+            <td>
+                <input th:id="${item.id}" th:value="${item.id}" class="id_checkbox" type="checkbox" name="checkedid"/>
+                <label for="features3" th:text="${item.id}"/>
+            </td>
+
+            <td th:text="${item.name}"></td>
+
+            <td><a th:href="@{/crudNotes/update/{id}(id=${item.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/crudNotes/delete_request/{id}(id=${item.id})}" class="btn btn-danger">Delete</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="fixed-table-pagination displayLikeBlock" style="">
+
+        <div class="float-left pagination-detail">
+          <span th:if="${totalPages > 1}" class="pagination-info">
+            Total Rows: [[${totalItems}]]
+          </span>
+        </div><!-- <div class="float-left pagination-detail"> -->
+
+        <div class="float-right pagination">
+            <ul class="pagination" id="ulPageId">
+
+                <li class="page-item page-pre padding5px">
+                    <a class="page-link" aria-label="to page‹" th:if="${currentPage > 5}"
+                       th:href="@{'/crudNotes/page/' + ${1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">First</a>
+                    <span th:unless="${currentPage > 5}"></span>
+                </li>
+
+                <li class="page-item page-pre">
+                    <a class="page-link" aria-label="to page‹" th:if="${currentPage > 1}"
+                       th:href="@{'/crudNotes/page/' + ${currentPage - 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">‹</a>
+                    <span th:unless="${currentPage > 1}"></span>
+                </li>
+
+                <span th:each="i: ${#numbers.sequence(1, totalPages)}">
+                    <li th:if="${currentPage != i}" class="page-item">
+                      <a class="page-link"
+                         th:href="@{'/crudNotes/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+                    </li>
+                    <li th:unless="${currentPage != i}" class="page-item active">
+                      <a class="page-link">[[${i}]]</a>
+                    </li>  &nbsp; &nbsp;
+                  </span>
+
+                <li class="page-item page-next">
+                    <a class="page-link" aria-label="to page›" th:if="${currentPage < totalPages}"
+                       th:href="@{'/crudNotes/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">›</a>
+                    <span th:unless="${currentPage < totalPages}"></span>
+                </li>
+
+                <li class="page-item page-next">
+                    <a class="page-link" aria-label="to page›" th:if="${currentPage < totalPages}"
+                       th:href="@{'/crudNotes/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+                    <span th:unless="${currentPage < totalPages}"></span>
+                </li>
+
+            </ul> <!-- <ul class="pagination" id="ulPageId"> -->
+        </div><!--     <div class="float-right pagination"> -->
+    </div> <!-- <div class="fixed-table-pagination" style=""> -->
+
+</main> <!-- <div class="container my-2"> -->
+
+
+<!--  -->
+<!--  -->
+<!--  -->
+<hr/>
+
+</body>
+</html>

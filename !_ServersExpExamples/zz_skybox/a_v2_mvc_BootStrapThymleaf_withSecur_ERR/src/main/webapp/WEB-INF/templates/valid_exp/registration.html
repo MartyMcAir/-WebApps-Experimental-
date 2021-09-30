@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+<hr/>
+
+<main class="container" role="main">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+        <div class="collapse navbar-collapse justify-content-md-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link disabled" tabindex="-1" aria-disabled="true" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/books}">Книги</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr/>
+
+    <!--  .........................................................................................................  -->
+
+    <div class="card-deck mb-3 text-center">
+
+        <hr/>
+        <h2>With Out Error</h2>
+        <form id="userForm" class="form-signin" action="/simple_mvc/registration" method="POST">
+            <h2 class="form-signin-heading">Create your account</h2>
+
+            <div class="form-group ">
+                <input id="username" name="username" placeholder="Username" type="text" autofocus="true"
+                       class="form-control" value="">
+            </div>
+
+            <div class="form-group ">
+                <input id="password" name="password" placeholder="Password" type="password" class="form-control"
+                       value="">
+            </div>
+
+            <div class="form-group ">
+                <input id="passwordConfirm" name="passwordConfirm" placeholder="Confirm your password" type="password"
+                       class="form-control" value="">
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+
+        <hr/>
+        <h2>With Error</h2>
+        <form id="userForm" class="form-signin" action="/simple_mvc/registration" method="POST">
+            <h2 class="form-signin-heading">Create your account</h2>
+
+            <div class="form-group has-error">
+                <input id="username" name="username" placeholder="Username" type="text" autofocus="true"
+                       class="form-control" value="">
+                <span id="username.errors">This field is required.<br>Please use between 6 and 32 characters.<br>Someone already has that username.</span>
+            </div>
+
+            <div class="form-group ">
+                <input id="password" name="password" placeholder="Password" type="password" class="form-control"
+                       value="DYsL527AjAv7yKz">
+            </div>
+
+            <div class="form-group has-error">
+                <input id="passwordConfirm" name="passwordConfirm" placeholder="Confirm your password" type="password"
+                       class="form-control" value="">
+                <span id="passwordConfirm.errors">These passwords don't match.</span>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <!--  .........................................................................................................  -->
+
+</main> <!-- <div class="container"> -->
+
+<hr class="navbar"/>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

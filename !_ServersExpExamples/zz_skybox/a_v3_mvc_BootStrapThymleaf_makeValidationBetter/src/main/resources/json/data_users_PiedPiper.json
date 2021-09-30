@@ -1,0 +1,62 @@
+[
+  {
+    "username": "Ричард Хендрикс",
+    "password": "123456",
+    "email": "richardCEO@piedPiper.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Гевин Белсон",
+    "password": "123456",
+    "email": "gevinCEO@hooli.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Эрлих Бахман",
+    "password": "123456",
+    "email": "user1@mail.com",
+    "role": "USER"
+  },
+  {
+    "username": "Бертрам Гилфойл",
+    "password": "123456",
+    "email": "user2@mail.com",
+    "role": "USER"
+  },
+  {
+    "username": "Динеш Чугтай",
+    "password": "123456",
+    "email": "user4@mail.com",
+    "role": "USER"
+  },
+  {
+    "username": "Питер Грегори",
+    "password": "123456",
+    "email": "user5@mail.com",
+    "role": "USER"
+  },
+  {
+    "username": "Моника Холл",
+    "password": "123456",
+    "email": "user6@mail.com",
+    "role": "USER"
+  },
+  {
+    "username": "Джаред Данн",
+    "password": "123456",
+    "email": "user8@mail.com",
+    "role": "USER"
+  },
+  {
+    "username": "Лори Брим",
+    "password": "123456",
+    "email": "user9@mail.com",
+    "role": "USER"
+  },
+  {
+    "username": "Джек Баркер",
+    "password": "123456",
+    "email": "user10@mail.com",
+    "role": "USER"
+  }
+]

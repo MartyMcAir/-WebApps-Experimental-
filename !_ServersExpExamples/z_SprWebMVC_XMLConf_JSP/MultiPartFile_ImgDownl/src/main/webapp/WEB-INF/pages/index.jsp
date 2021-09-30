@@ -31,5 +31,6 @@
     <li><a href="${contextPath}/image-response-entity"> img response entity</a></li>
     <li><a href="${contextPath}/image-resource"> img resource</a></li>
 </ul>
+
 </body>
 </html>

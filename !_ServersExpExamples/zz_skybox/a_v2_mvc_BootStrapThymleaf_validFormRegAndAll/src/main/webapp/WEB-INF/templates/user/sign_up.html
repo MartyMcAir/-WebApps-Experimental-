@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head :: head(~{::title})">
+    <title>Home Page</title>
+</head>
+
+<body class="text-center">
+
+<!--<header th:replace="fragments/header :: header(home='true', login='false', services='false', contact='false',-->
+<header th:replace="fragments/header">&nbsp;
+</header>
+<hr/>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <div class="collapse navbar-collapse justify-content-md-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" tabindex="-1" aria-disabled="true" th:href="@{/}">Регистрация</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/books}">Книги</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<hr/>
+
+<main class="container blog-main col-md-6" role="main">
+
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Регистрация</h4>
+
+            <form th:action="@{/user/signUpRequest}" modelAttribute="form" th:object="${form}" method="post"
+                  class="form-signin"  novalidate="">
+
+                <div class="form-group input-group"
+                     th:classappend="${!#fields.hasErrors('username')} ? class : was-validated">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input th:field="*{username}" class="form-control" placeholder="Имя пользователя" type="text"
+                           required="" th:classappend="${!#fields.hasErrors('username')} ? class : invalid"/>
+                    <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:errorclass="error"
+                       class="invalid-feedback">
+                        Incorrect username</p>
+                </div> <!-- form-group// -->
+
+                <div class="form-group input-group"
+                     th:classappend="${!#fields.hasErrors('email')} ? class : was-validated">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input th:field="*{email}" class="form-control" placeholder="myemail@mail.com" type="email"
+                           required="" th:classappend="${!#fields.hasErrors('email')} ? class : invalid"/>
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="error"
+                       class="invalid-feedback">
+                        Incorrect email</p>
+                </div> <!-- form-group// -->
+
+                <div class="form-group input-group"
+                     th:classappend="${!#fields.hasErrors('password')} ? class : was-validated">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input th:field="*{password}" class="form-control" placeholder="Пароль" type="text" required=""
+                    th:classappend="${!#fields.hasErrors('password')} ? class : invalid"/>
+                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="error"
+                       class="invalid-feedback">
+                        Incorrect password</p>
+                </div> <!-- form-group// -->
+
+                <div class="form-group input-group"
+                     th:classappend="${!#fields.hasErrors('confirmPassword')} ? class : was-validated">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input th:field="*{confirmPassword}" class="form-control" placeholder="Подтвержение пароля"
+                           type="text" required="" th:classappend="${!#fields.hasErrors('confirmPassword')} ? class : invalid"/>
+                    <p th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
+                       th:errorclass="error" class="invalid-feedback">
+                        Incorrect confirmPassword</p>
+                </div> <!-- form-group// -->
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+                </div> <!-- form-group// -->
+                <p class="text-center">У вас уже есть аккаунт?<a th:href="@{/user/signIn}"> Войдите</a></p>
+            </form>
+
+        </article>
+    </div> <!-- card.// -->
+
+</main> <!-- <div class="container"> -->
+
+<hr class="navbar"/>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/footer :: scripts}"></div>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+[
+  {
+    "username": "Алексей Шипилёв",
+    "password": "123456",
+    "email": "oracleAlexJvmMaster@shipilev.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Тагир Валеев",
+    "password": "123456",
+    "email": "jetbrainsJavaEng@tagir_valeev.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Егор Бугаенко",
+    "password": "123456",
+    "email": "huaweiLabDirectorspeaker@yegor256.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Евгений Борисов",
+    "password": "123456",
+    "email": "javaTrainerArchitect@jekaborisov.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Максим Дорофеев",
+    "password": "123456",
+    "email": "relaxManProkastinolog@cartmendum.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Наиль Алишев",
+    "password": "123456",
+    "email": "courseJavaTreaner@nail-alishevUdemy.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Антон Архипов-Шпайзман",
+    "password": "123456",
+    "email": "jetBrainsKotlin@antonarhipovTwitter.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Барух Садогурский",
+    "password": "123456",
+    "email": "speakerJFrogLiquidSoft@jbaruch.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Алексей Абашев",
+    "password": "123456",
+    "email": "razborPoletov@a_abashevtwitter.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Андрей Родионов",
+    "password": "123456",
+    "email": "jugRuDevoxUA@AndriiRodionov.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Алексей Владыкин",
+    "password": "123456",
+    "email": "courseJavaTreaner@jetBrains.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Головач Courses",
+    "password": "123456",
+    "email": "courseJavaTreaner@GolovachCourses.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Леонид Игольник",
+    "password": "123456",
+    "email": "productDevelAngelInvestor@ligolnik.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Голодный Антон Черноусов",
+    "password": "123456",
+    "email": "speaker@golodnyjTwitter.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Александр Белокрылов",
+    "password": "123456",
+    "email": "bellsoftLibericaJdk@gigabelTwitter.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Николай Алименков",
+    "password": "123456",
+    "email": "speakerGuruConference@xpinjection.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Йонатан Левин",
+    "password": "123456",
+    "email": "androidAcademy@parahall.com",
+    "role": "ADMIN"
+  },
+  {
+    "username": "Дмитрий Чурбанов-Деревянский",
+    "password": "123456",
+    "email": "googleDeveloper@dzmitrycTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Виктор Гамов-Загудзонский",
+    "password": "123456",
+    "email": "confluentRazborPoletov@gamussaTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Никита Салников-Тарновский",
+    "password": "123456",
+    "email": "openTelemetryAndSplunk@iNikem.com",
+    "role": "USER"
+  },
+  {
+    "username": "Денис Калашников",
+    "password": "123456",
+    "email": "softwareEngineer@DanKalashnikov.com",
+    "role": "USER"
+  },
+  {
+    "username": "Дмитрий Джемеров",
+    "password": "123456",
+    "email": "kotlinJetBrains@intelliyoleTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Алексей Федоров",
+    "password": "123456",
+    "email": "conferenceProducer@23derevoTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Игорь Артаманов",
+    "password": "123456",
+    "email": "blockchainDeveloper@splixTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Дмитрий Нестерук",
+    "password": "123456",
+    "email": "fininceRetired@dnesterukTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Кирил Толкачев",
+    "password": "123456",
+    "email": "CIO_JugRu@tolkvTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Константин Буркалев",
+    "password": "123456",
+    "email": "radioJS@KSDaemonTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Петр Мязин",
+    "password": "123456",
+    "email": "b2bJsDeveloper@PetrMyazinTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Павел Савельев",
+    "password": "123456",
+    "email": "lamoda@stateofzuseTwitter.com",
+    "role": "USER"
+  },
+  {
+    "username": "Андрей Акиншин",
+    "password": "123456",
+    "email": "jetBrainsPerformNET@andrey_akinshin.com",
+    "role": "USER"
+  },
+  {
+    "username": "Андрей Акиншин",
+    "password": "123456",
+    "email": "jetBrainsProdManag@andrey_cheptsov.com",
+    "role": "USER"
+  },
+  {
+    "username": "Константин Буленков",
+    "password": "123456",
+    "email": "jetBrainsSwing@bulenkov.com",
+    "role": "USER"
+  },
+  {
+    "username": "Иван Крылов",
+    "password": "123456",
+    "email": "appleSoftEngineerJVM@johnwings.com",
+    "role": "USER"
+  },
+  {
+    "username": "Александ Тарасов",
+    "password": "123456",
+    "email": "annaMoneyCEO@aatarasoff.com",
+    "role": "USER"
+  },
+  {
+    "username": "Константин Назаров",
+    "password": "123456",
+    "email": "hackingTheWorldProfit@racktear.com",
+    "role": "USER"
+  },
+  {
+    "username": "Никита Липский",
+    "password": "123456",
+    "email": "huaweiJVM@pjBooms.com",
+    "role": "USER"
+  },
+  {
+    "username": "Никита Липский",
+    "password": "123456",
+    "email": "principalEngineerOkRu@m0nstermind.com",
+    "role": "USER"
+  },
+  {
+    "username": "Юрий Артаманов",
+    "password": "123456",
+    "email": "jetBrainsSoftDevel@Yuriy_Artamonov.com",
+    "role": "USER"
+  },
+  {
+    "username": "Роксана",
+    "password": "123456",
+    "email": "faceBookFullStackPhoto@Bouli2837.com",
+    "role": "USER"
+  },
+  {
+    "username": "Сергей Егоров",
+    "password": "123456",
+    "email": "testJChampReactiveGroovy@bsideup.com",
+    "role": "USER"
+  },
+  {
+    "username": "Остроумова",
+    "password": "123456",
+    "email": "recrutManRedmadRobot@ru_ostroumova.com",
+    "role": "USER"
+  },
+  {
+    "username": "Евгений Самуилович Борт",
+    "password": "123456",
+    "email": "javaDeveloper@umputun.com",
+    "role": "USER"
+  },
+  {
+    "username": "Светлана Исакова",
+    "password": "123456",
+    "email": "jetBrainsDevAdvKotlin@sveta_isakova.com",
+    "role": "USER"
+  },
+  {
+    "username": "Никита Тонский",
+    "password": "123456",
+    "email": "patreonSupport@nikitonsky.com",
+    "role": "USER"
+  },
+  {
+    "username": "Андрей Платов",
+    "password": "123456",
+    "email": "xoredSoftWarePresident@platoff.com",
+    "role": "USER"
+  },
+  {
+    "username": "Роман Левентов",
+    "password": "123456",
+    "email": "northvoltClimateScape@leventov.com",
+    "role": "USER"
+  },
+  {
+    "username": "Олег Чирукин",
+    "password": "123456",
+    "email": "jetBrainsProductMarketing@olegchir.com",
+    "role": "USER"
+  },
+  {
+    "username": "Митя Александров",
+    "password": "123456",
+    "email": "jugRu@aboute_GPU_withJava.com",
+    "role": "USER"
+  }
+]
