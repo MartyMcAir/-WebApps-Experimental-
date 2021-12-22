@@ -1,6 +1,6 @@
 package com.services;
 
-import com.model.User;
+import com.model.UserHere;
 import com.model.UserRoleEnum;
 import com.repositories.UserRepository;
 import org.slf4j.Logger;
@@ -34,11 +34,11 @@ public class SecurityService implements UserDetailsService {
 //    @Autowired
 //    private PasswordEncoder encoder;
 
-    public User register(String username, String password) {
-        return repository.save(new User(username, password));
+    public UserHere register(String username, String password) {
+        return repository.save(new UserHere(username, password));
     }
 
-    public User register(String username, String password, String email, String role) {
+    public UserHere register(String username, String password, String email, String role) {
         // это проверяется в валидаторе
 //        repository.findByUsername(username).ifPresent(user -> {
 //            throw new IllegalArgumentException("User with that name already exists!");
@@ -47,12 +47,12 @@ public class SecurityService implements UserDetailsService {
 //        Password encryptedPassword = Password.encrypted(encoder.encode(password));
 //        String encode = encoder.encode(password);
 
-        return repository.save(new User(username, password, email, role));
+        return repository.save(new UserHere(username, password, email, role));
     }
 
     // ............................................................................................................
 
-    public Page<User> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
+    public Page<UserHere> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
 
@@ -63,19 +63,19 @@ public class SecurityService implements UserDetailsService {
     // Standard methods Implements by Spring
     // ............................................................................................................
 
-    public void save(User obj) {
+    public void save(UserHere obj) {
         repository.save(obj);
     }
 
-    public List<User> getListAll() {
-        return (List<User>) repository.findAll();
+    public List<UserHere> getListAll() {
+        return (List<UserHere>) repository.findAll();
     }
 
     public void deleteAllData() {
         repository.deleteAll();
     }
 
-    public User getByID(int id) {
+    public UserHere getByID(int id) {
         return repository.findById(id).get();
     }
 
@@ -83,28 +83,28 @@ public class SecurityService implements UserDetailsService {
         repository.deleteById(id);
     }
 
-    public List<User> search(String keyword) {
+    public List<UserHere> search(String keyword) {
         return repository.search(keyword);
     }
 
     // ............................................................................................................
 
-    public Optional<User> getUseByName(String username) {
+    public Optional<UserHere> getUseByName(String username) {
         return repository.findByUsername(username);
     }
 
-    public Optional<User> getUseById(int id) {
+    public Optional<UserHere> getUseById(int id) {
         return repository.findById(id);
     }
 
-    public Optional<User> getUserByEmail(String email) {
+    public Optional<UserHere> getUserByEmail(String email) {
         return repository.findByEmail(email);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 //        User user = userService.getUser("colibri");
-        User user = userService.getUseByName(username).get();
+        UserHere userHere = userService.getUseByName(username).get();
         Set<GrantedAuthority> roles = new HashSet();
         roles.add(new SimpleGrantedAuthority(UserRoleEnum.USER.name()));
 
@@ -114,7 +114,7 @@ public class SecurityService implements UserDetailsService {
 //        user.setRolesUser(roles1);
 
         UserDetails userDetails =
-                new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), roles);
+                new org.springframework.security.core.userdetails.User(userHere.getUsername(), userHere.getPassword(), roles);
 
         return userDetails;
     }

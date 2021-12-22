@@ -1,6 +1,6 @@
 package com.services;
 
-import com.model.User;
+import com.model.UserHere;
 import com.model.UserRoleEnum;
 import com.repositories.UserRepository;
 import org.slf4j.Logger;
@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -60,38 +59,38 @@ public class zExceptionLoadService {
     }
 
     // ...
-    public User myRegister(String username, String password, String role) {
+    public UserHere myRegister(String username, String password, String role) {
 
-        User user = new User(username, password);
-        user.setRole(role);
-        return userRepository.save(user);
+        UserHere userHere = new UserHere(username, password);
+        userHere.setRole(role);
+        return userRepository.save(userHere);
     }
 
     // z_SprBoot_Thymleaf\+Secur_Registration_Pagination
-    public User register(String username, String password) {
-        return userRepository.save(new User(username, password));
+    public UserHere register(String username, String password) {
+        return userRepository.save(new UserHere(username, password));
     }
 
     // z_SprBoot_Thymleaf\+Secur_Registration_Pagination
-    public User register(String username, String password, String email, String role) {
+    public UserHere register(String username, String password, String email, String role) {
 //        Password encryptedPassword = Password.encrypted(encoder.encode(password));
 //        String encode = encoder.encode(password);
 
-        return userRepository.save(new User(username, password, email, role));
+        return userRepository.save(new UserHere(username, password, email, role));
     }
 
 //    from Trash
 //     ............................................................................................................
 
-    public boolean saveUser(User user) {
+    public boolean saveUser(UserHere userHere) {
 //        User userFromDB = userRepository.findByUsername(user.getUsername());
 //        if (userFromDB != null) {
 //            return false;
 //        }
 
 //        user.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
+        userHere.setPassword(bCryptPasswordEncoder.encode(userHere.getPassword()));
+        userRepository.save(userHere);
         return true;
     }
 
@@ -104,32 +103,32 @@ public class zExceptionLoadService {
         return false;
     }
 
-    public User loadUserByUsername(String username) throws UsernameNotFoundException {
-        User s = new User();
+    public UserHere loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserHere s = new UserHere();
         s.setUsername("root");
         // 1234
         s.setPassword("$2y$12$JPIWBBP6Te8xxrbFrBxrde/m1WiNIo9U0P/Pi1dLDbcRG0uMz.9Au");
         userRepository.save(s);
-        User user = userRepository.findByUsername(username).get();
-        if (user == null) throw new UsernameNotFoundException("User not found");
-        return user;
+        UserHere userHere = userRepository.findByUsername(username).get();
+        if (userHere == null) throw new UsernameNotFoundException("User not found");
+        return userHere;
     }
 
     public UserDetails loadUserByUsername4(String email) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername("colibri").get();
+        UserHere userHere = userRepository.findByUsername("colibri").get();
         Set<GrantedAuthority> roles = new HashSet();
         roles.add(new SimpleGrantedAuthority(UserRoleEnum.USER.name()));
-        UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), roles);
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User(userHere.getUsername(), userHere.getPassword(), roles);
         return userDetails;
     }
 
     public UserDetails loadUserByUsername3(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username).get();
+        UserHere userHere = userRepository.findByUsername(username).get();
         org.springframework.security.core.userdetails.User.UserBuilder builder = null;
-        if (user != null) {
+        if (userHere != null) {
             builder = org.springframework.security.core.userdetails.User.withUsername(username);
 //            builder.disabled(!user.isEnabled());
-            builder.password(user.getPassword());
+            builder.password(userHere.getPassword());
 //            String[] authorities = user.getAuthorities().stream().map(a -> a.getAuthority()).toArray(String[]::new);
 //            builder.authorities(authorities);
         } else {
@@ -139,21 +138,21 @@ public class zExceptionLoadService {
     }
 
     public UserDetails loadUserByUsername2(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username).get();
+        UserHere userHere = userRepository.findByUsername(username).get();
         Set<GrantedAuthority> grantedAuthoritySet = new HashSet<>();
         grantedAuthoritySet.add(new SimpleGrantedAuthority("USER"));
         grantedAuthoritySet.add(new SimpleGrantedAuthority("ADMIN"));
-        UserDetails userDetails = (UserDetails) new org.springframework.security.core.userdetails.User(user.getUsername(), //
-                user.getPassword(), grantedAuthoritySet);
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+        UserDetails userDetails = (UserDetails) new org.springframework.security.core.userdetails.User(userHere.getUsername(), //
+                userHere.getPassword(), grantedAuthoritySet);
+        return new org.springframework.security.core.userdetails.User(userHere.getUsername(), userHere.getPassword(),
                 grantedAuthoritySet);
     }
 
     // Standard methods Implements by Spring
     // ............................................................................................................
 
-    public void save(User user) {
-        userRepository.save(user);
+    public void save(UserHere userHere) {
+        userRepository.save(userHere);
     }
 
 }

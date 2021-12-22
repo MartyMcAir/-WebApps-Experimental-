@@ -33,7 +33,7 @@
     </http>
 
     <authentication-manager alias="authenticationManager">
-        <!--        <authentication-provider user-service-ref="userDetailsServiceImpl">-->
+        <!--        <authentication-provider userHere-service-ref="userDetailsServiceImpl">-->
         <authentication-provider>
             <password-encoder ref="encoder"/>
 

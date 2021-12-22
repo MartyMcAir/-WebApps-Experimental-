@@ -1,6 +1,6 @@
 package com.services;
 
-import com.model.User;
+import com.model.UserHere;
 import com.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,11 +23,11 @@ public class UserService {
 //    @Autowired
 //    private PasswordEncoder encoder;
 
-    public User register(String username, String password) {
-        return repository.save(new User(username, password));
+    public UserHere register(String username, String password) {
+        return repository.save(new UserHere(username, password));
     }
 
-    public User register(String username, String password, String email, String role) {
+    public UserHere register(String username, String password, String email, String role) {
         // это проверяется в валидаторе
 //        repository.findByUsername(username).ifPresent(user -> {
 //            throw new IllegalArgumentException("User with that name already exists!");
@@ -36,12 +36,12 @@ public class UserService {
 //        Password encryptedPassword = Password.encrypted(encoder.encode(password));
 //        String encode = encoder.encode(password);
 
-        return repository.save(new User(username, password, email, role));
+        return repository.save(new UserHere(username, password, email, role));
     }
 
     // ............................................................................................................
 
-    public Page<User> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
+    public Page<UserHere> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
 
@@ -52,19 +52,19 @@ public class UserService {
     // Standard methods Implements by Spring
     // ............................................................................................................
 
-    public void save(User obj) {
+    public void save(UserHere obj) {
         repository.save(obj);
     }
 
-    public List<User> getListAll() {
-        return (List<User>) repository.findAll();
+    public List<UserHere> getListAll() {
+        return (List<UserHere>) repository.findAll();
     }
 
     public void deleteAllData() {
         repository.deleteAll();
     }
 
-    public User getByID(int id) {
+    public UserHere getByID(int id) {
         return repository.findById(id).get();
     }
 
@@ -72,21 +72,21 @@ public class UserService {
         repository.deleteById(id);
     }
 
-    public List<User> search(String keyword) {
+    public List<UserHere> search(String keyword) {
         return repository.search(keyword);
     }
 
     // ............................................................................................................
 
-    public Optional<User> getUseByName(String username) {
+    public Optional<UserHere> getUseByName(String username) {
         return repository.findByUsername(username);
     }
 
-    public Optional<User> getUseById(int id) {
+    public Optional<UserHere> getUseById(int id) {
         return repository.findById(id);
     }
 
-    public Optional<User> getUserByEmail(String email) {
+    public Optional<UserHere> getUserByEmail(String email) {
         return repository.findByEmail(email);
     }
 

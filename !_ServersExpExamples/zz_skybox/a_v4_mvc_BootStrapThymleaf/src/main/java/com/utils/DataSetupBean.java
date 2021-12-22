@@ -1,7 +1,7 @@
 package com.utils;
 
 import com.model.Book;
-import com.model.User;
+import com.model.UserHere;
 import com.repositories.BookRepository;
 import com.repositories.UserRepository;
 import org.springframework.beans.factory.InitializingBean;
@@ -29,7 +29,7 @@ public class DataSetupBean implements InitializingBean {
         bookList.forEach(v -> bookRepository.save(v));
 
         // data_users_PiedPiper.json data_users_ruJavaMen.json
-        List<User> userList = userServiceUtils.getDataFromJson("json/data_users_PiedPiper.json");
-        userList.forEach(v -> userRepository.save(v));
+        List<UserHere> userHereList = userServiceUtils.getDataFromJson("json/data_users_PiedPiper.json");
+        userHereList.forEach(v -> userRepository.save(v));
     }
 }

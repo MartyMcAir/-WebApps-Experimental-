@@ -1,6 +1,6 @@
 package com.validator;
 
-import com.model.User;
+import com.model.UserHere;
 import com.model.forms.SignupForm;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -20,7 +20,7 @@ public class UserValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        User obj = (User) o;
+        UserHere obj = (UserHere) o;
 
         rejectIfEmptyOrWhitespace(errors, "username", "signUpForm.userName.empty");
         rejectIfEmptyOrWhitespace(errors, "email", "signUpForm.email.empty");

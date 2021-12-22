@@ -1,6 +1,6 @@
 package com.controllers;
 
-import com.model.User;
+import com.model.UserHere;
 import com.model.forms.UserMultiWrapperForm;
 import com.services.UserService;
 import com.validator.UserMultiWrapperValidator;
@@ -37,7 +37,7 @@ public class UserController {
     @GetMapping("/profile")
     public String profilePage2(Model model) {
         UserMultiWrapperForm multi2 = new UserMultiWrapperForm();
-        User byID = service.getByID(1);
+        UserHere byID = service.getByID(1);
         multi2.setUserOriginBackUp(byID);
 
         model.addAttribute("form", multi2);
@@ -47,8 +47,8 @@ public class UserController {
     @PostMapping("/profileUpdate")
     public String profileRequest2(@Valid @ModelAttribute("form") UserMultiWrapperForm form, BindingResult result, Model model) {
         // if user don't change fields
-        User newUserFromForm = form.getNewUserFromForm();
-        if (form.getUserOriginBackUp().equalsWithOutPassword(newUserFromForm) & form.isEmptyPasswordFields()) {
+        UserHere newUserHereFromForm = form.getNewUserFromForm();
+        if (form.getUserOriginBackUp().equalsWithOutPassword(newUserHereFromForm) & form.isEmptyPasswordFields()) {
             return folderPath + "upd_profile_noChange";
         }
 

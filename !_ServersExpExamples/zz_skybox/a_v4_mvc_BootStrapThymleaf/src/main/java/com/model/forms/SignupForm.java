@@ -1,7 +1,6 @@
 package com.model.forms;
 
-import com.model.User;
-import org.springframework.validation.BindingResult;
+import com.model.UserHere;
 
 import static org.springframework.validation.ValidationUtils.rejectIfEmptyOrWhitespace;
 
@@ -43,7 +42,7 @@ public class SignupForm {
         this.email = email;
     }
 
-    public User getUserFromForm() {
-        return new User(username, password, email, "USER");
+    public UserHere getUserFromForm() {
+        return new UserHere(username, password, email, "USER");
     }
 }

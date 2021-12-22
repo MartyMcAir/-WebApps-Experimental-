@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-public class User {
+public class UserHere {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -16,15 +16,15 @@ public class User {
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 //    private Set<Authorities> authorities = new HashSet<>();
 
-    public User() {
+    public UserHere() {
     }
 
-    public User(String username, String password) {
+    public UserHere(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public User(String username, String password, String email, String role) {
+    public UserHere(String username, String password, String email, String role) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -77,23 +77,23 @@ public class User {
         this.role = role;
     }
 
-    public boolean equalsWithOutPassword(User user) {
-        return id == user.id &&
-                Objects.equals(username, user.username) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(role, user.role);
+    public boolean equalsWithOutPassword(UserHere userHere) {
+        return id == userHere.id &&
+                Objects.equals(username, userHere.username) &&
+                Objects.equals(email, userHere.email) &&
+                Objects.equals(role, userHere.role);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id &&
-                Objects.equals(username, user.username) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(role, user.role);
+        UserHere userHere = (UserHere) o;
+        return id == userHere.id &&
+                Objects.equals(username, userHere.username) &&
+                Objects.equals(password, userHere.password) &&
+                Objects.equals(email, userHere.email) &&
+                Objects.equals(role, userHere.role);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.validator;
 
-import com.model.User;
+import com.model.UserHere;
 import com.model.forms.SignupForm;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,7 +76,7 @@ public class SignupValidator implements Validator {
 
         // Check in Data Base
         // UserName
-        Optional<User> useByName = service.getUseByName(obj.getUsername());
+        Optional<UserHere> useByName = service.getUseByName(obj.getUsername());
         if (useByName.isPresent()) {
             errors.rejectValue("username", "signUpForm.userName.exists");
         }

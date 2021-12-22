@@ -1,6 +1,6 @@
 package com.validator;
 
-import com.model.User;
+import com.model.UserHere;
 import com.model.forms.LoginForm;
 import com.model.forms.SignupForm;
 import com.services.UserService;
@@ -32,10 +32,10 @@ public class LoginValidator implements Validator {
 
         // ............................................................................................
 
-        Optional<User> userByName = service.getUseByName(obj.getLogin());
-        Optional<User> userByEmail = service.getUserByEmail(obj.getLogin());
+        Optional<UserHere> userByName = service.getUseByName(obj.getLogin());
+        Optional<UserHere> userByEmail = service.getUserByEmail(obj.getLogin());
 
-        Optional<User> user = Optional.empty();
+        Optional<UserHere> user = Optional.empty();
         if (userByName.isPresent()) user = userByName;
         if (userByEmail.isPresent()) user = userByEmail;
 

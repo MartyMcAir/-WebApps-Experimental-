@@ -41,7 +41,7 @@
                 <div class="form-group input-group"
                      th:classappend="${!#fields.hasErrors('username')} ? class : was-validated">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        <span class="input-group-text"> <i class="fa fa-userHere"></i> </span>
                     </div>
                     <input th:field="*{username}" class="form-control" placeholder="Имя пользователя" type="text"
                            required="" th:classappend="${!#fields.hasErrors('username')} ? class : invalid"/>

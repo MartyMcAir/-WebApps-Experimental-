@@ -2,9 +2,7 @@ package com.utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.model.Book;
-import com.model.User;
-import com.services.BookService;
+import com.model.UserHere;
 import com.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,12 +25,12 @@ public class UserServiceUtils {
     private UserService service;
 
     // id author title size
-    public List<User> getFilteredList(String idKey, String userNameKey, String emailKey, String roleKey, String regex) {
-        List<User> listAll = service.getListAll();
-        Set<User> set = new HashSet<>();
+    public List<UserHere> getFilteredList(String idKey, String userNameKey, String emailKey, String roleKey, String regex) {
+        List<UserHere> listAll = service.getListAll();
+        Set<UserHere> set = new HashSet<>();
 
         if (regex == null) { // if (regex.isEmpty())
-            for (User obj : listAll) {
+            for (UserHere obj : listAll) {
                 if (!idKey.isEmpty())
                     if (String.valueOf(obj.getId()).contains(idKey)) {
                         set.add(obj);
@@ -58,7 +56,7 @@ public class UserServiceUtils {
         // if regex True (on)
 
         boolean flag;
-        for (User obj : listAll) {
+        for (UserHere obj : listAll) {
             flag = false;
 
             if (!idKey.isEmpty()) {
@@ -84,7 +82,7 @@ public class UserServiceUtils {
         return new ArrayList<>(set);
     }
 
-    private boolean isFlag(Set<User> set, boolean flag, User obj, Matcher matcher) {
+    private boolean isFlag(Set<UserHere> set, boolean flag, UserHere obj, Matcher matcher) {
         while (matcher.find()) {
             set.add(obj);
             flag = true;
@@ -92,13 +90,13 @@ public class UserServiceUtils {
         return flag;
     }
 
-    public List<User> getSearchList(String keyword, String regex) {
+    public List<UserHere> getSearchList(String keyword, String regex) {
         if (regex.isEmpty()) return service.search(keyword);
 
-        Set<User> set = new HashSet<>();
-        List<User> listAll = service.getListAll();
+        Set<UserHere> set = new HashSet<>();
+        List<UserHere> listAll = service.getListAll();
 
-        for (User obj : listAll) {
+        for (UserHere obj : listAll) {
             for (String field : obj.getAllFields()) {
                 Pattern pattern = Pattern.compile(keyword);
                 Matcher matcher = pattern.matcher(field);
@@ -110,13 +108,13 @@ public class UserServiceUtils {
         return new ArrayList<>(set);
     }
 
-    public List<User> getDataFromJson(String fileName) {
-        List<User> list = new ArrayList<>();
+    public List<UserHere> getDataFromJson(String fileName) {
+        List<UserHere> list = new ArrayList<>();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             list = objectMapper.readValue(
                     getClass().getClassLoader().getResourceAsStream(fileName),
-                    new TypeReference<List<User>>() {
+                    new TypeReference<List<UserHere>>() {
                     });
         } catch (IOException e) {
             e.printStackTrace();

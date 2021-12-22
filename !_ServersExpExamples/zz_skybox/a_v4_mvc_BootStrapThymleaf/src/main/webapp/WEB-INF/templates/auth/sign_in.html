@@ -35,7 +35,7 @@
         <article class="card-body mx-auto" style="max-width: 400px;">
 
             <form th:action="@{/auth/signInRequest}" modelAttribute="form" th:object="${form}" method="post" class="form-signin" novalidate="">
-            <!-- <form th:action="@{/user/signInRequest}" modelAttribute="form" th:object="${form}" method="post" -->
+            <!-- <form th:action="@{/userHere/signInRequest}" modelAttribute="form" th:object="${form}" method="post" -->
                   <!-- class="form-signin"> -->
                 <!-- <h4 class="card-title mt-3 text-center">Аутентификация</h4> -->
                 <img class="mb-4 opacity_0_7" th:src="@{/resources/img/book_icon_64.png}" alt="" width="64" height="64">
@@ -43,7 +43,7 @@
                 <div class="form-group input-group"
                      th:classappend="${!#fields.hasErrors('login')} ? class : was-validated">
                     <!-- <label for="inputEmail">Почтовый адрес</label> -->
-                    <div class="input-group-prepend"><span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    <div class="input-group-prepend"><span class="input-group-text"> <i class="fa fa-userHere"></i> </span>
                     </div>
 
                     <input th:field="*{login}" class="form-control" id="inputEmail" placeholder="Имя или Email"

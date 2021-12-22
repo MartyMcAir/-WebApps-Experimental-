@@ -1,6 +1,6 @@
 package com.controllers;
 
-import com.model.User;
+import com.model.UserHere;
 import com.services.UserService;
 import com.utils.UserServiceUtils;
 import com.validator.UserValidator;
@@ -35,7 +35,7 @@ public class AdminController {
 
     @GetMapping
     public String listPage(Model model) {
-        model.addAttribute("form", new User());
+        model.addAttribute("form", new UserHere());
         return findPaginated(1, "id", "asc", "10", model);
     }
 
@@ -44,9 +44,9 @@ public class AdminController {
                                 @RequestParam("sortField") String sortField,
                                 @RequestParam("sortDir") String sortDir, @RequestParam("pageSize") String pageSize,
                                 Model model) {
-        if (model.getAttribute("form") == null) model.addAttribute("form", new User());
+        if (model.getAttribute("form") == null) model.addAttribute("form", new UserHere());
 
-        Page<User> page = service.findPaginated(pageNo, Integer.parseInt(pageSize), sortField, sortDir);
+        Page<UserHere> page = service.findPaginated(pageNo, Integer.parseInt(pageSize), sortField, sortDir);
 
         model.addAttribute("currentPage", pageNo);
         model.addAttribute("totalPages", page.getTotalPages());
@@ -63,8 +63,8 @@ public class AdminController {
     @GetMapping("/import")
     public String importTestDataFromJsonRequest() {
         // data_users_PiedPiper.json data_users_ruJavaMen.json
-        List<User> list = utils.getDataFromJson("json/data_users_ruJavaMen.json");
-        for (User obj : list) service.save(obj);
+        List<UserHere> list = utils.getDataFromJson("json/data_users_ruJavaMen.json");
+        for (UserHere obj : list) service.save(obj);
 
         return "redirect:/admin";
     }
@@ -79,7 +79,7 @@ public class AdminController {
     }
 
     @PostMapping(value = "/save")
-    public String saveRequest(@Valid @ModelAttribute("obj") User obj, BindingResult result) {
+    public String saveRequest(@Valid @ModelAttribute("obj") UserHere obj, BindingResult result) {
         validator.validate(obj, result);
         if (result.hasErrors()) {
             return folderPath + "upd_form";
@@ -90,9 +90,9 @@ public class AdminController {
     }
 
     @PostMapping(value = "/saveForm")
-    public String saveFormRequest(@ModelAttribute("obj") User obj, @Valid @ModelAttribute("form") User form,
+    public String saveFormRequest(@ModelAttribute("obj") UserHere obj, @Valid @ModelAttribute("form") UserHere form,
                                   BindingResult result, Model model) {
-        if (model.getAttribute("form") == null) model.addAttribute("form", new User());
+        if (model.getAttribute("form") == null) model.addAttribute("form", new UserHere());
 
         validator.validate(form, result);
         if (result.hasErrors()) {
@@ -129,9 +129,9 @@ public class AdminController {
     public String searchRequest(@RequestParam("sortField") String sortField, @RequestParam("sortDir") String sortDir,
                                 @RequestParam("pageSize") String pageSize, @RequestParam("keyword") String keyword,
                                 @RequestParam(required = false, name = "regex") String regex, Model model) {
-        if (model.getAttribute("form") == null) model.addAttribute("form", new User());
+        if (model.getAttribute("form") == null) model.addAttribute("form", new UserHere());
 
-        List<User> filteredList;
+        List<UserHere> filteredList;
         if (regex != null) filteredList = utils.getSearchList(keyword, regex);
         else filteredList = service.search(keyword);
 
@@ -155,9 +155,9 @@ public class AdminController {
             @RequestParam("sortField") String sortField, @RequestParam("sortDir") String sortDir,
             @RequestParam("pageSize") String pageSize,
             @RequestParam(required = false, name = "regex") String regex, Model model) {
-        if (model.getAttribute("form") == null) model.addAttribute("form", new User());
+        if (model.getAttribute("form") == null) model.addAttribute("form", new UserHere());
 
-        List<User> filteredList = utils.getFilteredList(idKey, userNameKey, emailKey, roleKey, regex);
+        List<UserHere> filteredList = utils.getFilteredList(idKey, userNameKey, emailKey, roleKey, regex);
 
         model.addAttribute("currentPage", 1);
         model.addAttribute("totalPages", 1);

@@ -1,10 +1,10 @@
 package com.model.forms;
 
-import com.model.User;
+import com.model.UserHere;
 
 public class UserMultiWrapperForm {
-    private User userOriginBackUp; // load from DB and Set, to form _ in hidden input for save
-    private User newUserFromForm; // for comparison with origin..
+    private UserHere userHereOriginBackUp; // load from DB and Set, to form _ in hidden input for save
+    private UserHere newUserHereFromForm; // for comparison with origin..
 
     // id one for both objects
     private int id;
@@ -25,73 +25,73 @@ public class UserMultiWrapperForm {
     private String email2;
     private String role2;
 
-    public void setUserOriginBackUp(User userOriginBackUp) {
-        this.userOriginBackUp = userOriginBackUp;
+    public void setUserOriginBackUp(UserHere userHereOriginBackUp) {
+        this.userHereOriginBackUp = userHereOriginBackUp;
         // load data for save like origin in form
         // input type="hidden" ..
-        this.id = userOriginBackUp.getId();
-        this.username = userOriginBackUp.getUsername();
-        this.password = userOriginBackUp.getPassword();
+        this.id = userHereOriginBackUp.getId();
+        this.username = userHereOriginBackUp.getUsername();
+        this.password = userHereOriginBackUp.getPassword();
 
 //        if (!userOriginBackUp.getPassword().equals("")) {
 //            // на случай если сеттится, из формы в которой нет изменений
 //            this.password = userOriginBackUp.getPassword();
 //        }
 
-        this.email = userOriginBackUp.getEmail();
-        this.role = userOriginBackUp.getRole();
+        this.email = userHereOriginBackUp.getEmail();
+        this.role = userHereOriginBackUp.getRole();
 
         // load data for show in form
-        this.username2 = userOriginBackUp.getUsername();
-        this.email2 = userOriginBackUp.getEmail();
-        this.role2 = userOriginBackUp.getRole();
+        this.username2 = userHereOriginBackUp.getUsername();
+        this.email2 = userHereOriginBackUp.getEmail();
+        this.role2 = userHereOriginBackUp.getRole();
     }
 
     // ........................................................................
 
-    public User getUserOriginBackUp() {
-        if (userOriginBackUp == null) {
-            User userOrigin = new User();
-            userOrigin.setId(id);
-            userOrigin.setUsername(username);
-            userOrigin.setPassword(password);
-            userOrigin.setEmail(email);
-            userOrigin.setRole(role);
+    public UserHere getUserOriginBackUp() {
+        if (userHereOriginBackUp == null) {
+            UserHere userHereOrigin = new UserHere();
+            userHereOrigin.setId(id);
+            userHereOrigin.setUsername(username);
+            userHereOrigin.setPassword(password);
+            userHereOrigin.setEmail(email);
+            userHereOrigin.setRole(role);
 
-            this.userOriginBackUp = userOrigin;
+            this.userHereOriginBackUp = userHereOrigin;
         }
-        return userOriginBackUp;
+        return userHereOriginBackUp;
     }
 
-    public User getNewUserFromForm() {
-        if (newUserFromForm == null) {
-            User newUser = new User();
-            newUser.setId(id);
-            newUser.setUsername(username2);
-            newUser.setPassword(password2);
-            newUser.setEmail(email2);
-            newUser.setRole(role2);
+    public UserHere getNewUserFromForm() {
+        if (newUserHereFromForm == null) {
+            UserHere newUserHere = new UserHere();
+            newUserHere.setId(id);
+            newUserHere.setUsername(username2);
+            newUserHere.setPassword(password2);
+            newUserHere.setEmail(email2);
+            newUserHere.setRole(role2);
 
-            this.newUserFromForm = newUser;
+            this.newUserHereFromForm = newUserHere;
         }
-        return newUserFromForm;
+        return newUserHereFromForm;
     }
 
-    public User getNewUserFromFormForSave() {
-        if (newUserFromForm == null) {
-            User newUser = new User();
-            newUser.setId(id);
-            newUser.setUsername(username2);
-            newUser.setEmail(email2);
-            newUser.setRole(role2);
+    public UserHere getNewUserFromFormForSave() {
+        if (newUserHereFromForm == null) {
+            UserHere newUserHere = new UserHere();
+            newUserHere.setId(id);
+            newUserHere.setUsername(username2);
+            newUserHere.setEmail(email2);
+            newUserHere.setRole(role2);
 
-            this.newUserFromForm = newUser;
+            this.newUserHereFromForm = newUserHere;
         }
         // если в поле пароль, не было измененно
-        if (newUserFromForm.getPassword().equals(""))
-            newUserFromForm.setPassword(password);
+        if (newUserHereFromForm.getPassword().equals(""))
+            newUserHereFromForm.setPassword(password);
 
-        return newUserFromForm;
+        return newUserHereFromForm;
     }
 
     public void showUserNameFields() {
@@ -135,8 +135,8 @@ public class UserMultiWrapperForm {
 
     // ........................................................................
     // Standard Getters adn Setters
-    public void setNewUserFromForm(User newUserFromForm) {
-        this.newUserFromForm = newUserFromForm;
+    public void setNewUserFromForm(UserHere newUserHereFromForm) {
+        this.newUserHereFromForm = newUserHereFromForm;
     }
 
     public int getId() {

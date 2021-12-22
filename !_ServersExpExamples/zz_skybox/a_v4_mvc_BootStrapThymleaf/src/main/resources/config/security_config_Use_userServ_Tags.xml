@@ -10,19 +10,19 @@
 		https://www.springframework.org/schema/security/spring-security.xsd
 ">
 
-    <!-- Setting for using user-service in XML withOut DataBase or userDetailsServiceImpl -->
+    <!-- Setting for using userHere-service in XML withOut DataBase or userDetailsServiceImpl -->
     <!-- password: 1234 from: https://bcrypt-generator.com/ -->
     <!-- new BCryptPasswordEncoder().encode("password") -->
     <authentication-manager alias="authenticationManager">
         <authentication-provider>
             <password-encoder ref="bcryptEncoder"/>   <!-- for encoding password -->
 
-            <user-service>   <!-- Добавляем пользователя который будет иметь права админа -->
-                <user name="admin" authorities="ROLE_ADMIN, ROLE_USER"
+            <userHere-service>   <!-- Добавляем пользователя который будет иметь права админа -->
+                <userHere name="admin" authorities="ROLE_ADMIN, ROLE_USER"
                       password="$2y$12$JPIWBBP6Te8xxrbFrBxrde/m1WiNIo9U0P/Pi1dLDbcRG0uMz.9Au"/>
-                <user name="user1" authorities="ROLE_USER"
+                <userHere name="user1" authorities="ROLE_USER"
                       password="$2y$12$JPIWBBP6Te8xxrbFrBxrde/m1WiNIo9U0P/Pi1dLDbcRG0uMz.9Au"/>
-            </user-service>
+            </userHere-service>
 
         </authentication-provider>
     </authentication-manager>

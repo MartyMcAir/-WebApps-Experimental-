@@ -1,10 +1,10 @@
 package com.utils;
 
-import com.model.User;
+import com.model.UserHere;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class ForTestUserWrapperForm {
-    private User user;
+    private UserHere userHere;
     private String current_password_text;
     private String new_password_text;
     private String confirm_new_password;
@@ -22,13 +22,13 @@ public class ForTestUserWrapperForm {
     public ForTestUserWrapperForm() {
     }
 
-    public ForTestUserWrapperForm(User user) {
-        this.id = user.getId();
-        this.username = user.getUsername();
-        this.password = user.getPassword();
-        this.email = user.getEmail();
-        this.role = user.getRole();
-        this.current_password_crypt = new BCryptPasswordEncoder().encode(user.getPassword());
+    public ForTestUserWrapperForm(UserHere userHere) {
+        this.id = userHere.getId();
+        this.username = userHere.getUsername();
+        this.password = userHere.getPassword();
+        this.email = userHere.getEmail();
+        this.role = userHere.getRole();
+        this.current_password_crypt = new BCryptPasswordEncoder().encode(userHere.getPassword());
     }
 
     public void refreshNewPasswordVariable() {
@@ -37,25 +37,25 @@ public class ForTestUserWrapperForm {
         this.confirm_new_password = "";
     }
 
-    public User getNewUser() {
-        User user_new = new User();
-        user_new.setId(getId());
-        user_new.setUsername(getUsername());
-        user_new.setEmail(getEmail());
-        user_new.setRole(getRole());
-        user_new.setPassword(getNew_password_text());
-        this.user = user_new;
-        return user_new;
+    public UserHere getNewUser() {
+        UserHere user_Here_new = new UserHere();
+        user_Here_new.setId(getId());
+        user_Here_new.setUsername(getUsername());
+        user_Here_new.setEmail(getEmail());
+        user_Here_new.setRole(getRole());
+        user_Here_new.setPassword(getNew_password_text());
+        this.userHere = user_Here_new;
+        return user_Here_new;
     }
 
     // Standard Getters and Setters ..............................................................................
 
-    public User getUser() {
-        return user;
+    public UserHere getUser() {
+        return userHere;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(UserHere userHere) {
+        this.userHere = userHere;
     }
 
     public String getCurrent_password_text() {

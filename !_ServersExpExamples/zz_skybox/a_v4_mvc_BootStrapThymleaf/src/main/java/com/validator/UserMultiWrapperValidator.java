@@ -1,6 +1,6 @@
 package com.validator;
 
-import com.model.User;
+import com.model.UserHere;
 import com.model.forms.SignupForm;
 import com.model.forms.UserMultiWrapperForm;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,7 +25,7 @@ public class UserMultiWrapperValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         UserMultiWrapperForm obj = (UserMultiWrapperForm) o;
-        User userForm = obj.getNewUserFromForm();
+        UserHere userHereForm = obj.getNewUserFromForm();
 
         rejectIfEmptyOrWhitespace(errors, "username2", "signUpForm.userName.empty");
         rejectIfEmptyOrWhitespace(errors, "email2", "signUpForm.email.empty");
@@ -33,7 +33,7 @@ public class UserMultiWrapperValidator implements Validator {
 
         // Password
         // если хотя бы одно из полей НЕ является пустым _ сначала идёт проверка на то, что пусты ли поля
-        if (!obj.isEmptyPasswordFields() || !userForm.getPassword().equals("")) {
+        if (!obj.isEmptyPasswordFields() || !userHereForm.getPassword().equals("")) {
             rejectIfEmptyOrWhitespace(errors, "user_password2", "userWrapperForm.current_password.empty");
             rejectIfEmptyOrWhitespace(errors, "password2", "userWrapperForm.confirm_new_password.empty");
             rejectIfEmptyOrWhitespace(errors, "confirm_password2", "userWrapperForm.new_password.empty");
@@ -44,9 +44,9 @@ public class UserMultiWrapperValidator implements Validator {
 //                errors.rejectValue("current_password_text", "userWrapperForm.current_password.invalid");
 //            }
 
-            if (!userForm.getPassword().equals("")) { // _ если поле ввода, для нового пароля не пусто
+            if (!userHereForm.getPassword().equals("")) { // _ если поле ввода, для нового пароля не пусто
                 // проверка (НОВОГО) пароля на его длину _ если поле не пусто
-                if ((userForm.getPassword().length() < 6) | (userForm.getPassword().length() > 20)) {
+                if ((userHereForm.getPassword().length() < 6) | (userHereForm.getPassword().length() > 20)) {
                     errors.rejectValue("password2", "signUpForm.password.longShort");
                 }
 
@@ -56,7 +56,7 @@ public class UserMultiWrapperValidator implements Validator {
                 }
 
                 // сравнение нового пароля с его подтвержением
-                if (!(userForm.getPassword().equals(obj.getConfirm_password2()))) {
+                if (!(userHereForm.getPassword().equals(obj.getConfirm_password2()))) {
                     errors.rejectValue("confirm_password2", "signUpForm.confirmPassword.invalid");
                 }
             }
@@ -66,7 +66,7 @@ public class UserMultiWrapperValidator implements Validator {
 
         // UserName
         // проверка имени на её длину
-        if ((userForm.getUsername().length() < 4) || (userForm.getUsername().length() > 20)) {
+        if ((userHereForm.getUsername().length() < 4) || (userHereForm.getUsername().length() > 20)) {
             errors.rejectValue("username2", "signUpForm.userName.longShort");
         }
 
@@ -76,11 +76,11 @@ public class UserMultiWrapperValidator implements Validator {
 
         // Email
         // проверка почты на её длину
-        if (userForm.getEmail().length() > 40) {
+        if (userHereForm.getEmail().length() > 40) {
             errors.rejectValue("email2", "signUpForm.email.longShort");
         }
 
-        if (!userForm.getEmail().matches(EMAIL_PATTERN)) {
+        if (!userHereForm.getEmail().matches(EMAIL_PATTERN)) {
             errors.rejectValue("email2", "signUpForm.email.invalid");
         }
 

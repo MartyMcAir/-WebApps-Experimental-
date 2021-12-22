@@ -77,7 +77,7 @@
           <div class="card-body">
 
             <div>
-              <form th:action="@{/user/profileUpdate}" th:object="${form}" method="post" modelAttribute="form"
+              <form th:action="@{/userHere/profileUpdate}" th:object="${form}" method="post" modelAttribute="form"
               class="text-right"
               novalidate="">
               <div class="form-label-group form-group text-center">
@@ -164,7 +164,7 @@
             <input type="text" th:field="*{user_password2}" id="inputUserPassword" class="form-control"
             th:classappend="${!#fields.hasErrors('user_password2')} ? class : invalid"/>
             <p th:if="${#fields.hasErrors('user_password2')}"              th:errors="*{user_password2}" th:errorclass="error"
-            class="invalid-feedback">              Incorrect current user password2</p>
+            class="invalid-feedback">              Incorrect current userHere password2</p>
           </div>
         </div>
 

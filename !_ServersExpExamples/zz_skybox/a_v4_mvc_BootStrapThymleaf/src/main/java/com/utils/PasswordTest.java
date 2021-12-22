@@ -1,6 +1,6 @@
 package com.utils;
 
-import com.model.User;
+import com.model.UserHere;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -49,7 +49,7 @@ public class PasswordTest {
     public void myTest() {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
 
-        User usr1 = new User("user888", "123456", "email@mail.com", "ADMIN");
+        UserHere usr1 = new UserHere("user888", "123456", "email@mail.com", "ADMIN");
         ForTestUserWrapperForm form = new ForTestUserWrapperForm(usr1);
         form.setCurrent_password_crypt(new BCryptPasswordEncoder().encode(usr1.getPassword()));
 
