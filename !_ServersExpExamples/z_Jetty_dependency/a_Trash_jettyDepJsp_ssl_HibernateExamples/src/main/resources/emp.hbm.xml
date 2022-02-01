@@ -1,0 +1,8 @@
+<!--//emp.hbm.xml-->
+
+<hibernate-mapping>
+
+    <mapping class="hibernateJavaStudy.model.User_m" table="user_m"/>
+
+</hibernate-mapping>
+

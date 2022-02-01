@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/spring-mvc-embedded-db.iml" filepath="$PROJECT_DIR$/spring-mvc-embedded-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a_TrashWebMvc_JavaConf_JSP.iml" filepath="$PROJECT_DIR$/a_TrashWebMvc_JavaConf_JSP.iml" />
     </modules>
   </component>
 </project>

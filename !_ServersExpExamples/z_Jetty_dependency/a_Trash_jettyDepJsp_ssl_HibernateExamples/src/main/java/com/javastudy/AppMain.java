@@ -15,13 +15,18 @@ public class AppMain {
 
         session.beginTransaction();
 
-        ContactEntity contactEntity = new ContactEntity();
+//        ContactEntity contactEntity = new ContactEntity();
+//
+//        contactEntity.setBirthDate(new java.util.Date());
+//        contactEntity.setFirstName("Nick");
+//        contactEntity.setLastName("VN");
 
-        contactEntity.setBirthDate(new java.util.Date());
-        contactEntity.setFirstName("Nick");
-        contactEntity.setLastName("VN");
+        User_m andru = new User_m();
+        andru.setId(1);
+        andru.setName("Andru");
+        andru.setPostIndex("23414");
+        session.save(andru);
 
-        session.save(contactEntity);
         session.getTransaction().commit();
 
         session.close();

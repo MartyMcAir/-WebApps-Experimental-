@@ -6,13 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="HibernateExamples_SessionFactory_EntityM_Repo" />
-        <module name="SpringMvc_jsp_Hibernate_H2Base_XmlConfig_lite" />
-        <module name="HibernateMixTrash_SessionFactory_EntityM_Repo" />
-        <module name="a_TrashWebMvc_XmlConfJSP_DB_Patterns" />
         <module name="err_HibernateMixTrash_SessionFactory_EntityM_Repo" />
-        <module name="HibernateExamplesMix_SpringMvc" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="err_HibernateMixTrash_SessionFactory_EntityM_Repo" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

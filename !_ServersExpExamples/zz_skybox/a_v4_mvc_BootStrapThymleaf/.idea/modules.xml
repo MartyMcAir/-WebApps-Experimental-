@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/usermanager.iml" filepath="$PROJECT_DIR$/usermanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a_v1_mvc_BootStrapThymleaf.iml" filepath="$PROJECT_DIR$/a_v1_mvc_BootStrapThymleaf.iml" />
     </modules>
   </component>
 </project>

@@ -6,14 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jetty_jsp_Trash_ERR" />
-        <module name="jetty_jsp_FullExp" />
-        <module name="a_Trash_jettyMvnPlg_Jsp" />
         <module name="a_Trash_jettyMvnPlg_Jsp_fileUpload" />
-        <module name="simpleMvc1_3_my" />
-        <module name="jetty_FullExp" />
-        <module name="a_Trash_jettyMvnPlgJsp_Hibernate_fileUpload" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="a_Trash_jettyMvnPlg_Jsp_fileUpload" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

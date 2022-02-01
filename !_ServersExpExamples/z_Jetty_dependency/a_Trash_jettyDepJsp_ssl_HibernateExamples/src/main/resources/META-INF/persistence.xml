@@ -24,6 +24,7 @@
         <!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
         <class>com.model.Student</class>
         <class>com.model.Employee</class>
+        <class>com.javastudy.User_m</class>
         <class>com.model.EmployeeForCriteriaApi</class>
 
         <!-- https://habr.com/ru/post/420827/ -->
@@ -39,7 +40,7 @@
             <property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
             <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="toplink.jdbc.user" value="postgres"/>
-            <property name="toplink.jdbc.password" value="Z33_q77_888"/>
+            <property name="toplink.jdbc.password" value="anduser"/>
             <property name="toplink.ddl-generation" value="create-tables"/>
 
             <!-- https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html -->
@@ -57,6 +58,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.model.Student</class>
         <class>com.model.Employee</class>
+        <class>com.javastudy.User_m</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.url"

@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-mvc-embedded-db" />
+        <module name="a_TrashWebMvc_JavaConf_JSP" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-mvc-embedded-db" target="1.8" />
+      <module name="a_TrashWebMvc_JavaConf_JSP" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
