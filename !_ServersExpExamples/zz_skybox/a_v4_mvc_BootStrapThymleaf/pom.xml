@@ -23,7 +23,6 @@
         <spring.security>5.3.4.RELEASE</spring.security>
     </properties>
 
-
     <dependencies>
         <!-- for TEST's -->
         <dependency>
