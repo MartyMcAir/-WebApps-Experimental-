@@ -9,8 +9,5 @@
         <module name="jetty-ssl-example" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="jetty-ssl-example" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
